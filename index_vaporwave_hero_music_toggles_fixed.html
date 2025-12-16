@@ -351,8 +351,6 @@ footer {
 
 <div class="toast" id="toast">Copied.</div>
 
-<audio id="bgMusic" src="synthwave_loop.wav" loop preload="auto"></audio>
-
 <script>
 
 // --- Audio state (plop + synthwave) ---
@@ -387,7 +385,6 @@ const countEl = document.getElementById("count");
 const toast = document.getElementById("toast");
 const plopToggleBtn = document.getElementById("plopToggleBtn");
 const musicToggleBtn = document.getElementById("musicToggleBtn");
-const bgMusic = document.getElementById("bgMusic");
 
 function syncAudioButtons() {
   if (plopToggleBtn) {
@@ -815,16 +812,6 @@ function startMusic() {
   if (musicEnabled) return;
   musicEnabled = true;
 
-  // Prefer the included audio file (synthwave_loop.wav) if present
-  if (bgMusic) {
-    try {
-      bgMusic.volume = 0.30;
-      const p = bgMusic.play();
-      if (p && p.catch) p.catch(() => {});
-      return;
-    } catch (e) {}
-  }
-
   const ctx = ensureAudio();
   if (!musicNodes) initMusicGraph();
 
@@ -842,14 +829,6 @@ function startMusic() {
 function stopMusic() {
   if (!musicEnabled) return;
   musicEnabled = false;
-
-  if (bgMusic) {
-    try {
-      bgMusic.pause();
-      // keep position (more 'tape deck' vibe); comment next line if you prefer reset
-      // bgMusic.currentTime = 0;
-    } catch (e) {}
-  }
 
   const ctx = ensureAudio();
   if (musicTimer) clearInterval(musicTimer);
