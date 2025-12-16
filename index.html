@@ -4,1017 +4,2021 @@
 <style>
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.4;
   padding: 20px;
 }
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:flex-start;
+}
+.cb{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+.chip{
+  display:inline-block;
+  padding:8px 12px;
+  border:1px solid #999;
+  border-radius:999px;
+  cursor:pointer;
+  user-select:none;
+}
+.cb:checked + .chip{
+  background:#222;
+  color:#fff;
+  border-color:#222;
+}
+.section{
+  flex-basis:100%;
+  margin:14px 0 6px;
+  font-weight:bold;
+  opacity:0.8;
+}
+.actions{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.copybtn{
+  padding:10px 14px;
+  border:1px solid #555;
+  border-radius:10px;
+  cursor:pointer;
+  background:#f3f3f3;
+}
+.copybtn:active{
+  transform:translateY(1px);
+}
+.hint{
+  opacity:0.75;
+}
+
 </style>
 </head>
 <body>
 <h1>1000 Human Activities Checklist</h1>
 <form>
+<div class="chips">
 
-<input type="checkbox"> breathing <br>
-<input type="checkbox"> blinking <br>
-<input type="checkbox"> swallowing <br>
-<input type="checkbox"> chewing <br>
-<input type="checkbox"> stretching <br>
-<input type="checkbox"> yawning <br>
-<input type="checkbox"> standing <br>
-<input type="checkbox"> sitting <br>
-<input type="checkbox"> walking <br>
-<input type="checkbox"> running <br>
-<input type="checkbox"> jogging <br>
-<input type="checkbox"> jumping <br>
-<input type="checkbox"> crawling <br>
-<input type="checkbox"> balancing <br>
-<input type="checkbox"> bending <br>
-<input type="checkbox"> lifting <br>
-<input type="checkbox"> carrying <br>
-<input type="checkbox"> pulling <br>
-<input type="checkbox"> pushing <br>
-<input type="checkbox"> climbing <br>
-<input type="checkbox"> falling asleep <br>
-<input type="checkbox"> waking up <br>
-<input type="checkbox"> sneezing <br>
-<input type="checkbox"> coughing <br>
-<input type="checkbox"> sweating <br>
-<input type="checkbox"> shivering <br>
-<input type="checkbox"> napping <br>
-<input type="checkbox"> sleeping <br>
-<input type="checkbox"> warming up <br>
-<input type="checkbox"> cooling down <br>
-<input type="checkbox"> drinking <br>
-<input type="checkbox"> eating <br>
-<input type="checkbox"> tasting <br>
-<input type="checkbox"> sniffing <br>
-<input type="checkbox"> touching <br>
-<input type="checkbox"> hearing <br>
-<input type="checkbox"> seeing <br>
-<input type="checkbox"> smelling <br>
-<input type="checkbox"> speaking <br>
-<input type="checkbox"> whispering <br>
-<input type="checkbox"> humming <br>
-<input type="checkbox"> singing <br>
-<input type="checkbox"> laughing <br>
-<input type="checkbox"> crying <br>
-<input type="checkbox"> smiling <br>
-<input type="checkbox"> frowning <br>
-<input type="checkbox"> sighing <br>
-<input type="checkbox"> groaning <br>
-<input type="checkbox"> daydreaming <br>
-<input type="checkbox"> thinking <br>
+<input type="checkbox" id="cb1" data-label="breathing" class="cb">
+<label for="cb1" class="chip">breathing</label>
+<input type="checkbox" id="cb2" data-label="blinking" class="cb">
+<label for="cb2" class="chip">blinking</label>
+<input type="checkbox" id="cb3" data-label="swallowing" class="cb">
+<label for="cb3" class="chip">swallowing</label>
+<input type="checkbox" id="cb4" data-label="chewing" class="cb">
+<label for="cb4" class="chip">chewing</label>
+<input type="checkbox" id="cb5" data-label="stretching" class="cb">
+<label for="cb5" class="chip">stretching</label>
+<input type="checkbox" id="cb6" data-label="yawning" class="cb">
+<label for="cb6" class="chip">yawning</label>
+<input type="checkbox" id="cb7" data-label="standing" class="cb">
+<label for="cb7" class="chip">standing</label>
+<input type="checkbox" id="cb8" data-label="sitting" class="cb">
+<label for="cb8" class="chip">sitting</label>
+<input type="checkbox" id="cb9" data-label="walking" class="cb">
+<label for="cb9" class="chip">walking</label>
+<input type="checkbox" id="cb10" data-label="running" class="cb">
+<label for="cb10" class="chip">running</label>
+<input type="checkbox" id="cb11" data-label="jogging" class="cb">
+<label for="cb11" class="chip">jogging</label>
+<input type="checkbox" id="cb12" data-label="jumping" class="cb">
+<label for="cb12" class="chip">jumping</label>
+<input type="checkbox" id="cb13" data-label="crawling" class="cb">
+<label for="cb13" class="chip">crawling</label>
+<input type="checkbox" id="cb14" data-label="balancing" class="cb">
+<label for="cb14" class="chip">balancing</label>
+<input type="checkbox" id="cb15" data-label="bending" class="cb">
+<label for="cb15" class="chip">bending</label>
+<input type="checkbox" id="cb16" data-label="lifting" class="cb">
+<label for="cb16" class="chip">lifting</label>
+<input type="checkbox" id="cb17" data-label="carrying" class="cb">
+<label for="cb17" class="chip">carrying</label>
+<input type="checkbox" id="cb18" data-label="pulling" class="cb">
+<label for="cb18" class="chip">pulling</label>
+<input type="checkbox" id="cb19" data-label="pushing" class="cb">
+<label for="cb19" class="chip">pushing</label>
+<input type="checkbox" id="cb20" data-label="climbing" class="cb">
+<label for="cb20" class="chip">climbing</label>
+<input type="checkbox" id="cb21" data-label="falling asleep" class="cb">
+<label for="cb21" class="chip">falling asleep</label>
+<input type="checkbox" id="cb22" data-label="waking up" class="cb">
+<label for="cb22" class="chip">waking up</label>
+<input type="checkbox" id="cb23" data-label="sneezing" class="cb">
+<label for="cb23" class="chip">sneezing</label>
+<input type="checkbox" id="cb24" data-label="coughing" class="cb">
+<label for="cb24" class="chip">coughing</label>
+<input type="checkbox" id="cb25" data-label="sweating" class="cb">
+<label for="cb25" class="chip">sweating</label>
+<input type="checkbox" id="cb26" data-label="shivering" class="cb">
+<label for="cb26" class="chip">shivering</label>
+<input type="checkbox" id="cb27" data-label="napping" class="cb">
+<label for="cb27" class="chip">napping</label>
+<input type="checkbox" id="cb28" data-label="sleeping" class="cb">
+<label for="cb28" class="chip">sleeping</label>
+<input type="checkbox" id="cb29" data-label="warming up" class="cb">
+<label for="cb29" class="chip">warming up</label>
+<input type="checkbox" id="cb30" data-label="cooling down" class="cb">
+<label for="cb30" class="chip">cooling down</label>
+<input type="checkbox" id="cb31" data-label="drinking" class="cb">
+<label for="cb31" class="chip">drinking</label>
+<input type="checkbox" id="cb32" data-label="eating" class="cb">
+<label for="cb32" class="chip">eating</label>
+<input type="checkbox" id="cb33" data-label="tasting" class="cb">
+<label for="cb33" class="chip">tasting</label>
+<input type="checkbox" id="cb34" data-label="sniffing" class="cb">
+<label for="cb34" class="chip">sniffing</label>
+<input type="checkbox" id="cb35" data-label="touching" class="cb">
+<label for="cb35" class="chip">touching</label>
+<input type="checkbox" id="cb36" data-label="hearing" class="cb">
+<label for="cb36" class="chip">hearing</label>
+<input type="checkbox" id="cb37" data-label="seeing" class="cb">
+<label for="cb37" class="chip">seeing</label>
+<input type="checkbox" id="cb38" data-label="smelling" class="cb">
+<label for="cb38" class="chip">smelling</label>
+<input type="checkbox" id="cb39" data-label="speaking" class="cb">
+<label for="cb39" class="chip">speaking</label>
+<input type="checkbox" id="cb40" data-label="whispering" class="cb">
+<label for="cb40" class="chip">whispering</label>
+<input type="checkbox" id="cb41" data-label="humming" class="cb">
+<label for="cb41" class="chip">humming</label>
+<input type="checkbox" id="cb42" data-label="singing" class="cb">
+<label for="cb42" class="chip">singing</label>
+<input type="checkbox" id="cb43" data-label="laughing" class="cb">
+<label for="cb43" class="chip">laughing</label>
+<input type="checkbox" id="cb44" data-label="crying" class="cb">
+<label for="cb44" class="chip">crying</label>
+<input type="checkbox" id="cb45" data-label="smiling" class="cb">
+<label for="cb45" class="chip">smiling</label>
+<input type="checkbox" id="cb46" data-label="frowning" class="cb">
+<label for="cb46" class="chip">frowning</label>
+<input type="checkbox" id="cb47" data-label="sighing" class="cb">
+<label for="cb47" class="chip">sighing</label>
+<input type="checkbox" id="cb48" data-label="groaning" class="cb">
+<label for="cb48" class="chip">groaning</label>
+<input type="checkbox" id="cb49" data-label="daydreaming" class="cb">
+<label for="cb49" class="chip">daydreaming</label>
+<input type="checkbox" id="cb50" data-label="thinking" class="cb">
+<label for="cb50" class="chip">thinking</label>
 
-<!-- DAILY TASKS -->
-<input type="checkbox"> cooking <br>
-<input type="checkbox"> boiling water <br>
-<input type="checkbox"> frying food <br>
-<input type="checkbox"> baking <br>
-<input type="checkbox"> washing dishes <br>
-<input type="checkbox"> vacuuming <br>
-<input type="checkbox"> sweeping <br>
-<input type="checkbox"> mopping <br>
-<input type="checkbox"> folding clothes <br>
-<input type="checkbox"> doing laundry <br>
-<input type="checkbox"> ironing <br>
-<input type="checkbox"> cleaning windows <br>
-<input type="checkbox"> making the bed <br>
-<input type="checkbox"> showering <br>
-<input type="checkbox"> brushing teeth <br>
-<input type="checkbox"> shaving <br>
-<input type="checkbox"> combing hair <br>
-<input type="checkbox"> applying lotion <br>
-<input type="checkbox"> getting dressed <br>
-<input type="checkbox"> undressing <br>
-<input type="checkbox"> grocery shopping <br>
-<input type="checkbox"> refilling prescriptions <br>
-<input type="checkbox"> paying bills <br>
-<input type="checkbox"> budgeting <br>
-<input type="checkbox"> taking out the trash <br>
-<input type="checkbox"> recycling <br>
-<input type="checkbox"> opening mail <br>
-<input type="checkbox"> organizing drawers <br>
-<input type="checkbox"> writing lists <br>
-<input type="checkbox"> meal prepping <br>
-<input type="checkbox"> packing bags <br>
-<input type="checkbox"> unpacking <br>
-<input type="checkbox"> calling someone <br>
-<input type="checkbox"> texting <br>
-<input type="checkbox"> sending emails <br>
-<input type="checkbox"> waiting in line <br>
-<input type="checkbox"> commuting <br>
-<input type="checkbox"> checking the weather <br>
-<input type="checkbox"> reading instructions <br>
-<input type="checkbox"> setting reminders <br>
-<input type="checkbox"> locking doors <br>
-<input type="checkbox"> charging devices <br>
-<input type="checkbox"> making coffee <br>
-<input type="checkbox"> making tea <br>
-<input type="checkbox"> watering plants <br>
-<input type="checkbox"> feeding pets <br>
-<input type="checkbox"> taking medication <br>
-<input type="checkbox"> using the bathroom <br>
-<input type="checkbox"> washing hands <br>
-<input type="checkbox"> tidying up <br>
+<div class="section">DAILY TASKS</div>
+<input type="checkbox" id="cb51" data-label="cooking" class="cb">
+<label for="cb51" class="chip">cooking</label>
+<input type="checkbox" id="cb52" data-label="boiling water" class="cb">
+<label for="cb52" class="chip">boiling water</label>
+<input type="checkbox" id="cb53" data-label="frying food" class="cb">
+<label for="cb53" class="chip">frying food</label>
+<input type="checkbox" id="cb54" data-label="baking" class="cb">
+<label for="cb54" class="chip">baking</label>
+<input type="checkbox" id="cb55" data-label="washing dishes" class="cb">
+<label for="cb55" class="chip">washing dishes</label>
+<input type="checkbox" id="cb56" data-label="vacuuming" class="cb">
+<label for="cb56" class="chip">vacuuming</label>
+<input type="checkbox" id="cb57" data-label="sweeping" class="cb">
+<label for="cb57" class="chip">sweeping</label>
+<input type="checkbox" id="cb58" data-label="mopping" class="cb">
+<label for="cb58" class="chip">mopping</label>
+<input type="checkbox" id="cb59" data-label="folding clothes" class="cb">
+<label for="cb59" class="chip">folding clothes</label>
+<input type="checkbox" id="cb60" data-label="doing laundry" class="cb">
+<label for="cb60" class="chip">doing laundry</label>
+<input type="checkbox" id="cb61" data-label="ironing" class="cb">
+<label for="cb61" class="chip">ironing</label>
+<input type="checkbox" id="cb62" data-label="cleaning windows" class="cb">
+<label for="cb62" class="chip">cleaning windows</label>
+<input type="checkbox" id="cb63" data-label="making the bed" class="cb">
+<label for="cb63" class="chip">making the bed</label>
+<input type="checkbox" id="cb64" data-label="showering" class="cb">
+<label for="cb64" class="chip">showering</label>
+<input type="checkbox" id="cb65" data-label="brushing teeth" class="cb">
+<label for="cb65" class="chip">brushing teeth</label>
+<input type="checkbox" id="cb66" data-label="shaving" class="cb">
+<label for="cb66" class="chip">shaving</label>
+<input type="checkbox" id="cb67" data-label="combing hair" class="cb">
+<label for="cb67" class="chip">combing hair</label>
+<input type="checkbox" id="cb68" data-label="applying lotion" class="cb">
+<label for="cb68" class="chip">applying lotion</label>
+<input type="checkbox" id="cb69" data-label="getting dressed" class="cb">
+<label for="cb69" class="chip">getting dressed</label>
+<input type="checkbox" id="cb70" data-label="undressing" class="cb">
+<label for="cb70" class="chip">undressing</label>
+<input type="checkbox" id="cb71" data-label="grocery shopping" class="cb">
+<label for="cb71" class="chip">grocery shopping</label>
+<input type="checkbox" id="cb72" data-label="refilling prescriptions" class="cb">
+<label for="cb72" class="chip">refilling prescriptions</label>
+<input type="checkbox" id="cb73" data-label="paying bills" class="cb">
+<label for="cb73" class="chip">paying bills</label>
+<input type="checkbox" id="cb74" data-label="budgeting" class="cb">
+<label for="cb74" class="chip">budgeting</label>
+<input type="checkbox" id="cb75" data-label="taking out the trash" class="cb">
+<label for="cb75" class="chip">taking out the trash</label>
+<input type="checkbox" id="cb76" data-label="recycling" class="cb">
+<label for="cb76" class="chip">recycling</label>
+<input type="checkbox" id="cb77" data-label="opening mail" class="cb">
+<label for="cb77" class="chip">opening mail</label>
+<input type="checkbox" id="cb78" data-label="organizing drawers" class="cb">
+<label for="cb78" class="chip">organizing drawers</label>
+<input type="checkbox" id="cb79" data-label="writing lists" class="cb">
+<label for="cb79" class="chip">writing lists</label>
+<input type="checkbox" id="cb80" data-label="meal prepping" class="cb">
+<label for="cb80" class="chip">meal prepping</label>
+<input type="checkbox" id="cb81" data-label="packing bags" class="cb">
+<label for="cb81" class="chip">packing bags</label>
+<input type="checkbox" id="cb82" data-label="unpacking" class="cb">
+<label for="cb82" class="chip">unpacking</label>
+<input type="checkbox" id="cb83" data-label="calling someone" class="cb">
+<label for="cb83" class="chip">calling someone</label>
+<input type="checkbox" id="cb84" data-label="texting" class="cb">
+<label for="cb84" class="chip">texting</label>
+<input type="checkbox" id="cb85" data-label="sending emails" class="cb">
+<label for="cb85" class="chip">sending emails</label>
+<input type="checkbox" id="cb86" data-label="waiting in line" class="cb">
+<label for="cb86" class="chip">waiting in line</label>
+<input type="checkbox" id="cb87" data-label="commuting" class="cb">
+<label for="cb87" class="chip">commuting</label>
+<input type="checkbox" id="cb88" data-label="checking the weather" class="cb">
+<label for="cb88" class="chip">checking the weather</label>
+<input type="checkbox" id="cb89" data-label="reading instructions" class="cb">
+<label for="cb89" class="chip">reading instructions</label>
+<input type="checkbox" id="cb90" data-label="setting reminders" class="cb">
+<label for="cb90" class="chip">setting reminders</label>
+<input type="checkbox" id="cb91" data-label="locking doors" class="cb">
+<label for="cb91" class="chip">locking doors</label>
+<input type="checkbox" id="cb92" data-label="charging devices" class="cb">
+<label for="cb92" class="chip">charging devices</label>
+<input type="checkbox" id="cb93" data-label="making coffee" class="cb">
+<label for="cb93" class="chip">making coffee</label>
+<input type="checkbox" id="cb94" data-label="making tea" class="cb">
+<label for="cb94" class="chip">making tea</label>
+<input type="checkbox" id="cb95" data-label="watering plants" class="cb">
+<label for="cb95" class="chip">watering plants</label>
+<input type="checkbox" id="cb96" data-label="feeding pets" class="cb">
+<label for="cb96" class="chip">feeding pets</label>
+<input type="checkbox" id="cb97" data-label="taking medication" class="cb">
+<label for="cb97" class="chip">taking medication</label>
+<input type="checkbox" id="cb98" data-label="using the bathroom" class="cb">
+<label for="cb98" class="chip">using the bathroom</label>
+<input type="checkbox" id="cb99" data-label="washing hands" class="cb">
+<label for="cb99" class="chip">washing hands</label>
+<input type="checkbox" id="cb100" data-label="tidying up" class="cb">
+<label for="cb100" class="chip">tidying up</label>
 
-<!-- SOCIAL & EMOTIONAL -->
-<input type="checkbox"> listening <br>
-<input type="checkbox"> empathizing <br>
-<input type="checkbox"> consoling someone <br>
-<input type="checkbox"> encouraging someone <br>
-<input type="checkbox"> complimenting <br>
-<input type="checkbox"> apologizing <br>
-<input type="checkbox"> forgiving <br>
-<input type="checkbox"> debating <br>
-<input type="checkbox"> arguing <br>
-<input type="checkbox"> negotiating <br>
-<input type="checkbox"> mediating <br>
-<input type="checkbox"> comforting someone <br>
-<input type="checkbox"> reflecting on feelings <br>
-<input type="checkbox"> journaling emotions <br>
-<input type="checkbox"> setting boundaries <br>
-<input type="checkbox"> giving advice <br>
-<input type="checkbox"> asking questions <br>
-<input type="checkbox"> telling stories <br>
-<input type="checkbox"> meeting new people <br>
-<input type="checkbox"> introducing yourself <br>
-<input type="checkbox"> attending a party <br>
-<input type="checkbox"> hosting guests <br>
-<input type="checkbox"> networking <br>
-<input type="checkbox"> hugging <br>
-<input type="checkbox"> handshaking <br>
-<input type="checkbox"> high-fiving <br>
-<input type="checkbox"> waving <br>
-<input type="checkbox"> nodding <br>
-<input type="checkbox"> making eye contact <br>
-<input type="checkbox"> avoiding eye contact <br>
-<input type="checkbox"> confessing something <br>
-<input type="checkbox"> comfort eating <br>
-<input type="checkbox"> venting <br>
-<input type="checkbox"> cry-laughing <br>
-<input type="checkbox"> feeling nostalgia <br>
-<input type="checkbox"> feeling anxiety <br>
-<input type="checkbox"> feeling joy <br>
-<input type="checkbox"> feeling frustration <br>
-<input type="checkbox"> feeling excitement <br>
-<input type="checkbox"> feeling curiosity <br>
-<input type="checkbox"> caring for others <br>
-<input type="checkbox"> caring for yourself <br>
-<input type="checkbox"> practicing gratitude <br>
-<input type="checkbox"> setting goals <br>
-<input type="checkbox"> daydreaming about the future <br>
-<input type="checkbox"> reminiscing <br>
-<input type="checkbox"> missing someone <br>
-<input type="checkbox"> letting go <br>
-<input type="checkbox"> sharing secrets <br>
-<input type="checkbox"> keeping secrets <br>
+<div class="section">SOCIAL &amp; EMOTIONAL</div>
+<input type="checkbox" id="cb101" data-label="listening" class="cb">
+<label for="cb101" class="chip">listening</label>
+<input type="checkbox" id="cb102" data-label="empathizing" class="cb">
+<label for="cb102" class="chip">empathizing</label>
+<input type="checkbox" id="cb103" data-label="consoling someone" class="cb">
+<label for="cb103" class="chip">consoling someone</label>
+<input type="checkbox" id="cb104" data-label="encouraging someone" class="cb">
+<label for="cb104" class="chip">encouraging someone</label>
+<input type="checkbox" id="cb105" data-label="complimenting" class="cb">
+<label for="cb105" class="chip">complimenting</label>
+<input type="checkbox" id="cb106" data-label="apologizing" class="cb">
+<label for="cb106" class="chip">apologizing</label>
+<input type="checkbox" id="cb107" data-label="forgiving" class="cb">
+<label for="cb107" class="chip">forgiving</label>
+<input type="checkbox" id="cb108" data-label="debating" class="cb">
+<label for="cb108" class="chip">debating</label>
+<input type="checkbox" id="cb109" data-label="arguing" class="cb">
+<label for="cb109" class="chip">arguing</label>
+<input type="checkbox" id="cb110" data-label="negotiating" class="cb">
+<label for="cb110" class="chip">negotiating</label>
+<input type="checkbox" id="cb111" data-label="mediating" class="cb">
+<label for="cb111" class="chip">mediating</label>
+<input type="checkbox" id="cb112" data-label="comforting someone" class="cb">
+<label for="cb112" class="chip">comforting someone</label>
+<input type="checkbox" id="cb113" data-label="reflecting on feelings" class="cb">
+<label for="cb113" class="chip">reflecting on feelings</label>
+<input type="checkbox" id="cb114" data-label="journaling emotions" class="cb">
+<label for="cb114" class="chip">journaling emotions</label>
+<input type="checkbox" id="cb115" data-label="setting boundaries" class="cb">
+<label for="cb115" class="chip">setting boundaries</label>
+<input type="checkbox" id="cb116" data-label="giving advice" class="cb">
+<label for="cb116" class="chip">giving advice</label>
+<input type="checkbox" id="cb117" data-label="asking questions" class="cb">
+<label for="cb117" class="chip">asking questions</label>
+<input type="checkbox" id="cb118" data-label="telling stories" class="cb">
+<label for="cb118" class="chip">telling stories</label>
+<input type="checkbox" id="cb119" data-label="meeting new people" class="cb">
+<label for="cb119" class="chip">meeting new people</label>
+<input type="checkbox" id="cb120" data-label="introducing yourself" class="cb">
+<label for="cb120" class="chip">introducing yourself</label>
+<input type="checkbox" id="cb121" data-label="attending a party" class="cb">
+<label for="cb121" class="chip">attending a party</label>
+<input type="checkbox" id="cb122" data-label="hosting guests" class="cb">
+<label for="cb122" class="chip">hosting guests</label>
+<input type="checkbox" id="cb123" data-label="networking" class="cb">
+<label for="cb123" class="chip">networking</label>
+<input type="checkbox" id="cb124" data-label="hugging" class="cb">
+<label for="cb124" class="chip">hugging</label>
+<input type="checkbox" id="cb125" data-label="handshaking" class="cb">
+<label for="cb125" class="chip">handshaking</label>
+<input type="checkbox" id="cb126" data-label="high-fiving" class="cb">
+<label for="cb126" class="chip">high-fiving</label>
+<input type="checkbox" id="cb127" data-label="waving" class="cb">
+<label for="cb127" class="chip">waving</label>
+<input type="checkbox" id="cb128" data-label="nodding" class="cb">
+<label for="cb128" class="chip">nodding</label>
+<input type="checkbox" id="cb129" data-label="making eye contact" class="cb">
+<label for="cb129" class="chip">making eye contact</label>
+<input type="checkbox" id="cb130" data-label="avoiding eye contact" class="cb">
+<label for="cb130" class="chip">avoiding eye contact</label>
+<input type="checkbox" id="cb131" data-label="confessing something" class="cb">
+<label for="cb131" class="chip">confessing something</label>
+<input type="checkbox" id="cb132" data-label="comfort eating" class="cb">
+<label for="cb132" class="chip">comfort eating</label>
+<input type="checkbox" id="cb133" data-label="venting" class="cb">
+<label for="cb133" class="chip">venting</label>
+<input type="checkbox" id="cb134" data-label="cry-laughing" class="cb">
+<label for="cb134" class="chip">cry-laughing</label>
+<input type="checkbox" id="cb135" data-label="feeling nostalgia" class="cb">
+<label for="cb135" class="chip">feeling nostalgia</label>
+<input type="checkbox" id="cb136" data-label="feeling anxiety" class="cb">
+<label for="cb136" class="chip">feeling anxiety</label>
+<input type="checkbox" id="cb137" data-label="feeling joy" class="cb">
+<label for="cb137" class="chip">feeling joy</label>
+<input type="checkbox" id="cb138" data-label="feeling frustration" class="cb">
+<label for="cb138" class="chip">feeling frustration</label>
+<input type="checkbox" id="cb139" data-label="feeling excitement" class="cb">
+<label for="cb139" class="chip">feeling excitement</label>
+<input type="checkbox" id="cb140" data-label="feeling curiosity" class="cb">
+<label for="cb140" class="chip">feeling curiosity</label>
+<input type="checkbox" id="cb141" data-label="caring for others" class="cb">
+<label for="cb141" class="chip">caring for others</label>
+<input type="checkbox" id="cb142" data-label="caring for yourself" class="cb">
+<label for="cb142" class="chip">caring for yourself</label>
+<input type="checkbox" id="cb143" data-label="practicing gratitude" class="cb">
+<label for="cb143" class="chip">practicing gratitude</label>
+<input type="checkbox" id="cb144" data-label="setting goals" class="cb">
+<label for="cb144" class="chip">setting goals</label>
+<input type="checkbox" id="cb145" data-label="daydreaming about the future" class="cb">
+<label for="cb145" class="chip">daydreaming about the future</label>
+<input type="checkbox" id="cb146" data-label="reminiscing" class="cb">
+<label for="cb146" class="chip">reminiscing</label>
+<input type="checkbox" id="cb147" data-label="missing someone" class="cb">
+<label for="cb147" class="chip">missing someone</label>
+<input type="checkbox" id="cb148" data-label="letting go" class="cb">
+<label for="cb148" class="chip">letting go</label>
+<input type="checkbox" id="cb149" data-label="sharing secrets" class="cb">
+<label for="cb149" class="chip">sharing secrets</label>
+<input type="checkbox" id="cb150" data-label="keeping secrets" class="cb">
+<label for="cb150" class="chip">keeping secrets</label>
 
-<!-- COGNITIVE & CREATIVE -->
-<input type="checkbox"> reading <br>
-<input type="checkbox"> writing <br>
-<input type="checkbox"> editing <br>
-<input type="checkbox"> brainstorming <br>
-<input type="checkbox"> proofreading <br>
-<input type="checkbox"> memorizing <br>
-<input type="checkbox"> solving puzzles <br>
-<input type="checkbox"> analyzing data <br>
-<input type="checkbox"> calculating <br>
-<input type="checkbox"> strategizing <br>
-<input type="checkbox"> planning <br>
-<input type="checkbox"> organizing <br>
-<input type="checkbox"> designing <br>
-<input type="checkbox"> drawing <br>
-<input type="checkbox"> sketching <br>
-<input type="checkbox"> painting <br>
-<input type="checkbox"> sculpting <br>
-<input type="checkbox"> crafting <br>
-<input type="checkbox"> knitting <br>
-<input type="checkbox"> crocheting <br>
-<input type="checkbox"> sewing <br>
-<input type="checkbox"> quilting <br>
-<input type="checkbox"> woodworking <br>
-<input type="checkbox"> pottery <br>
-<input type="checkbox"> photography <br>
-<input type="checkbox"> filming <br>
-<input type="checkbox"> video editing <br>
-<input type="checkbox"> sound recording <br>
-<input type="checkbox"> mixing audio <br>
-<input type="checkbox"> playing music <br>
-<input type="checkbox"> improvising <br>
-<input type="checkbox"> composing <br>
-<input type="checkbox"> acting <br>
-<input type="checkbox"> dancing <br>
-<input type="checkbox"> choreographing <br>
-<input type="checkbox"> storyboarding <br>
-<input type="checkbox"> illustrating <br>
-<input type="checkbox"> calligraphy <br>
-<input type="checkbox"> graphic design <br>
-<input type="checkbox"> making memes <br>
-<input type="checkbox"> collaging <br>
-<input type="checkbox"> worldbuilding <br>
-<input type="checkbox"> writing poetry <br>
-<input type="checkbox"> writing fiction <br>
-<input type="checkbox"> solving riddles <br>
-<input type="checkbox"> strategizing games <br>
-<input type="checkbox"> making playlists <br>
-<input type="checkbox"> mapping routes <br>
-<input type="checkbox"> inventing things <br>
-<!-- OUTDOOR & PHYSICAL ACTIVITIES -->
-<input type="checkbox"> hiking <br>
-<input type="checkbox"> biking <br>
-<input type="checkbox"> swimming <br>
-<input type="checkbox"> surfing <br>
-<input type="checkbox"> kayaking <br>
-<input type="checkbox"> canoeing <br>
-<input type="checkbox"> sailing <br>
-<input type="checkbox"> paddleboarding <br>
-<input type="checkbox"> trail running <br>
-<input type="checkbox"> rock climbing <br>
-<input type="checkbox"> bouldering <br>
-<input type="checkbox"> skateboarding <br>
-<input type="checkbox"> rollerblading <br>
-<input type="checkbox"> ice skating <br>
-<input type="checkbox"> skiing <br>
-<input type="checkbox"> snowboarding <br>
-<input type="checkbox"> snowshoeing <br>
-<input type="checkbox"> sledding <br>
-<input type="checkbox"> fishing <br>
-<input type="checkbox"> hunting <br>
-<input type="checkbox"> gardening <br>
-<input type="checkbox"> planting trees <br>
-<input type="checkbox"> mowing the lawn <br>
-<input type="checkbox"> weeding <br>
-<input type="checkbox"> composting <br>
-<input type="checkbox"> feeding wildlife <br>
-<input type="checkbox"> birdwatching <br>
-<input type="checkbox"> stargazing <br>
-<input type="checkbox"> camping <br>
-<input type="checkbox"> building a campfire <br>
-<input type="checkbox"> pitching a tent <br>
-<input type="checkbox"> orienteering <br>
-<input type="checkbox"> foraging <br>
-<input type="checkbox"> mushroom hunting <br>
-<input type="checkbox"> chopping wood <br>
-<input type="checkbox"> jogging with a dog <br>
-<input type="checkbox"> throwing a frisbee <br>
-<input type="checkbox"> playing catch <br>
-<input type="checkbox"> yoga <br>
-<input type="checkbox"> pilates <br>
-<input type="checkbox"> weightlifting <br>
-<input type="checkbox"> boxing <br>
-<input type="checkbox"> kickboxing <br>
-<input type="checkbox"> stretching routines <br>
-<input type="checkbox"> aerobics <br>
-<input type="checkbox"> martial arts <br>
-<input type="checkbox"> tai chi <br>
-<input type="checkbox"> qi gong <br>
-<input type="checkbox"> fencing <br>
-<input type="checkbox"> archery <br>
-<input type="checkbox"> horseback riding <br>
-<input type="checkbox"> barrel racing <br>
-<input type="checkbox"> vaulting <br>
-<input type="checkbox"> mountain hiking <br>
-<input type="checkbox"> trail clearing <br>
-<input type="checkbox"> parkour <br>
-<input type="checkbox"> jump roping <br>
-<input type="checkbox"> trampoline jumping <br>
-<input type="checkbox"> rowing <br>
-<input type="checkbox"> scuba diving <br>
-<input type="checkbox"> snorkeling <br>
-<input type="checkbox"> spearfishing <br>
-<input type="checkbox"> cliff jumping <br>
-<input type="checkbox"> paragliding <br>
-<input type="checkbox"> skydiving <br>
-<input type="checkbox"> ziplining <br>
-<input type="checkbox"> uphill biking <br>
-<input type="checkbox"> downhill biking <br>
-<input type="checkbox"> inline skating <br>
-<input type="checkbox"> cross-country skiing <br>
-<input type="checkbox"> sprinting <br>
-<input type="checkbox"> playing soccer <br>
-<input type="checkbox"> playing basketball <br>
-<input type="checkbox"> playing volleyball <br>
-<input type="checkbox"> playing tennis <br>
-<input type="checkbox"> playing badminton <br>
-<input type="checkbox"> table tennis <br>
-<input type="checkbox"> wrestling <br>
-<input type="checkbox"> swimming laps <br>
-<input type="checkbox"> diving <br>
-<input type="checkbox"> water polo <br>
-<input type="checkbox"> long jumping <br>
-<input type="checkbox"> high jumping <br>
-<input type="checkbox"> javelin throwing <br>
-<input type="checkbox"> hammer throw <br>
-<input type="checkbox"> shot put <br>
-<input type="checkbox"> gymnastics <br>
-<input type="checkbox"> cheerleading <br>
-<input type="checkbox"> tumbling <br>
-<input type="checkbox"> baton twirling <br>
-<input type="checkbox"> handstands <br>
-<input type="checkbox"> cartwheeling <br>
-<input type="checkbox"> unicycling <br>
-<input type="checkbox"> balance beam practice <br>
-<input type="checkbox"> slacklining <br>
-<input type="checkbox"> running errands <br>
-<input type="checkbox"> walking a dog <br>
-<input type="checkbox"> exploring parks <br>
-<input type="checkbox"> watching sunsets <br>
+<div class="section">COGNITIVE &amp; CREATIVE</div>
+<input type="checkbox" id="cb151" data-label="reading" class="cb">
+<label for="cb151" class="chip">reading</label>
+<input type="checkbox" id="cb152" data-label="writing" class="cb">
+<label for="cb152" class="chip">writing</label>
+<input type="checkbox" id="cb153" data-label="editing" class="cb">
+<label for="cb153" class="chip">editing</label>
+<input type="checkbox" id="cb154" data-label="brainstorming" class="cb">
+<label for="cb154" class="chip">brainstorming</label>
+<input type="checkbox" id="cb155" data-label="proofreading" class="cb">
+<label for="cb155" class="chip">proofreading</label>
+<input type="checkbox" id="cb156" data-label="memorizing" class="cb">
+<label for="cb156" class="chip">memorizing</label>
+<input type="checkbox" id="cb157" data-label="solving puzzles" class="cb">
+<label for="cb157" class="chip">solving puzzles</label>
+<input type="checkbox" id="cb158" data-label="analyzing data" class="cb">
+<label for="cb158" class="chip">analyzing data</label>
+<input type="checkbox" id="cb159" data-label="calculating" class="cb">
+<label for="cb159" class="chip">calculating</label>
+<input type="checkbox" id="cb160" data-label="strategizing" class="cb">
+<label for="cb160" class="chip">strategizing</label>
+<input type="checkbox" id="cb161" data-label="planning" class="cb">
+<label for="cb161" class="chip">planning</label>
+<input type="checkbox" id="cb162" data-label="organizing" class="cb">
+<label for="cb162" class="chip">organizing</label>
+<input type="checkbox" id="cb163" data-label="designing" class="cb">
+<label for="cb163" class="chip">designing</label>
+<input type="checkbox" id="cb164" data-label="drawing" class="cb">
+<label for="cb164" class="chip">drawing</label>
+<input type="checkbox" id="cb165" data-label="sketching" class="cb">
+<label for="cb165" class="chip">sketching</label>
+<input type="checkbox" id="cb166" data-label="painting" class="cb">
+<label for="cb166" class="chip">painting</label>
+<input type="checkbox" id="cb167" data-label="sculpting" class="cb">
+<label for="cb167" class="chip">sculpting</label>
+<input type="checkbox" id="cb168" data-label="crafting" class="cb">
+<label for="cb168" class="chip">crafting</label>
+<input type="checkbox" id="cb169" data-label="knitting" class="cb">
+<label for="cb169" class="chip">knitting</label>
+<input type="checkbox" id="cb170" data-label="crocheting" class="cb">
+<label for="cb170" class="chip">crocheting</label>
+<input type="checkbox" id="cb171" data-label="sewing" class="cb">
+<label for="cb171" class="chip">sewing</label>
+<input type="checkbox" id="cb172" data-label="quilting" class="cb">
+<label for="cb172" class="chip">quilting</label>
+<input type="checkbox" id="cb173" data-label="woodworking" class="cb">
+<label for="cb173" class="chip">woodworking</label>
+<input type="checkbox" id="cb174" data-label="pottery" class="cb">
+<label for="cb174" class="chip">pottery</label>
+<input type="checkbox" id="cb175" data-label="photography" class="cb">
+<label for="cb175" class="chip">photography</label>
+<input type="checkbox" id="cb176" data-label="filming" class="cb">
+<label for="cb176" class="chip">filming</label>
+<input type="checkbox" id="cb177" data-label="video editing" class="cb">
+<label for="cb177" class="chip">video editing</label>
+<input type="checkbox" id="cb178" data-label="sound recording" class="cb">
+<label for="cb178" class="chip">sound recording</label>
+<input type="checkbox" id="cb179" data-label="mixing audio" class="cb">
+<label for="cb179" class="chip">mixing audio</label>
+<input type="checkbox" id="cb180" data-label="playing music" class="cb">
+<label for="cb180" class="chip">playing music</label>
+<input type="checkbox" id="cb181" data-label="improvising" class="cb">
+<label for="cb181" class="chip">improvising</label>
+<input type="checkbox" id="cb182" data-label="composing" class="cb">
+<label for="cb182" class="chip">composing</label>
+<input type="checkbox" id="cb183" data-label="acting" class="cb">
+<label for="cb183" class="chip">acting</label>
+<input type="checkbox" id="cb184" data-label="dancing" class="cb">
+<label for="cb184" class="chip">dancing</label>
+<input type="checkbox" id="cb185" data-label="choreographing" class="cb">
+<label for="cb185" class="chip">choreographing</label>
+<input type="checkbox" id="cb186" data-label="storyboarding" class="cb">
+<label for="cb186" class="chip">storyboarding</label>
+<input type="checkbox" id="cb187" data-label="illustrating" class="cb">
+<label for="cb187" class="chip">illustrating</label>
+<input type="checkbox" id="cb188" data-label="calligraphy" class="cb">
+<label for="cb188" class="chip">calligraphy</label>
+<input type="checkbox" id="cb189" data-label="graphic design" class="cb">
+<label for="cb189" class="chip">graphic design</label>
+<input type="checkbox" id="cb190" data-label="making memes" class="cb">
+<label for="cb190" class="chip">making memes</label>
+<input type="checkbox" id="cb191" data-label="collaging" class="cb">
+<label for="cb191" class="chip">collaging</label>
+<input type="checkbox" id="cb192" data-label="worldbuilding" class="cb">
+<label for="cb192" class="chip">worldbuilding</label>
+<input type="checkbox" id="cb193" data-label="writing poetry" class="cb">
+<label for="cb193" class="chip">writing poetry</label>
+<input type="checkbox" id="cb194" data-label="writing fiction" class="cb">
+<label for="cb194" class="chip">writing fiction</label>
+<input type="checkbox" id="cb195" data-label="solving riddles" class="cb">
+<label for="cb195" class="chip">solving riddles</label>
+<input type="checkbox" id="cb196" data-label="strategizing games" class="cb">
+<label for="cb196" class="chip">strategizing games</label>
+<input type="checkbox" id="cb197" data-label="making playlists" class="cb">
+<label for="cb197" class="chip">making playlists</label>
+<input type="checkbox" id="cb198" data-label="mapping routes" class="cb">
+<label for="cb198" class="chip">mapping routes</label>
+<input type="checkbox" id="cb199" data-label="inventing things" class="cb">
+<label for="cb199" class="chip">inventing things</label>
+<div class="section">OUTDOOR &amp; PHYSICAL ACTIVITIES</div>
+<input type="checkbox" id="cb200" data-label="hiking" class="cb">
+<label for="cb200" class="chip">hiking</label>
+<input type="checkbox" id="cb201" data-label="biking" class="cb">
+<label for="cb201" class="chip">biking</label>
+<input type="checkbox" id="cb202" data-label="swimming" class="cb">
+<label for="cb202" class="chip">swimming</label>
+<input type="checkbox" id="cb203" data-label="surfing" class="cb">
+<label for="cb203" class="chip">surfing</label>
+<input type="checkbox" id="cb204" data-label="kayaking" class="cb">
+<label for="cb204" class="chip">kayaking</label>
+<input type="checkbox" id="cb205" data-label="canoeing" class="cb">
+<label for="cb205" class="chip">canoeing</label>
+<input type="checkbox" id="cb206" data-label="sailing" class="cb">
+<label for="cb206" class="chip">sailing</label>
+<input type="checkbox" id="cb207" data-label="paddleboarding" class="cb">
+<label for="cb207" class="chip">paddleboarding</label>
+<input type="checkbox" id="cb208" data-label="trail running" class="cb">
+<label for="cb208" class="chip">trail running</label>
+<input type="checkbox" id="cb209" data-label="rock climbing" class="cb">
+<label for="cb209" class="chip">rock climbing</label>
+<input type="checkbox" id="cb210" data-label="bouldering" class="cb">
+<label for="cb210" class="chip">bouldering</label>
+<input type="checkbox" id="cb211" data-label="skateboarding" class="cb">
+<label for="cb211" class="chip">skateboarding</label>
+<input type="checkbox" id="cb212" data-label="rollerblading" class="cb">
+<label for="cb212" class="chip">rollerblading</label>
+<input type="checkbox" id="cb213" data-label="ice skating" class="cb">
+<label for="cb213" class="chip">ice skating</label>
+<input type="checkbox" id="cb214" data-label="skiing" class="cb">
+<label for="cb214" class="chip">skiing</label>
+<input type="checkbox" id="cb215" data-label="snowboarding" class="cb">
+<label for="cb215" class="chip">snowboarding</label>
+<input type="checkbox" id="cb216" data-label="snowshoeing" class="cb">
+<label for="cb216" class="chip">snowshoeing</label>
+<input type="checkbox" id="cb217" data-label="sledding" class="cb">
+<label for="cb217" class="chip">sledding</label>
+<input type="checkbox" id="cb218" data-label="fishing" class="cb">
+<label for="cb218" class="chip">fishing</label>
+<input type="checkbox" id="cb219" data-label="hunting" class="cb">
+<label for="cb219" class="chip">hunting</label>
+<input type="checkbox" id="cb220" data-label="gardening" class="cb">
+<label for="cb220" class="chip">gardening</label>
+<input type="checkbox" id="cb221" data-label="planting trees" class="cb">
+<label for="cb221" class="chip">planting trees</label>
+<input type="checkbox" id="cb222" data-label="mowing the lawn" class="cb">
+<label for="cb222" class="chip">mowing the lawn</label>
+<input type="checkbox" id="cb223" data-label="weeding" class="cb">
+<label for="cb223" class="chip">weeding</label>
+<input type="checkbox" id="cb224" data-label="composting" class="cb">
+<label for="cb224" class="chip">composting</label>
+<input type="checkbox" id="cb225" data-label="feeding wildlife" class="cb">
+<label for="cb225" class="chip">feeding wildlife</label>
+<input type="checkbox" id="cb226" data-label="birdwatching" class="cb">
+<label for="cb226" class="chip">birdwatching</label>
+<input type="checkbox" id="cb227" data-label="stargazing" class="cb">
+<label for="cb227" class="chip">stargazing</label>
+<input type="checkbox" id="cb228" data-label="camping" class="cb">
+<label for="cb228" class="chip">camping</label>
+<input type="checkbox" id="cb229" data-label="building a campfire" class="cb">
+<label for="cb229" class="chip">building a campfire</label>
+<input type="checkbox" id="cb230" data-label="pitching a tent" class="cb">
+<label for="cb230" class="chip">pitching a tent</label>
+<input type="checkbox" id="cb231" data-label="orienteering" class="cb">
+<label for="cb231" class="chip">orienteering</label>
+<input type="checkbox" id="cb232" data-label="foraging" class="cb">
+<label for="cb232" class="chip">foraging</label>
+<input type="checkbox" id="cb233" data-label="mushroom hunting" class="cb">
+<label for="cb233" class="chip">mushroom hunting</label>
+<input type="checkbox" id="cb234" data-label="chopping wood" class="cb">
+<label for="cb234" class="chip">chopping wood</label>
+<input type="checkbox" id="cb235" data-label="jogging with a dog" class="cb">
+<label for="cb235" class="chip">jogging with a dog</label>
+<input type="checkbox" id="cb236" data-label="throwing a frisbee" class="cb">
+<label for="cb236" class="chip">throwing a frisbee</label>
+<input type="checkbox" id="cb237" data-label="playing catch" class="cb">
+<label for="cb237" class="chip">playing catch</label>
+<input type="checkbox" id="cb238" data-label="yoga" class="cb">
+<label for="cb238" class="chip">yoga</label>
+<input type="checkbox" id="cb239" data-label="pilates" class="cb">
+<label for="cb239" class="chip">pilates</label>
+<input type="checkbox" id="cb240" data-label="weightlifting" class="cb">
+<label for="cb240" class="chip">weightlifting</label>
+<input type="checkbox" id="cb241" data-label="boxing" class="cb">
+<label for="cb241" class="chip">boxing</label>
+<input type="checkbox" id="cb242" data-label="kickboxing" class="cb">
+<label for="cb242" class="chip">kickboxing</label>
+<input type="checkbox" id="cb243" data-label="stretching routines" class="cb">
+<label for="cb243" class="chip">stretching routines</label>
+<input type="checkbox" id="cb244" data-label="aerobics" class="cb">
+<label for="cb244" class="chip">aerobics</label>
+<input type="checkbox" id="cb245" data-label="martial arts" class="cb">
+<label for="cb245" class="chip">martial arts</label>
+<input type="checkbox" id="cb246" data-label="tai chi" class="cb">
+<label for="cb246" class="chip">tai chi</label>
+<input type="checkbox" id="cb247" data-label="qi gong" class="cb">
+<label for="cb247" class="chip">qi gong</label>
+<input type="checkbox" id="cb248" data-label="fencing" class="cb">
+<label for="cb248" class="chip">fencing</label>
+<input type="checkbox" id="cb249" data-label="archery" class="cb">
+<label for="cb249" class="chip">archery</label>
+<input type="checkbox" id="cb250" data-label="horseback riding" class="cb">
+<label for="cb250" class="chip">horseback riding</label>
+<input type="checkbox" id="cb251" data-label="barrel racing" class="cb">
+<label for="cb251" class="chip">barrel racing</label>
+<input type="checkbox" id="cb252" data-label="vaulting" class="cb">
+<label for="cb252" class="chip">vaulting</label>
+<input type="checkbox" id="cb253" data-label="mountain hiking" class="cb">
+<label for="cb253" class="chip">mountain hiking</label>
+<input type="checkbox" id="cb254" data-label="trail clearing" class="cb">
+<label for="cb254" class="chip">trail clearing</label>
+<input type="checkbox" id="cb255" data-label="parkour" class="cb">
+<label for="cb255" class="chip">parkour</label>
+<input type="checkbox" id="cb256" data-label="jump roping" class="cb">
+<label for="cb256" class="chip">jump roping</label>
+<input type="checkbox" id="cb257" data-label="trampoline jumping" class="cb">
+<label for="cb257" class="chip">trampoline jumping</label>
+<input type="checkbox" id="cb258" data-label="rowing" class="cb">
+<label for="cb258" class="chip">rowing</label>
+<input type="checkbox" id="cb259" data-label="scuba diving" class="cb">
+<label for="cb259" class="chip">scuba diving</label>
+<input type="checkbox" id="cb260" data-label="snorkeling" class="cb">
+<label for="cb260" class="chip">snorkeling</label>
+<input type="checkbox" id="cb261" data-label="spearfishing" class="cb">
+<label for="cb261" class="chip">spearfishing</label>
+<input type="checkbox" id="cb262" data-label="cliff jumping" class="cb">
+<label for="cb262" class="chip">cliff jumping</label>
+<input type="checkbox" id="cb263" data-label="paragliding" class="cb">
+<label for="cb263" class="chip">paragliding</label>
+<input type="checkbox" id="cb264" data-label="skydiving" class="cb">
+<label for="cb264" class="chip">skydiving</label>
+<input type="checkbox" id="cb265" data-label="ziplining" class="cb">
+<label for="cb265" class="chip">ziplining</label>
+<input type="checkbox" id="cb266" data-label="uphill biking" class="cb">
+<label for="cb266" class="chip">uphill biking</label>
+<input type="checkbox" id="cb267" data-label="downhill biking" class="cb">
+<label for="cb267" class="chip">downhill biking</label>
+<input type="checkbox" id="cb268" data-label="inline skating" class="cb">
+<label for="cb268" class="chip">inline skating</label>
+<input type="checkbox" id="cb269" data-label="cross-country skiing" class="cb">
+<label for="cb269" class="chip">cross-country skiing</label>
+<input type="checkbox" id="cb270" data-label="sprinting" class="cb">
+<label for="cb270" class="chip">sprinting</label>
+<input type="checkbox" id="cb271" data-label="playing soccer" class="cb">
+<label for="cb271" class="chip">playing soccer</label>
+<input type="checkbox" id="cb272" data-label="playing basketball" class="cb">
+<label for="cb272" class="chip">playing basketball</label>
+<input type="checkbox" id="cb273" data-label="playing volleyball" class="cb">
+<label for="cb273" class="chip">playing volleyball</label>
+<input type="checkbox" id="cb274" data-label="playing tennis" class="cb">
+<label for="cb274" class="chip">playing tennis</label>
+<input type="checkbox" id="cb275" data-label="playing badminton" class="cb">
+<label for="cb275" class="chip">playing badminton</label>
+<input type="checkbox" id="cb276" data-label="table tennis" class="cb">
+<label for="cb276" class="chip">table tennis</label>
+<input type="checkbox" id="cb277" data-label="wrestling" class="cb">
+<label for="cb277" class="chip">wrestling</label>
+<input type="checkbox" id="cb278" data-label="swimming laps" class="cb">
+<label for="cb278" class="chip">swimming laps</label>
+<input type="checkbox" id="cb279" data-label="diving" class="cb">
+<label for="cb279" class="chip">diving</label>
+<input type="checkbox" id="cb280" data-label="water polo" class="cb">
+<label for="cb280" class="chip">water polo</label>
+<input type="checkbox" id="cb281" data-label="long jumping" class="cb">
+<label for="cb281" class="chip">long jumping</label>
+<input type="checkbox" id="cb282" data-label="high jumping" class="cb">
+<label for="cb282" class="chip">high jumping</label>
+<input type="checkbox" id="cb283" data-label="javelin throwing" class="cb">
+<label for="cb283" class="chip">javelin throwing</label>
+<input type="checkbox" id="cb284" data-label="hammer throw" class="cb">
+<label for="cb284" class="chip">hammer throw</label>
+<input type="checkbox" id="cb285" data-label="shot put" class="cb">
+<label for="cb285" class="chip">shot put</label>
+<input type="checkbox" id="cb286" data-label="gymnastics" class="cb">
+<label for="cb286" class="chip">gymnastics</label>
+<input type="checkbox" id="cb287" data-label="cheerleading" class="cb">
+<label for="cb287" class="chip">cheerleading</label>
+<input type="checkbox" id="cb288" data-label="tumbling" class="cb">
+<label for="cb288" class="chip">tumbling</label>
+<input type="checkbox" id="cb289" data-label="baton twirling" class="cb">
+<label for="cb289" class="chip">baton twirling</label>
+<input type="checkbox" id="cb290" data-label="handstands" class="cb">
+<label for="cb290" class="chip">handstands</label>
+<input type="checkbox" id="cb291" data-label="cartwheeling" class="cb">
+<label for="cb291" class="chip">cartwheeling</label>
+<input type="checkbox" id="cb292" data-label="unicycling" class="cb">
+<label for="cb292" class="chip">unicycling</label>
+<input type="checkbox" id="cb293" data-label="balance beam practice" class="cb">
+<label for="cb293" class="chip">balance beam practice</label>
+<input type="checkbox" id="cb294" data-label="slacklining" class="cb">
+<label for="cb294" class="chip">slacklining</label>
+<input type="checkbox" id="cb295" data-label="running errands" class="cb">
+<label for="cb295" class="chip">running errands</label>
+<input type="checkbox" id="cb296" data-label="walking a dog" class="cb">
+<label for="cb296" class="chip">walking a dog</label>
+<input type="checkbox" id="cb297" data-label="exploring parks" class="cb">
+<label for="cb297" class="chip">exploring parks</label>
+<input type="checkbox" id="cb298" data-label="watching sunsets" class="cb">
+<label for="cb298" class="chip">watching sunsets</label>
 
-<!-- DIGITAL & MODERN ACTIVITIES -->
-<input type="checkbox"> browsing the internet <br>
-<input type="checkbox"> watching YouTube <br>
-<input type="checkbox"> streaming shows <br>
-<input type="checkbox"> doomscrolling <br>
-<input type="checkbox"> online shopping <br>
-<input type="checkbox"> scrolling social media <br>
-<input type="checkbox"> posting photos <br>
-<input type="checkbox"> commenting <br>
-<input type="checkbox"> liking posts <br>
-<input type="checkbox"> sharing content <br>
-<input type="checkbox"> messaging friends <br>
-<input type="checkbox"> video calling <br>
-<input type="checkbox"> voice chatting <br>
-<input type="checkbox"> gaming <br>
-<input type="checkbox"> speedrunning <br>
-<input type="checkbox"> modding games <br>
-<input type="checkbox"> streaming on Twitch <br>
-<input type="checkbox"> editing VODs <br>
-<input type="checkbox"> coding <br>
-<input type="checkbox"> programming <br>
-<input type="checkbox"> debugging <br>
-<input type="checkbox"> writing scripts <br>
-<input type="checkbox"> designing websites <br>
-<input type="checkbox"> UI/UX design <br>
-<input type="checkbox"> building apps <br>
-<input type="checkbox"> learning languages online <br>
-<input type="checkbox"> taking digital notes <br>
-<input type="checkbox"> using spreadsheets <br>
-<input type="checkbox"> managing calendars <br>
-<input type="checkbox"> file organizing <br>
-<input type="checkbox"> running virtual meetings <br>
-<input type="checkbox"> using AI tools <br>
-<input type="checkbox"> typing <br>
-<input type="checkbox"> copy-pasting <br>
-<input type="checkbox"> dragging files <br>
-<input type="checkbox"> installing software <br>
-<input type="checkbox"> updating drivers <br>
-<input type="checkbox"> troubleshooting tech <br>
-<input type="checkbox"> building PCs <br>
-<input type="checkbox"> backing up data <br>
-<input type="checkbox"> creating presentations <br>
-<input type="checkbox"> graphic editing <br>
-<input type="checkbox"> photo retouching <br>
-<input type="checkbox"> 3D modeling <br>
-<input type="checkbox"> Blender sculpting <br>
-<input type="checkbox"> creating animations <br>
-<input type="checkbox"> writing code snippets <br>
-<input type="checkbox"> creating bots <br>
-<input type="checkbox"> API testing <br>
-<input type="checkbox"> cybersecurity practice <br>
-<input type="checkbox"> ethical hacking <br>
-<input type="checkbox"> data entry <br>
-<input type="checkbox"> data analysis <br>
-<input type="checkbox"> spreadsheet modeling <br>
-<input type="checkbox"> managing digital finances <br>
-<input type="checkbox"> using crypto wallets <br>
-<input type="checkbox"> VR gaming <br>
-<input type="checkbox"> AR experiences <br>
-<input type="checkbox"> drone flying <br>
-<input type="checkbox"> making digital art <br>
-<input type="checkbox"> editing sprite sheets <br>
-<input type="checkbox"> creating GIFs <br>
-<input type="checkbox"> using filters <br>
-<input type="checkbox"> coding neural networks <br>
-<input type="checkbox"> training ML models <br>
-<input type="checkbox"> animating sprites <br>
-<input type="checkbox"> writing fanfic <br>
-<input type="checkbox"> curating Pinterest boards <br>
-<input type="checkbox"> designing wallpapers <br>
-<input type="checkbox"> blogging <br>
-<input type="checkbox"> vlogging <br>
-<input type="checkbox"> creating tutorials <br>
-<input type="checkbox"> recording podcasts <br>
-<input type="checkbox"> scheduling posts <br>
-<input type="checkbox"> writing newsletters <br>
-<input type="checkbox"> troubleshooting Wi-Fi <br>
-<input type="checkbox"> updating firmware <br>
-<input type="checkbox"> creating databases <br>
-<input type="checkbox"> tagging metadata <br>
-<input type="checkbox"> using digital to-do lists <br>
-<input type="checkbox"> playing online chess <br>
-<input type="checkbox"> solving captchas <br>
-<input type="checkbox"> saving bookmarks <br>
-<input type="checkbox"> password managing <br>
-<input type="checkbox"> pixel art creation <br>
-<input type="checkbox"> using Discord <br>
-<input type="checkbox"> managing servers <br>
-<input type="checkbox"> moderating communities <br>
-<input type="checkbox"> setting server roles <br>
-<input type="checkbox"> creating channels <br>
-<input type="checkbox"> uploading emojis <br>
-<input type="checkbox"> building Notion dashboards <br>
-<input type="checkbox"> automating workflows <br>
-<!-- EMOTIONAL, RELATIONAL, INTERNAL ACTIVITIES -->
-<input type="checkbox"> meditating <br>
-<input type="checkbox"> deep breathing <br>
-<input type="checkbox"> grounding exercises <br>
-<input type="checkbox"> mindfulness practice <br>
-<input type="checkbox"> mantra chanting <br>
-<input type="checkbox"> self-soothing <br>
-<input type="checkbox"> emotional regulation <br>
-<input type="checkbox"> identifying triggers <br>
-<input type="checkbox"> unpacking memories <br>
-<input type="checkbox"> visualizing success <br>
-<input type="checkbox"> reframing thoughts <br>
-<input type="checkbox"> body scanning <br>
-<input type="checkbox"> progressive muscle relaxation <br>
-<input type="checkbox"> shadow work <br>
-<input type="checkbox"> affirmations <br>
-<input type="checkbox"> seeking comfort <br>
-<input type="checkbox"> asking for help <br>
-<input type="checkbox"> therapy homework <br>
-<input type="checkbox"> introspection <br>
-<input type="checkbox"> goal tracking <br>
-<input type="checkbox"> building routines <br>
-<input type="checkbox"> habit stacking <br>
-<input type="checkbox"> reflecting on choices <br>
-<input type="checkbox"> reading self-help <br>
-<input type="checkbox"> journaling insights <br>
-<input type="checkbox"> writing affirmations <br>
-<input type="checkbox"> spending time alone <br>
-<input type="checkbox"> reconnecting with others <br>
-<input type="checkbox"> healing old wounds <br>
-<input type="checkbox"> forgiving yourself <br>
-<input type="checkbox"> practicing stillness <br>
-<input type="checkbox"> taking breaks <br>
-<input type="checkbox"> crying intentionally <br>
-<input type="checkbox"> understanding emotions <br>
-<input type="checkbox"> naming feelings <br>
-<input type="checkbox"> resting <br>
-<input type="checkbox"> napping intentionally <br>
-<input type="checkbox"> regulating stress <br>
-<input type="checkbox"> walking to think <br>
-<input type="checkbox"> pacing <br>
-<input type="checkbox"> dissociating <br>
-<input type="checkbox"> grounding in nature <br>
-<input type="checkbox"> cleansing your space <br>
-<input type="checkbox"> rearranging furniture <br>
-<input type="checkbox"> taking long showers <br>
-<input type="checkbox"> listening to calming music <br>
-<input type="checkbox"> singing in the shower <br>
-<input type="checkbox"> dancing alone <br>
-<input type="checkbox"> stretching in the morning <br>
-<input type="checkbox"> stimming <br>
-<input type="checkbox"> sensory seeking <br>
-<input type="checkbox"> sensory avoidance <br>
-<input type="checkbox"> aromatherapy <br>
-<input type="checkbox"> lighting candles <br>
-<input type="checkbox"> tidying your desk <br>
-<input type="checkbox"> drinking cold water <br>
-<input type="checkbox"> drinking warm tea <br>
-<input type="checkbox"> hugging a pillow <br>
-<input type="checkbox"> watching comfort shows <br>
-<input type="checkbox"> wearing soft clothes <br>
-<input type="checkbox"> petting animals <br>
-<input type="checkbox"> feeding birds <br>
-<input type="checkbox"> helping a friend <br>
-<input type="checkbox"> talking through problems <br>
-<input type="checkbox"> venting safely <br>
-<input type="checkbox"> asking clarifying questions <br>
-<input type="checkbox"> researching solutions <br>
-<input type="checkbox"> making decisions <br>
-<input type="checkbox"> delaying decisions <br>
-<input type="checkbox"> prioritizing tasks <br>
-<input type="checkbox"> saying no <br>
-<input type="checkbox"> saying yes <br>
-<input type="checkbox"> compromising <br>
-<input type="checkbox"> self-advocating <br>
-<input type="checkbox"> setting boundaries <br>
-<input type="checkbox"> maintaining boundaries <br>
-<input type="checkbox"> repairing relationships <br>
-<input type="checkbox"> ending relationships <br>
-<input type="checkbox"> grieving <br>
-<input type="checkbox"> celebrating <br>
-<input type="checkbox"> feeling pride <br>
-<input type="checkbox"> feeling relief <br>
-<input type="checkbox"> feeling anticipation <br>
-<input type="checkbox"> feeling uncertainty <br>
+<div class="section">DIGITAL &amp; MODERN ACTIVITIES</div>
+<input type="checkbox" id="cb299" data-label="browsing the internet" class="cb">
+<label for="cb299" class="chip">browsing the internet</label>
+<input type="checkbox" id="cb300" data-label="watching YouTube" class="cb">
+<label for="cb300" class="chip">watching YouTube</label>
+<input type="checkbox" id="cb301" data-label="streaming shows" class="cb">
+<label for="cb301" class="chip">streaming shows</label>
+<input type="checkbox" id="cb302" data-label="doomscrolling" class="cb">
+<label for="cb302" class="chip">doomscrolling</label>
+<input type="checkbox" id="cb303" data-label="online shopping" class="cb">
+<label for="cb303" class="chip">online shopping</label>
+<input type="checkbox" id="cb304" data-label="scrolling social media" class="cb">
+<label for="cb304" class="chip">scrolling social media</label>
+<input type="checkbox" id="cb305" data-label="posting photos" class="cb">
+<label for="cb305" class="chip">posting photos</label>
+<input type="checkbox" id="cb306" data-label="commenting" class="cb">
+<label for="cb306" class="chip">commenting</label>
+<input type="checkbox" id="cb307" data-label="liking posts" class="cb">
+<label for="cb307" class="chip">liking posts</label>
+<input type="checkbox" id="cb308" data-label="sharing content" class="cb">
+<label for="cb308" class="chip">sharing content</label>
+<input type="checkbox" id="cb309" data-label="messaging friends" class="cb">
+<label for="cb309" class="chip">messaging friends</label>
+<input type="checkbox" id="cb310" data-label="video calling" class="cb">
+<label for="cb310" class="chip">video calling</label>
+<input type="checkbox" id="cb311" data-label="voice chatting" class="cb">
+<label for="cb311" class="chip">voice chatting</label>
+<input type="checkbox" id="cb312" data-label="gaming" class="cb">
+<label for="cb312" class="chip">gaming</label>
+<input type="checkbox" id="cb313" data-label="speedrunning" class="cb">
+<label for="cb313" class="chip">speedrunning</label>
+<input type="checkbox" id="cb314" data-label="modding games" class="cb">
+<label for="cb314" class="chip">modding games</label>
+<input type="checkbox" id="cb315" data-label="streaming on Twitch" class="cb">
+<label for="cb315" class="chip">streaming on Twitch</label>
+<input type="checkbox" id="cb316" data-label="editing VODs" class="cb">
+<label for="cb316" class="chip">editing VODs</label>
+<input type="checkbox" id="cb317" data-label="coding" class="cb">
+<label for="cb317" class="chip">coding</label>
+<input type="checkbox" id="cb318" data-label="programming" class="cb">
+<label for="cb318" class="chip">programming</label>
+<input type="checkbox" id="cb319" data-label="debugging" class="cb">
+<label for="cb319" class="chip">debugging</label>
+<input type="checkbox" id="cb320" data-label="writing scripts" class="cb">
+<label for="cb320" class="chip">writing scripts</label>
+<input type="checkbox" id="cb321" data-label="designing websites" class="cb">
+<label for="cb321" class="chip">designing websites</label>
+<input type="checkbox" id="cb322" data-label="UI/UX design" class="cb">
+<label for="cb322" class="chip">UI/UX design</label>
+<input type="checkbox" id="cb323" data-label="building apps" class="cb">
+<label for="cb323" class="chip">building apps</label>
+<input type="checkbox" id="cb324" data-label="learning languages online" class="cb">
+<label for="cb324" class="chip">learning languages online</label>
+<input type="checkbox" id="cb325" data-label="taking digital notes" class="cb">
+<label for="cb325" class="chip">taking digital notes</label>
+<input type="checkbox" id="cb326" data-label="using spreadsheets" class="cb">
+<label for="cb326" class="chip">using spreadsheets</label>
+<input type="checkbox" id="cb327" data-label="managing calendars" class="cb">
+<label for="cb327" class="chip">managing calendars</label>
+<input type="checkbox" id="cb328" data-label="file organizing" class="cb">
+<label for="cb328" class="chip">file organizing</label>
+<input type="checkbox" id="cb329" data-label="running virtual meetings" class="cb">
+<label for="cb329" class="chip">running virtual meetings</label>
+<input type="checkbox" id="cb330" data-label="using AI tools" class="cb">
+<label for="cb330" class="chip">using AI tools</label>
+<input type="checkbox" id="cb331" data-label="typing" class="cb">
+<label for="cb331" class="chip">typing</label>
+<input type="checkbox" id="cb332" data-label="copy-pasting" class="cb">
+<label for="cb332" class="chip">copy-pasting</label>
+<input type="checkbox" id="cb333" data-label="dragging files" class="cb">
+<label for="cb333" class="chip">dragging files</label>
+<input type="checkbox" id="cb334" data-label="installing software" class="cb">
+<label for="cb334" class="chip">installing software</label>
+<input type="checkbox" id="cb335" data-label="updating drivers" class="cb">
+<label for="cb335" class="chip">updating drivers</label>
+<input type="checkbox" id="cb336" data-label="troubleshooting tech" class="cb">
+<label for="cb336" class="chip">troubleshooting tech</label>
+<input type="checkbox" id="cb337" data-label="building PCs" class="cb">
+<label for="cb337" class="chip">building PCs</label>
+<input type="checkbox" id="cb338" data-label="backing up data" class="cb">
+<label for="cb338" class="chip">backing up data</label>
+<input type="checkbox" id="cb339" data-label="creating presentations" class="cb">
+<label for="cb339" class="chip">creating presentations</label>
+<input type="checkbox" id="cb340" data-label="graphic editing" class="cb">
+<label for="cb340" class="chip">graphic editing</label>
+<input type="checkbox" id="cb341" data-label="photo retouching" class="cb">
+<label for="cb341" class="chip">photo retouching</label>
+<input type="checkbox" id="cb342" data-label="3D modeling" class="cb">
+<label for="cb342" class="chip">3D modeling</label>
+<input type="checkbox" id="cb343" data-label="Blender sculpting" class="cb">
+<label for="cb343" class="chip">Blender sculpting</label>
+<input type="checkbox" id="cb344" data-label="creating animations" class="cb">
+<label for="cb344" class="chip">creating animations</label>
+<input type="checkbox" id="cb345" data-label="writing code snippets" class="cb">
+<label for="cb345" class="chip">writing code snippets</label>
+<input type="checkbox" id="cb346" data-label="creating bots" class="cb">
+<label for="cb346" class="chip">creating bots</label>
+<input type="checkbox" id="cb347" data-label="API testing" class="cb">
+<label for="cb347" class="chip">API testing</label>
+<input type="checkbox" id="cb348" data-label="cybersecurity practice" class="cb">
+<label for="cb348" class="chip">cybersecurity practice</label>
+<input type="checkbox" id="cb349" data-label="ethical hacking" class="cb">
+<label for="cb349" class="chip">ethical hacking</label>
+<input type="checkbox" id="cb350" data-label="data entry" class="cb">
+<label for="cb350" class="chip">data entry</label>
+<input type="checkbox" id="cb351" data-label="data analysis" class="cb">
+<label for="cb351" class="chip">data analysis</label>
+<input type="checkbox" id="cb352" data-label="spreadsheet modeling" class="cb">
+<label for="cb352" class="chip">spreadsheet modeling</label>
+<input type="checkbox" id="cb353" data-label="managing digital finances" class="cb">
+<label for="cb353" class="chip">managing digital finances</label>
+<input type="checkbox" id="cb354" data-label="using crypto wallets" class="cb">
+<label for="cb354" class="chip">using crypto wallets</label>
+<input type="checkbox" id="cb355" data-label="VR gaming" class="cb">
+<label for="cb355" class="chip">VR gaming</label>
+<input type="checkbox" id="cb356" data-label="AR experiences" class="cb">
+<label for="cb356" class="chip">AR experiences</label>
+<input type="checkbox" id="cb357" data-label="drone flying" class="cb">
+<label for="cb357" class="chip">drone flying</label>
+<input type="checkbox" id="cb358" data-label="making digital art" class="cb">
+<label for="cb358" class="chip">making digital art</label>
+<input type="checkbox" id="cb359" data-label="editing sprite sheets" class="cb">
+<label for="cb359" class="chip">editing sprite sheets</label>
+<input type="checkbox" id="cb360" data-label="creating GIFs" class="cb">
+<label for="cb360" class="chip">creating GIFs</label>
+<input type="checkbox" id="cb361" data-label="using filters" class="cb">
+<label for="cb361" class="chip">using filters</label>
+<input type="checkbox" id="cb362" data-label="coding neural networks" class="cb">
+<label for="cb362" class="chip">coding neural networks</label>
+<input type="checkbox" id="cb363" data-label="training ML models" class="cb">
+<label for="cb363" class="chip">training ML models</label>
+<input type="checkbox" id="cb364" data-label="animating sprites" class="cb">
+<label for="cb364" class="chip">animating sprites</label>
+<input type="checkbox" id="cb365" data-label="writing fanfic" class="cb">
+<label for="cb365" class="chip">writing fanfic</label>
+<input type="checkbox" id="cb366" data-label="curating Pinterest boards" class="cb">
+<label for="cb366" class="chip">curating Pinterest boards</label>
+<input type="checkbox" id="cb367" data-label="designing wallpapers" class="cb">
+<label for="cb367" class="chip">designing wallpapers</label>
+<input type="checkbox" id="cb368" data-label="blogging" class="cb">
+<label for="cb368" class="chip">blogging</label>
+<input type="checkbox" id="cb369" data-label="vlogging" class="cb">
+<label for="cb369" class="chip">vlogging</label>
+<input type="checkbox" id="cb370" data-label="creating tutorials" class="cb">
+<label for="cb370" class="chip">creating tutorials</label>
+<input type="checkbox" id="cb371" data-label="recording podcasts" class="cb">
+<label for="cb371" class="chip">recording podcasts</label>
+<input type="checkbox" id="cb372" data-label="scheduling posts" class="cb">
+<label for="cb372" class="chip">scheduling posts</label>
+<input type="checkbox" id="cb373" data-label="writing newsletters" class="cb">
+<label for="cb373" class="chip">writing newsletters</label>
+<input type="checkbox" id="cb374" data-label="troubleshooting Wi-Fi" class="cb">
+<label for="cb374" class="chip">troubleshooting Wi-Fi</label>
+<input type="checkbox" id="cb375" data-label="updating firmware" class="cb">
+<label for="cb375" class="chip">updating firmware</label>
+<input type="checkbox" id="cb376" data-label="creating databases" class="cb">
+<label for="cb376" class="chip">creating databases</label>
+<input type="checkbox" id="cb377" data-label="tagging metadata" class="cb">
+<label for="cb377" class="chip">tagging metadata</label>
+<input type="checkbox" id="cb378" data-label="using digital to-do lists" class="cb">
+<label for="cb378" class="chip">using digital to-do lists</label>
+<input type="checkbox" id="cb379" data-label="playing online chess" class="cb">
+<label for="cb379" class="chip">playing online chess</label>
+<input type="checkbox" id="cb380" data-label="solving captchas" class="cb">
+<label for="cb380" class="chip">solving captchas</label>
+<input type="checkbox" id="cb381" data-label="saving bookmarks" class="cb">
+<label for="cb381" class="chip">saving bookmarks</label>
+<input type="checkbox" id="cb382" data-label="password managing" class="cb">
+<label for="cb382" class="chip">password managing</label>
+<input type="checkbox" id="cb383" data-label="pixel art creation" class="cb">
+<label for="cb383" class="chip">pixel art creation</label>
+<input type="checkbox" id="cb384" data-label="using Discord" class="cb">
+<label for="cb384" class="chip">using Discord</label>
+<input type="checkbox" id="cb385" data-label="managing servers" class="cb">
+<label for="cb385" class="chip">managing servers</label>
+<input type="checkbox" id="cb386" data-label="moderating communities" class="cb">
+<label for="cb386" class="chip">moderating communities</label>
+<input type="checkbox" id="cb387" data-label="setting server roles" class="cb">
+<label for="cb387" class="chip">setting server roles</label>
+<input type="checkbox" id="cb388" data-label="creating channels" class="cb">
+<label for="cb388" class="chip">creating channels</label>
+<input type="checkbox" id="cb389" data-label="uploading emojis" class="cb">
+<label for="cb389" class="chip">uploading emojis</label>
+<input type="checkbox" id="cb390" data-label="building Notion dashboards" class="cb">
+<label for="cb390" class="chip">building Notion dashboards</label>
+<input type="checkbox" id="cb391" data-label="automating workflows" class="cb">
+<label for="cb391" class="chip">automating workflows</label>
+<div class="section">EMOTIONAL, RELATIONAL, INTERNAL ACTIVITIES</div>
+<input type="checkbox" id="cb392" data-label="meditating" class="cb">
+<label for="cb392" class="chip">meditating</label>
+<input type="checkbox" id="cb393" data-label="deep breathing" class="cb">
+<label for="cb393" class="chip">deep breathing</label>
+<input type="checkbox" id="cb394" data-label="grounding exercises" class="cb">
+<label for="cb394" class="chip">grounding exercises</label>
+<input type="checkbox" id="cb395" data-label="mindfulness practice" class="cb">
+<label for="cb395" class="chip">mindfulness practice</label>
+<input type="checkbox" id="cb396" data-label="mantra chanting" class="cb">
+<label for="cb396" class="chip">mantra chanting</label>
+<input type="checkbox" id="cb397" data-label="self-soothing" class="cb">
+<label for="cb397" class="chip">self-soothing</label>
+<input type="checkbox" id="cb398" data-label="emotional regulation" class="cb">
+<label for="cb398" class="chip">emotional regulation</label>
+<input type="checkbox" id="cb399" data-label="identifying triggers" class="cb">
+<label for="cb399" class="chip">identifying triggers</label>
+<input type="checkbox" id="cb400" data-label="unpacking memories" class="cb">
+<label for="cb400" class="chip">unpacking memories</label>
+<input type="checkbox" id="cb401" data-label="visualizing success" class="cb">
+<label for="cb401" class="chip">visualizing success</label>
+<input type="checkbox" id="cb402" data-label="reframing thoughts" class="cb">
+<label for="cb402" class="chip">reframing thoughts</label>
+<input type="checkbox" id="cb403" data-label="body scanning" class="cb">
+<label for="cb403" class="chip">body scanning</label>
+<input type="checkbox" id="cb404" data-label="progressive muscle relaxation" class="cb">
+<label for="cb404" class="chip">progressive muscle relaxation</label>
+<input type="checkbox" id="cb405" data-label="shadow work" class="cb">
+<label for="cb405" class="chip">shadow work</label>
+<input type="checkbox" id="cb406" data-label="affirmations" class="cb">
+<label for="cb406" class="chip">affirmations</label>
+<input type="checkbox" id="cb407" data-label="seeking comfort" class="cb">
+<label for="cb407" class="chip">seeking comfort</label>
+<input type="checkbox" id="cb408" data-label="asking for help" class="cb">
+<label for="cb408" class="chip">asking for help</label>
+<input type="checkbox" id="cb409" data-label="therapy homework" class="cb">
+<label for="cb409" class="chip">therapy homework</label>
+<input type="checkbox" id="cb410" data-label="introspection" class="cb">
+<label for="cb410" class="chip">introspection</label>
+<input type="checkbox" id="cb411" data-label="goal tracking" class="cb">
+<label for="cb411" class="chip">goal tracking</label>
+<input type="checkbox" id="cb412" data-label="building routines" class="cb">
+<label for="cb412" class="chip">building routines</label>
+<input type="checkbox" id="cb413" data-label="habit stacking" class="cb">
+<label for="cb413" class="chip">habit stacking</label>
+<input type="checkbox" id="cb414" data-label="reflecting on choices" class="cb">
+<label for="cb414" class="chip">reflecting on choices</label>
+<input type="checkbox" id="cb415" data-label="reading self-help" class="cb">
+<label for="cb415" class="chip">reading self-help</label>
+<input type="checkbox" id="cb416" data-label="journaling insights" class="cb">
+<label for="cb416" class="chip">journaling insights</label>
+<input type="checkbox" id="cb417" data-label="writing affirmations" class="cb">
+<label for="cb417" class="chip">writing affirmations</label>
+<input type="checkbox" id="cb418" data-label="spending time alone" class="cb">
+<label for="cb418" class="chip">spending time alone</label>
+<input type="checkbox" id="cb419" data-label="reconnecting with others" class="cb">
+<label for="cb419" class="chip">reconnecting with others</label>
+<input type="checkbox" id="cb420" data-label="healing old wounds" class="cb">
+<label for="cb420" class="chip">healing old wounds</label>
+<input type="checkbox" id="cb421" data-label="forgiving yourself" class="cb">
+<label for="cb421" class="chip">forgiving yourself</label>
+<input type="checkbox" id="cb422" data-label="practicing stillness" class="cb">
+<label for="cb422" class="chip">practicing stillness</label>
+<input type="checkbox" id="cb423" data-label="taking breaks" class="cb">
+<label for="cb423" class="chip">taking breaks</label>
+<input type="checkbox" id="cb424" data-label="crying intentionally" class="cb">
+<label for="cb424" class="chip">crying intentionally</label>
+<input type="checkbox" id="cb425" data-label="understanding emotions" class="cb">
+<label for="cb425" class="chip">understanding emotions</label>
+<input type="checkbox" id="cb426" data-label="naming feelings" class="cb">
+<label for="cb426" class="chip">naming feelings</label>
+<input type="checkbox" id="cb427" data-label="resting" class="cb">
+<label for="cb427" class="chip">resting</label>
+<input type="checkbox" id="cb428" data-label="napping intentionally" class="cb">
+<label for="cb428" class="chip">napping intentionally</label>
+<input type="checkbox" id="cb429" data-label="regulating stress" class="cb">
+<label for="cb429" class="chip">regulating stress</label>
+<input type="checkbox" id="cb430" data-label="walking to think" class="cb">
+<label for="cb430" class="chip">walking to think</label>
+<input type="checkbox" id="cb431" data-label="pacing" class="cb">
+<label for="cb431" class="chip">pacing</label>
+<input type="checkbox" id="cb432" data-label="dissociating" class="cb">
+<label for="cb432" class="chip">dissociating</label>
+<input type="checkbox" id="cb433" data-label="grounding in nature" class="cb">
+<label for="cb433" class="chip">grounding in nature</label>
+<input type="checkbox" id="cb434" data-label="cleansing your space" class="cb">
+<label for="cb434" class="chip">cleansing your space</label>
+<input type="checkbox" id="cb435" data-label="rearranging furniture" class="cb">
+<label for="cb435" class="chip">rearranging furniture</label>
+<input type="checkbox" id="cb436" data-label="taking long showers" class="cb">
+<label for="cb436" class="chip">taking long showers</label>
+<input type="checkbox" id="cb437" data-label="listening to calming music" class="cb">
+<label for="cb437" class="chip">listening to calming music</label>
+<input type="checkbox" id="cb438" data-label="singing in the shower" class="cb">
+<label for="cb438" class="chip">singing in the shower</label>
+<input type="checkbox" id="cb439" data-label="dancing alone" class="cb">
+<label for="cb439" class="chip">dancing alone</label>
+<input type="checkbox" id="cb440" data-label="stretching in the morning" class="cb">
+<label for="cb440" class="chip">stretching in the morning</label>
+<input type="checkbox" id="cb441" data-label="stimming" class="cb">
+<label for="cb441" class="chip">stimming</label>
+<input type="checkbox" id="cb442" data-label="sensory seeking" class="cb">
+<label for="cb442" class="chip">sensory seeking</label>
+<input type="checkbox" id="cb443" data-label="sensory avoidance" class="cb">
+<label for="cb443" class="chip">sensory avoidance</label>
+<input type="checkbox" id="cb444" data-label="aromatherapy" class="cb">
+<label for="cb444" class="chip">aromatherapy</label>
+<input type="checkbox" id="cb445" data-label="lighting candles" class="cb">
+<label for="cb445" class="chip">lighting candles</label>
+<input type="checkbox" id="cb446" data-label="tidying your desk" class="cb">
+<label for="cb446" class="chip">tidying your desk</label>
+<input type="checkbox" id="cb447" data-label="drinking cold water" class="cb">
+<label for="cb447" class="chip">drinking cold water</label>
+<input type="checkbox" id="cb448" data-label="drinking warm tea" class="cb">
+<label for="cb448" class="chip">drinking warm tea</label>
+<input type="checkbox" id="cb449" data-label="hugging a pillow" class="cb">
+<label for="cb449" class="chip">hugging a pillow</label>
+<input type="checkbox" id="cb450" data-label="watching comfort shows" class="cb">
+<label for="cb450" class="chip">watching comfort shows</label>
+<input type="checkbox" id="cb451" data-label="wearing soft clothes" class="cb">
+<label for="cb451" class="chip">wearing soft clothes</label>
+<input type="checkbox" id="cb452" data-label="petting animals" class="cb">
+<label for="cb452" class="chip">petting animals</label>
+<input type="checkbox" id="cb453" data-label="feeding birds" class="cb">
+<label for="cb453" class="chip">feeding birds</label>
+<input type="checkbox" id="cb454" data-label="helping a friend" class="cb">
+<label for="cb454" class="chip">helping a friend</label>
+<input type="checkbox" id="cb455" data-label="talking through problems" class="cb">
+<label for="cb455" class="chip">talking through problems</label>
+<input type="checkbox" id="cb456" data-label="venting safely" class="cb">
+<label for="cb456" class="chip">venting safely</label>
+<input type="checkbox" id="cb457" data-label="asking clarifying questions" class="cb">
+<label for="cb457" class="chip">asking clarifying questions</label>
+<input type="checkbox" id="cb458" data-label="researching solutions" class="cb">
+<label for="cb458" class="chip">researching solutions</label>
+<input type="checkbox" id="cb459" data-label="making decisions" class="cb">
+<label for="cb459" class="chip">making decisions</label>
+<input type="checkbox" id="cb460" data-label="delaying decisions" class="cb">
+<label for="cb460" class="chip">delaying decisions</label>
+<input type="checkbox" id="cb461" data-label="prioritizing tasks" class="cb">
+<label for="cb461" class="chip">prioritizing tasks</label>
+<input type="checkbox" id="cb462" data-label="saying no" class="cb">
+<label for="cb462" class="chip">saying no</label>
+<input type="checkbox" id="cb463" data-label="saying yes" class="cb">
+<label for="cb463" class="chip">saying yes</label>
+<input type="checkbox" id="cb464" data-label="compromising" class="cb">
+<label for="cb464" class="chip">compromising</label>
+<input type="checkbox" id="cb465" data-label="self-advocating" class="cb">
+<label for="cb465" class="chip">self-advocating</label>
+<input type="checkbox" id="cb466" data-label="setting boundaries" class="cb">
+<label for="cb466" class="chip">setting boundaries</label>
+<input type="checkbox" id="cb467" data-label="maintaining boundaries" class="cb">
+<label for="cb467" class="chip">maintaining boundaries</label>
+<input type="checkbox" id="cb468" data-label="repairing relationships" class="cb">
+<label for="cb468" class="chip">repairing relationships</label>
+<input type="checkbox" id="cb469" data-label="ending relationships" class="cb">
+<label for="cb469" class="chip">ending relationships</label>
+<input type="checkbox" id="cb470" data-label="grieving" class="cb">
+<label for="cb470" class="chip">grieving</label>
+<input type="checkbox" id="cb471" data-label="celebrating" class="cb">
+<label for="cb471" class="chip">celebrating</label>
+<input type="checkbox" id="cb472" data-label="feeling pride" class="cb">
+<label for="cb472" class="chip">feeling pride</label>
+<input type="checkbox" id="cb473" data-label="feeling relief" class="cb">
+<label for="cb473" class="chip">feeling relief</label>
+<input type="checkbox" id="cb474" data-label="feeling anticipation" class="cb">
+<label for="cb474" class="chip">feeling anticipation</label>
+<input type="checkbox" id="cb475" data-label="feeling uncertainty" class="cb">
+<label for="cb475" class="chip">feeling uncertainty</label>
 
-<!-- WORK & PROFESSIONAL ACTIVITIES -->
-<input type="checkbox"> working <br>
-<input type="checkbox"> commuting <br>
-<input type="checkbox"> replying to emails <br>
-<input type="checkbox"> attending meetings <br>
-<input type="checkbox"> brainstorming with coworkers <br>
-<input type="checkbox"> presenting ideas <br>
-<input type="checkbox"> taking notes <br>
-<input type="checkbox"> leading teams <br>
-<input type="checkbox"> collaborating <br>
-<input type="checkbox"> negotiating contracts <br>
-<input type="checkbox"> onboarding <br>
-<input type="checkbox"> training others <br>
-<input type="checkbox"> fixing equipment <br>
-<input type="checkbox"> restocking supplies <br>
-<input type="checkbox"> organizing inventory <br>
-<input type="checkbox"> project planning <br>
-<input type="checkbox"> scheduling tasks <br>
-<input type="checkbox"> time management <br>
-<input type="checkbox"> delegating <br>
-<input type="checkbox"> filing documents <br>
-<input type="checkbox"> archiving <br>
-<input type="checkbox"> reading reports <br>
-<input type="checkbox"> writing reports <br>
-<input type="checkbox"> troubleshooting systems <br>
-<input type="checkbox"> learning new skills <br>
-<input type="checkbox"> mentoring others <br>
-<input type="checkbox"> reviewing work <br>
-<input type="checkbox"> quality control <br>
-<input type="checkbox"> manufacturing tasks <br>
-<input type="checkbox"> customer service <br>
-<input type="checkbox"> answering phones <br>
-<input type="checkbox"> greeting clients <br>
-<input type="checkbox"> processing orders <br>
-<input type="checkbox"> transporting goods <br>
-<input type="checkbox"> driving cars <br>
-<input type="checkbox"> riding buses <br>
-<input type="checkbox"> cycling to work <br>
-<input type="checkbox"> navigating maps <br>
-<input type="checkbox"> booking appointments <br>
-<input type="checkbox"> managing finances <br>
-<input type="checkbox"> balancing accounts <br>
-<input type="checkbox"> calculating taxes <br>
-<input type="checkbox"> signing papers <br>
-<input type="checkbox"> reading legal documents <br>
-<input type="checkbox"> researching laws <br>
-<input type="checkbox"> contacting support <br>
-<input type="checkbox"> renewing licenses <br>
+<div class="section">WORK &amp; PROFESSIONAL ACTIVITIES</div>
+<input type="checkbox" id="cb476" data-label="working" class="cb">
+<label for="cb476" class="chip">working</label>
+<input type="checkbox" id="cb477" data-label="commuting" class="cb">
+<label for="cb477" class="chip">commuting</label>
+<input type="checkbox" id="cb478" data-label="replying to emails" class="cb">
+<label for="cb478" class="chip">replying to emails</label>
+<input type="checkbox" id="cb479" data-label="attending meetings" class="cb">
+<label for="cb479" class="chip">attending meetings</label>
+<input type="checkbox" id="cb480" data-label="brainstorming with coworkers" class="cb">
+<label for="cb480" class="chip">brainstorming with coworkers</label>
+<input type="checkbox" id="cb481" data-label="presenting ideas" class="cb">
+<label for="cb481" class="chip">presenting ideas</label>
+<input type="checkbox" id="cb482" data-label="taking notes" class="cb">
+<label for="cb482" class="chip">taking notes</label>
+<input type="checkbox" id="cb483" data-label="leading teams" class="cb">
+<label for="cb483" class="chip">leading teams</label>
+<input type="checkbox" id="cb484" data-label="collaborating" class="cb">
+<label for="cb484" class="chip">collaborating</label>
+<input type="checkbox" id="cb485" data-label="negotiating contracts" class="cb">
+<label for="cb485" class="chip">negotiating contracts</label>
+<input type="checkbox" id="cb486" data-label="onboarding" class="cb">
+<label for="cb486" class="chip">onboarding</label>
+<input type="checkbox" id="cb487" data-label="training others" class="cb">
+<label for="cb487" class="chip">training others</label>
+<input type="checkbox" id="cb488" data-label="fixing equipment" class="cb">
+<label for="cb488" class="chip">fixing equipment</label>
+<input type="checkbox" id="cb489" data-label="restocking supplies" class="cb">
+<label for="cb489" class="chip">restocking supplies</label>
+<input type="checkbox" id="cb490" data-label="organizing inventory" class="cb">
+<label for="cb490" class="chip">organizing inventory</label>
+<input type="checkbox" id="cb491" data-label="project planning" class="cb">
+<label for="cb491" class="chip">project planning</label>
+<input type="checkbox" id="cb492" data-label="scheduling tasks" class="cb">
+<label for="cb492" class="chip">scheduling tasks</label>
+<input type="checkbox" id="cb493" data-label="time management" class="cb">
+<label for="cb493" class="chip">time management</label>
+<input type="checkbox" id="cb494" data-label="delegating" class="cb">
+<label for="cb494" class="chip">delegating</label>
+<input type="checkbox" id="cb495" data-label="filing documents" class="cb">
+<label for="cb495" class="chip">filing documents</label>
+<input type="checkbox" id="cb496" data-label="archiving" class="cb">
+<label for="cb496" class="chip">archiving</label>
+<input type="checkbox" id="cb497" data-label="reading reports" class="cb">
+<label for="cb497" class="chip">reading reports</label>
+<input type="checkbox" id="cb498" data-label="writing reports" class="cb">
+<label for="cb498" class="chip">writing reports</label>
+<input type="checkbox" id="cb499" data-label="troubleshooting systems" class="cb">
+<label for="cb499" class="chip">troubleshooting systems</label>
+<input type="checkbox" id="cb500" data-label="learning new skills" class="cb">
+<label for="cb500" class="chip">learning new skills</label>
+<input type="checkbox" id="cb501" data-label="mentoring others" class="cb">
+<label for="cb501" class="chip">mentoring others</label>
+<input type="checkbox" id="cb502" data-label="reviewing work" class="cb">
+<label for="cb502" class="chip">reviewing work</label>
+<input type="checkbox" id="cb503" data-label="quality control" class="cb">
+<label for="cb503" class="chip">quality control</label>
+<input type="checkbox" id="cb504" data-label="manufacturing tasks" class="cb">
+<label for="cb504" class="chip">manufacturing tasks</label>
+<input type="checkbox" id="cb505" data-label="customer service" class="cb">
+<label for="cb505" class="chip">customer service</label>
+<input type="checkbox" id="cb506" data-label="answering phones" class="cb">
+<label for="cb506" class="chip">answering phones</label>
+<input type="checkbox" id="cb507" data-label="greeting clients" class="cb">
+<label for="cb507" class="chip">greeting clients</label>
+<input type="checkbox" id="cb508" data-label="processing orders" class="cb">
+<label for="cb508" class="chip">processing orders</label>
+<input type="checkbox" id="cb509" data-label="transporting goods" class="cb">
+<label for="cb509" class="chip">transporting goods</label>
+<input type="checkbox" id="cb510" data-label="driving cars" class="cb">
+<label for="cb510" class="chip">driving cars</label>
+<input type="checkbox" id="cb511" data-label="riding buses" class="cb">
+<label for="cb511" class="chip">riding buses</label>
+<input type="checkbox" id="cb512" data-label="cycling to work" class="cb">
+<label for="cb512" class="chip">cycling to work</label>
+<input type="checkbox" id="cb513" data-label="navigating maps" class="cb">
+<label for="cb513" class="chip">navigating maps</label>
+<input type="checkbox" id="cb514" data-label="booking appointments" class="cb">
+<label for="cb514" class="chip">booking appointments</label>
+<input type="checkbox" id="cb515" data-label="managing finances" class="cb">
+<label for="cb515" class="chip">managing finances</label>
+<input type="checkbox" id="cb516" data-label="balancing accounts" class="cb">
+<label for="cb516" class="chip">balancing accounts</label>
+<input type="checkbox" id="cb517" data-label="calculating taxes" class="cb">
+<label for="cb517" class="chip">calculating taxes</label>
+<input type="checkbox" id="cb518" data-label="signing papers" class="cb">
+<label for="cb518" class="chip">signing papers</label>
+<input type="checkbox" id="cb519" data-label="reading legal documents" class="cb">
+<label for="cb519" class="chip">reading legal documents</label>
+<input type="checkbox" id="cb520" data-label="researching laws" class="cb">
+<label for="cb520" class="chip">researching laws</label>
+<input type="checkbox" id="cb521" data-label="contacting support" class="cb">
+<label for="cb521" class="chip">contacting support</label>
+<input type="checkbox" id="cb522" data-label="renewing licenses" class="cb">
+<label for="cb522" class="chip">renewing licenses</label>
 
-<!-- STUDYING & LEARNING -->
-<input type="checkbox"> studying <br>
-<input type="checkbox"> taking tests <br>
-<input type="checkbox"> attending classes <br>
-<input type="checkbox"> listening to lectures <br>
-<input type="checkbox"> writing essays <br>
-<input type="checkbox"> reading textbooks <br>
-<input type="checkbox"> highlighting notes <br>
-<input type="checkbox"> group study <br>
-<input type="checkbox"> memorization drills <br>
-<input type="checkbox"> practicing skills <br>
-<input type="checkbox"> prepping presentations <br>
-<input type="checkbox"> learning instruments <br>
-<input type="checkbox"> rehearsing music <br>
-<input type="checkbox"> conducting experiments <br>
-<input type="checkbox"> observing results <br>
-<input type="checkbox"> writing hypotheses <br>
-<input type="checkbox"> designing posters <br>
-<input type="checkbox"> participating in labs <br>
-<input type="checkbox"> attending workshops <br>
-<input type="checkbox"> joining clubs <br>
-<input type="checkbox"> tutoring <br>
-<input type="checkbox"> volunteering <br>
-<input type="checkbox"> donating items <br>
-<input type="checkbox"> participating in charity events <br>
-<input type="checkbox"> mentoring youth <br>
-<input type="checkbox"> community organizing <br>
-<input type="checkbox"> activism <br>
-<input type="checkbox"> advocacy <br>
-<input type="checkbox"> protesting <br>
-<input type="checkbox"> voting <br>
-<input type="checkbox"> writing petitions <br>
-<input type="checkbox"> speaking publicly <br>
-<input type="checkbox"> debating ideas <br>
-<input type="checkbox"> educating others <br>
-<input type="checkbox"> raising awareness <br>
-<input type="checkbox"> fundraising <br>
-<input type="checkbox"> building community projects <br>
-<!-- HEALTH, WELLNESS & BODY CARE -->
-<input type="checkbox"> stretching before exercise <br>
-<input type="checkbox"> cooling down after workouts <br>
-<input type="checkbox"> taking vitamins <br>
-<input type="checkbox"> applying sunscreen <br>
-<input type="checkbox"> moisturizing <br>
-<input type="checkbox"> trimming nails <br>
-<input type="checkbox"> clipping toenails <br>
-<input type="checkbox"> brushing hair <br>
-<input type="checkbox"> conditioning hair <br>
-<input type="checkbox"> exfoliating skin <br>
-<input type="checkbox"> shaving body hair <br>
-<input type="checkbox"> shaving beard <br>
-<input type="checkbox"> brushing teeth <br>
-<input type="checkbox"> flossing <br>
-<input type="checkbox"> mouthwash rinsing <br>
-<input type="checkbox"> applying deodorant <br>
-<input type="checkbox"> massaging muscles <br>
-<input type="checkbox"> self-checking vitals <br>
-<input type="checkbox"> first aid <br>
-<input type="checkbox"> treating cuts <br>
-<input type="checkbox"> bandaging wounds <br>
-<input type="checkbox"> using ice packs <br>
-<input type="checkbox"> heating pads <br>
-<input type="checkbox"> stretching injured muscles <br>
-<input type="checkbox"> physical therapy exercises <br>
-<input type="checkbox"> med tracking <br>
-<input type="checkbox"> taking prescriptions <br>
-<input type="checkbox"> scheduling appointments <br>
-<input type="checkbox"> attending medical checkups <br>
-<input type="checkbox"> attending therapy <br>
-<input type="checkbox"> researching symptoms <br>
-<input type="checkbox"> doing breathwork <br>
-<input type="checkbox"> resting in bed <br>
-<input type="checkbox"> lowering stress <br>
-<input type="checkbox"> drinking electrolytes <br>
-<input type="checkbox"> improving posture <br>
-<input type="checkbox"> stretching neck <br>
-<input type="checkbox"> standing breaks at desk <br>
-<input type="checkbox"> drinking herbal tea <br>
-<input type="checkbox"> meditating with apps <br>
-<input type="checkbox"> taking long baths <br>
-<input type="checkbox"> aromatherapy showers <br>
-<input type="checkbox"> going for health walks <br>
-<input type="checkbox"> cooking healthy meals <br>
-<input type="checkbox"> reducing sugar intake <br>
-<input type="checkbox"> tracking calories <br>
-<input type="checkbox"> measuring weight <br>
-<input type="checkbox"> getting massages <br>
-<input type="checkbox"> chiropractic visits <br>
-<input type="checkbox"> stretching hamstrings <br>
-<input type="checkbox"> stretching back <br>
-<input type="checkbox"> stretching shoulders <br>
+<div class="section">STUDYING &amp; LEARNING</div>
+<input type="checkbox" id="cb523" data-label="studying" class="cb">
+<label for="cb523" class="chip">studying</label>
+<input type="checkbox" id="cb524" data-label="taking tests" class="cb">
+<label for="cb524" class="chip">taking tests</label>
+<input type="checkbox" id="cb525" data-label="attending classes" class="cb">
+<label for="cb525" class="chip">attending classes</label>
+<input type="checkbox" id="cb526" data-label="listening to lectures" class="cb">
+<label for="cb526" class="chip">listening to lectures</label>
+<input type="checkbox" id="cb527" data-label="writing essays" class="cb">
+<label for="cb527" class="chip">writing essays</label>
+<input type="checkbox" id="cb528" data-label="reading textbooks" class="cb">
+<label for="cb528" class="chip">reading textbooks</label>
+<input type="checkbox" id="cb529" data-label="highlighting notes" class="cb">
+<label for="cb529" class="chip">highlighting notes</label>
+<input type="checkbox" id="cb530" data-label="group study" class="cb">
+<label for="cb530" class="chip">group study</label>
+<input type="checkbox" id="cb531" data-label="memorization drills" class="cb">
+<label for="cb531" class="chip">memorization drills</label>
+<input type="checkbox" id="cb532" data-label="practicing skills" class="cb">
+<label for="cb532" class="chip">practicing skills</label>
+<input type="checkbox" id="cb533" data-label="prepping presentations" class="cb">
+<label for="cb533" class="chip">prepping presentations</label>
+<input type="checkbox" id="cb534" data-label="learning instruments" class="cb">
+<label for="cb534" class="chip">learning instruments</label>
+<input type="checkbox" id="cb535" data-label="rehearsing music" class="cb">
+<label for="cb535" class="chip">rehearsing music</label>
+<input type="checkbox" id="cb536" data-label="conducting experiments" class="cb">
+<label for="cb536" class="chip">conducting experiments</label>
+<input type="checkbox" id="cb537" data-label="observing results" class="cb">
+<label for="cb537" class="chip">observing results</label>
+<input type="checkbox" id="cb538" data-label="writing hypotheses" class="cb">
+<label for="cb538" class="chip">writing hypotheses</label>
+<input type="checkbox" id="cb539" data-label="designing posters" class="cb">
+<label for="cb539" class="chip">designing posters</label>
+<input type="checkbox" id="cb540" data-label="participating in labs" class="cb">
+<label for="cb540" class="chip">participating in labs</label>
+<input type="checkbox" id="cb541" data-label="attending workshops" class="cb">
+<label for="cb541" class="chip">attending workshops</label>
+<input type="checkbox" id="cb542" data-label="joining clubs" class="cb">
+<label for="cb542" class="chip">joining clubs</label>
+<input type="checkbox" id="cb543" data-label="tutoring" class="cb">
+<label for="cb543" class="chip">tutoring</label>
+<input type="checkbox" id="cb544" data-label="volunteering" class="cb">
+<label for="cb544" class="chip">volunteering</label>
+<input type="checkbox" id="cb545" data-label="donating items" class="cb">
+<label for="cb545" class="chip">donating items</label>
+<input type="checkbox" id="cb546" data-label="participating in charity events" class="cb">
+<label for="cb546" class="chip">participating in charity events</label>
+<input type="checkbox" id="cb547" data-label="mentoring youth" class="cb">
+<label for="cb547" class="chip">mentoring youth</label>
+<input type="checkbox" id="cb548" data-label="community organizing" class="cb">
+<label for="cb548" class="chip">community organizing</label>
+<input type="checkbox" id="cb549" data-label="activism" class="cb">
+<label for="cb549" class="chip">activism</label>
+<input type="checkbox" id="cb550" data-label="advocacy" class="cb">
+<label for="cb550" class="chip">advocacy</label>
+<input type="checkbox" id="cb551" data-label="protesting" class="cb">
+<label for="cb551" class="chip">protesting</label>
+<input type="checkbox" id="cb552" data-label="voting" class="cb">
+<label for="cb552" class="chip">voting</label>
+<input type="checkbox" id="cb553" data-label="writing petitions" class="cb">
+<label for="cb553" class="chip">writing petitions</label>
+<input type="checkbox" id="cb554" data-label="speaking publicly" class="cb">
+<label for="cb554" class="chip">speaking publicly</label>
+<input type="checkbox" id="cb555" data-label="debating ideas" class="cb">
+<label for="cb555" class="chip">debating ideas</label>
+<input type="checkbox" id="cb556" data-label="educating others" class="cb">
+<label for="cb556" class="chip">educating others</label>
+<input type="checkbox" id="cb557" data-label="raising awareness" class="cb">
+<label for="cb557" class="chip">raising awareness</label>
+<input type="checkbox" id="cb558" data-label="fundraising" class="cb">
+<label for="cb558" class="chip">fundraising</label>
+<input type="checkbox" id="cb559" data-label="building community projects" class="cb">
+<label for="cb559" class="chip">building community projects</label>
+<div class="section">HEALTH, WELLNESS &amp; BODY CARE</div>
+<input type="checkbox" id="cb560" data-label="stretching before exercise" class="cb">
+<label for="cb560" class="chip">stretching before exercise</label>
+<input type="checkbox" id="cb561" data-label="cooling down after workouts" class="cb">
+<label for="cb561" class="chip">cooling down after workouts</label>
+<input type="checkbox" id="cb562" data-label="taking vitamins" class="cb">
+<label for="cb562" class="chip">taking vitamins</label>
+<input type="checkbox" id="cb563" data-label="applying sunscreen" class="cb">
+<label for="cb563" class="chip">applying sunscreen</label>
+<input type="checkbox" id="cb564" data-label="moisturizing" class="cb">
+<label for="cb564" class="chip">moisturizing</label>
+<input type="checkbox" id="cb565" data-label="trimming nails" class="cb">
+<label for="cb565" class="chip">trimming nails</label>
+<input type="checkbox" id="cb566" data-label="clipping toenails" class="cb">
+<label for="cb566" class="chip">clipping toenails</label>
+<input type="checkbox" id="cb567" data-label="brushing hair" class="cb">
+<label for="cb567" class="chip">brushing hair</label>
+<input type="checkbox" id="cb568" data-label="conditioning hair" class="cb">
+<label for="cb568" class="chip">conditioning hair</label>
+<input type="checkbox" id="cb569" data-label="exfoliating skin" class="cb">
+<label for="cb569" class="chip">exfoliating skin</label>
+<input type="checkbox" id="cb570" data-label="shaving body hair" class="cb">
+<label for="cb570" class="chip">shaving body hair</label>
+<input type="checkbox" id="cb571" data-label="shaving beard" class="cb">
+<label for="cb571" class="chip">shaving beard</label>
+<input type="checkbox" id="cb572" data-label="brushing teeth" class="cb">
+<label for="cb572" class="chip">brushing teeth</label>
+<input type="checkbox" id="cb573" data-label="flossing" class="cb">
+<label for="cb573" class="chip">flossing</label>
+<input type="checkbox" id="cb574" data-label="mouthwash rinsing" class="cb">
+<label for="cb574" class="chip">mouthwash rinsing</label>
+<input type="checkbox" id="cb575" data-label="applying deodorant" class="cb">
+<label for="cb575" class="chip">applying deodorant</label>
+<input type="checkbox" id="cb576" data-label="massaging muscles" class="cb">
+<label for="cb576" class="chip">massaging muscles</label>
+<input type="checkbox" id="cb577" data-label="self-checking vitals" class="cb">
+<label for="cb577" class="chip">self-checking vitals</label>
+<input type="checkbox" id="cb578" data-label="first aid" class="cb">
+<label for="cb578" class="chip">first aid</label>
+<input type="checkbox" id="cb579" data-label="treating cuts" class="cb">
+<label for="cb579" class="chip">treating cuts</label>
+<input type="checkbox" id="cb580" data-label="bandaging wounds" class="cb">
+<label for="cb580" class="chip">bandaging wounds</label>
+<input type="checkbox" id="cb581" data-label="using ice packs" class="cb">
+<label for="cb581" class="chip">using ice packs</label>
+<input type="checkbox" id="cb582" data-label="heating pads" class="cb">
+<label for="cb582" class="chip">heating pads</label>
+<input type="checkbox" id="cb583" data-label="stretching injured muscles" class="cb">
+<label for="cb583" class="chip">stretching injured muscles</label>
+<input type="checkbox" id="cb584" data-label="physical therapy exercises" class="cb">
+<label for="cb584" class="chip">physical therapy exercises</label>
+<input type="checkbox" id="cb585" data-label="med tracking" class="cb">
+<label for="cb585" class="chip">med tracking</label>
+<input type="checkbox" id="cb586" data-label="taking prescriptions" class="cb">
+<label for="cb586" class="chip">taking prescriptions</label>
+<input type="checkbox" id="cb587" data-label="scheduling appointments" class="cb">
+<label for="cb587" class="chip">scheduling appointments</label>
+<input type="checkbox" id="cb588" data-label="attending medical checkups" class="cb">
+<label for="cb588" class="chip">attending medical checkups</label>
+<input type="checkbox" id="cb589" data-label="attending therapy" class="cb">
+<label for="cb589" class="chip">attending therapy</label>
+<input type="checkbox" id="cb590" data-label="researching symptoms" class="cb">
+<label for="cb590" class="chip">researching symptoms</label>
+<input type="checkbox" id="cb591" data-label="doing breathwork" class="cb">
+<label for="cb591" class="chip">doing breathwork</label>
+<input type="checkbox" id="cb592" data-label="resting in bed" class="cb">
+<label for="cb592" class="chip">resting in bed</label>
+<input type="checkbox" id="cb593" data-label="lowering stress" class="cb">
+<label for="cb593" class="chip">lowering stress</label>
+<input type="checkbox" id="cb594" data-label="drinking electrolytes" class="cb">
+<label for="cb594" class="chip">drinking electrolytes</label>
+<input type="checkbox" id="cb595" data-label="improving posture" class="cb">
+<label for="cb595" class="chip">improving posture</label>
+<input type="checkbox" id="cb596" data-label="stretching neck" class="cb">
+<label for="cb596" class="chip">stretching neck</label>
+<input type="checkbox" id="cb597" data-label="standing breaks at desk" class="cb">
+<label for="cb597" class="chip">standing breaks at desk</label>
+<input type="checkbox" id="cb598" data-label="drinking herbal tea" class="cb">
+<label for="cb598" class="chip">drinking herbal tea</label>
+<input type="checkbox" id="cb599" data-label="meditating with apps" class="cb">
+<label for="cb599" class="chip">meditating with apps</label>
+<input type="checkbox" id="cb600" data-label="taking long baths" class="cb">
+<label for="cb600" class="chip">taking long baths</label>
+<input type="checkbox" id="cb601" data-label="aromatherapy showers" class="cb">
+<label for="cb601" class="chip">aromatherapy showers</label>
+<input type="checkbox" id="cb602" data-label="going for health walks" class="cb">
+<label for="cb602" class="chip">going for health walks</label>
+<input type="checkbox" id="cb603" data-label="cooking healthy meals" class="cb">
+<label for="cb603" class="chip">cooking healthy meals</label>
+<input type="checkbox" id="cb604" data-label="reducing sugar intake" class="cb">
+<label for="cb604" class="chip">reducing sugar intake</label>
+<input type="checkbox" id="cb605" data-label="tracking calories" class="cb">
+<label for="cb605" class="chip">tracking calories</label>
+<input type="checkbox" id="cb606" data-label="measuring weight" class="cb">
+<label for="cb606" class="chip">measuring weight</label>
+<input type="checkbox" id="cb607" data-label="getting massages" class="cb">
+<label for="cb607" class="chip">getting massages</label>
+<input type="checkbox" id="cb608" data-label="chiropractic visits" class="cb">
+<label for="cb608" class="chip">chiropractic visits</label>
+<input type="checkbox" id="cb609" data-label="stretching hamstrings" class="cb">
+<label for="cb609" class="chip">stretching hamstrings</label>
+<input type="checkbox" id="cb610" data-label="stretching back" class="cb">
+<label for="cb610" class="chip">stretching back</label>
+<input type="checkbox" id="cb611" data-label="stretching shoulders" class="cb">
+<label for="cb611" class="chip">stretching shoulders</label>
 
-<!-- TRAVEL & EXPLORATION -->
-<input type="checkbox"> planning trips <br>
-<input type="checkbox"> packing luggage <br>
-<input type="checkbox"> unpacking luggage <br>
-<input type="checkbox"> booking flights <br>
-<input type="checkbox"> booking hotels <br>
-<input type="checkbox"> riding taxis <br>
-<input type="checkbox"> taking buses <br>
-<input type="checkbox"> riding subways <br>
-<input type="checkbox"> taking ferries <br>
-<input type="checkbox"> boarding planes <br>
-<input type="checkbox"> going through security <br>
-<input type="checkbox"> waiting in airports <br>
-<input type="checkbox"> traveling abroad <br>
-<input type="checkbox"> learning travel phrases <br>
-<input type="checkbox"> sampling foreign foods <br>
-<input type="checkbox"> sightseeing <br>
-<input type="checkbox"> hiking mountains <br>
-<input type="checkbox"> exploring forests <br>
-<input type="checkbox"> visiting lakes <br>
-<input type="checkbox"> visiting beaches <br>
-<input type="checkbox"> walking in cities <br>
-<input type="checkbox"> taking photos <br>
-<input type="checkbox"> navigating new places <br>
-<input type="checkbox"> collecting souvenirs <br>
-<input type="checkbox"> meeting locals <br>
-<input type="checkbox"> renting bikes <br>
-<input type="checkbox"> stargazing outdoors <br>
-<input type="checkbox"> camping under stars <br>
-<input type="checkbox"> exploring caves <br>
-<input type="checkbox"> swimming in rivers <br>
-<input type="checkbox"> visiting waterfalls <br>
-<input type="checkbox"> taking scenic drives <br>
-<input type="checkbox"> road tripping <br>
-<input type="checkbox"> using maps <br>
-<input type="checkbox"> booking tours <br>
-<input type="checkbox"> traveling solo <br>
-<input type="checkbox"> traveling with friends <br>
-<input type="checkbox"> navigating airports <br>
-<input type="checkbox"> trying local cafés <br>
-<input type="checkbox"> trying new cuisines <br>
+<div class="section">TRAVEL &amp; EXPLORATION</div>
+<input type="checkbox" id="cb612" data-label="planning trips" class="cb">
+<label for="cb612" class="chip">planning trips</label>
+<input type="checkbox" id="cb613" data-label="packing luggage" class="cb">
+<label for="cb613" class="chip">packing luggage</label>
+<input type="checkbox" id="cb614" data-label="unpacking luggage" class="cb">
+<label for="cb614" class="chip">unpacking luggage</label>
+<input type="checkbox" id="cb615" data-label="booking flights" class="cb">
+<label for="cb615" class="chip">booking flights</label>
+<input type="checkbox" id="cb616" data-label="booking hotels" class="cb">
+<label for="cb616" class="chip">booking hotels</label>
+<input type="checkbox" id="cb617" data-label="riding taxis" class="cb">
+<label for="cb617" class="chip">riding taxis</label>
+<input type="checkbox" id="cb618" data-label="taking buses" class="cb">
+<label for="cb618" class="chip">taking buses</label>
+<input type="checkbox" id="cb619" data-label="riding subways" class="cb">
+<label for="cb619" class="chip">riding subways</label>
+<input type="checkbox" id="cb620" data-label="taking ferries" class="cb">
+<label for="cb620" class="chip">taking ferries</label>
+<input type="checkbox" id="cb621" data-label="boarding planes" class="cb">
+<label for="cb621" class="chip">boarding planes</label>
+<input type="checkbox" id="cb622" data-label="going through security" class="cb">
+<label for="cb622" class="chip">going through security</label>
+<input type="checkbox" id="cb623" data-label="waiting in airports" class="cb">
+<label for="cb623" class="chip">waiting in airports</label>
+<input type="checkbox" id="cb624" data-label="traveling abroad" class="cb">
+<label for="cb624" class="chip">traveling abroad</label>
+<input type="checkbox" id="cb625" data-label="learning travel phrases" class="cb">
+<label for="cb625" class="chip">learning travel phrases</label>
+<input type="checkbox" id="cb626" data-label="sampling foreign foods" class="cb">
+<label for="cb626" class="chip">sampling foreign foods</label>
+<input type="checkbox" id="cb627" data-label="sightseeing" class="cb">
+<label for="cb627" class="chip">sightseeing</label>
+<input type="checkbox" id="cb628" data-label="hiking mountains" class="cb">
+<label for="cb628" class="chip">hiking mountains</label>
+<input type="checkbox" id="cb629" data-label="exploring forests" class="cb">
+<label for="cb629" class="chip">exploring forests</label>
+<input type="checkbox" id="cb630" data-label="visiting lakes" class="cb">
+<label for="cb630" class="chip">visiting lakes</label>
+<input type="checkbox" id="cb631" data-label="visiting beaches" class="cb">
+<label for="cb631" class="chip">visiting beaches</label>
+<input type="checkbox" id="cb632" data-label="walking in cities" class="cb">
+<label for="cb632" class="chip">walking in cities</label>
+<input type="checkbox" id="cb633" data-label="taking photos" class="cb">
+<label for="cb633" class="chip">taking photos</label>
+<input type="checkbox" id="cb634" data-label="navigating new places" class="cb">
+<label for="cb634" class="chip">navigating new places</label>
+<input type="checkbox" id="cb635" data-label="collecting souvenirs" class="cb">
+<label for="cb635" class="chip">collecting souvenirs</label>
+<input type="checkbox" id="cb636" data-label="meeting locals" class="cb">
+<label for="cb636" class="chip">meeting locals</label>
+<input type="checkbox" id="cb637" data-label="renting bikes" class="cb">
+<label for="cb637" class="chip">renting bikes</label>
+<input type="checkbox" id="cb638" data-label="stargazing outdoors" class="cb">
+<label for="cb638" class="chip">stargazing outdoors</label>
+<input type="checkbox" id="cb639" data-label="camping under stars" class="cb">
+<label for="cb639" class="chip">camping under stars</label>
+<input type="checkbox" id="cb640" data-label="exploring caves" class="cb">
+<label for="cb640" class="chip">exploring caves</label>
+<input type="checkbox" id="cb641" data-label="swimming in rivers" class="cb">
+<label for="cb641" class="chip">swimming in rivers</label>
+<input type="checkbox" id="cb642" data-label="visiting waterfalls" class="cb">
+<label for="cb642" class="chip">visiting waterfalls</label>
+<input type="checkbox" id="cb643" data-label="taking scenic drives" class="cb">
+<label for="cb643" class="chip">taking scenic drives</label>
+<input type="checkbox" id="cb644" data-label="road tripping" class="cb">
+<label for="cb644" class="chip">road tripping</label>
+<input type="checkbox" id="cb645" data-label="using maps" class="cb">
+<label for="cb645" class="chip">using maps</label>
+<input type="checkbox" id="cb646" data-label="booking tours" class="cb">
+<label for="cb646" class="chip">booking tours</label>
+<input type="checkbox" id="cb647" data-label="traveling solo" class="cb">
+<label for="cb647" class="chip">traveling solo</label>
+<input type="checkbox" id="cb648" data-label="traveling with friends" class="cb">
+<label for="cb648" class="chip">traveling with friends</label>
+<input type="checkbox" id="cb649" data-label="navigating airports" class="cb">
+<label for="cb649" class="chip">navigating airports</label>
+<input type="checkbox" id="cb650" data-label="trying local cafés" class="cb">
+<label for="cb650" class="chip">trying local cafés</label>
+<input type="checkbox" id="cb651" data-label="trying new cuisines" class="cb">
+<label for="cb651" class="chip">trying new cuisines</label>
 
-<!-- HOME LIFE & DOMESTIC SKILLS -->
-<input type="checkbox"> washing clothes <br>
-<input type="checkbox"> drying clothes <br>
-<input type="checkbox"> folding clothes <br>
-<input type="checkbox"> ironing clothes <br>
-<input type="checkbox"> organizing closets <br>
-<input type="checkbox"> sorting laundry <br>
-<input type="checkbox"> repairing clothes <br>
-<input type="checkbox"> sewing buttons <br>
-<input type="checkbox"> handwashing delicate fabrics <br>
-<input type="checkbox"> cleaning kitchen counters <br>
-<input type="checkbox"> scrubbing pans <br>
-<input type="checkbox"> disinfecting surfaces <br>
-<input type="checkbox"> organizing pantries <br>
-<input type="checkbox"> stocking food <br>
-<input type="checkbox"> meal planning <br>
-<input type="checkbox"> chopping vegetables <br>
-<input type="checkbox"> frying meals <br>
-<input type="checkbox"> roasting food <br>
-<input type="checkbox"> boiling pasta <br>
-<input type="checkbox"> making soups <br>
-<input type="checkbox"> baking cakes <br>
-<input type="checkbox"> making bread <br>
-<input type="checkbox"> decorating pastries <br>
-<input type="checkbox"> setting the table <br>
-<input type="checkbox"> washing floors <br>
-<input type="checkbox"> vacuuming carpets <br>
-<input type="checkbox"> scrubbing bathrooms <br>
-<input type="checkbox"> unclogging drains <br>
-<input type="checkbox"> fixing leaks <br>
-<input type="checkbox"> organizing cables <br>
-<input type="checkbox"> emptying trash bins <br>
-<input type="checkbox"> recycling plastics <br>
-<input type="checkbox"> composting food scraps <br>
-<input type="checkbox"> maintaining tools <br>
-<input type="checkbox"> painting walls <br>
-<input type="checkbox"> hanging shelves <br>
-<input type="checkbox"> assembling furniture <br>
-<input type="checkbox"> cleaning windows <br>
-<input type="checkbox"> raising blinds <br>
-<input type="checkbox"> lowering blinds <br>
-<input type="checkbox"> sweeping patios <br>
-<input type="checkbox"> watering gardens <br>
-<input type="checkbox"> trimming plants <br>
-<input type="checkbox"> raking leaves <br>
-<input type="checkbox"> shoveling snow <br>
-<input type="checkbox"> salting sidewalks <br>
-<input type="checkbox"> maintaining yard tools <br>
-<input type="checkbox"> maintaining appliances <br>
-<input type="checkbox"> changing light bulbs <br>
-<input type="checkbox"> changing smoke alarm batteries <br>
-<input type="checkbox"> organizing drawers <br>
-<input type="checkbox"> decluttering rooms <br>
-<input type="checkbox"> labeling boxes <br>
-<input type="checkbox"> storing seasonal items <br>
+<div class="section">HOME LIFE &amp; DOMESTIC SKILLS</div>
+<input type="checkbox" id="cb652" data-label="washing clothes" class="cb">
+<label for="cb652" class="chip">washing clothes</label>
+<input type="checkbox" id="cb653" data-label="drying clothes" class="cb">
+<label for="cb653" class="chip">drying clothes</label>
+<input type="checkbox" id="cb654" data-label="folding clothes" class="cb">
+<label for="cb654" class="chip">folding clothes</label>
+<input type="checkbox" id="cb655" data-label="ironing clothes" class="cb">
+<label for="cb655" class="chip">ironing clothes</label>
+<input type="checkbox" id="cb656" data-label="organizing closets" class="cb">
+<label for="cb656" class="chip">organizing closets</label>
+<input type="checkbox" id="cb657" data-label="sorting laundry" class="cb">
+<label for="cb657" class="chip">sorting laundry</label>
+<input type="checkbox" id="cb658" data-label="repairing clothes" class="cb">
+<label for="cb658" class="chip">repairing clothes</label>
+<input type="checkbox" id="cb659" data-label="sewing buttons" class="cb">
+<label for="cb659" class="chip">sewing buttons</label>
+<input type="checkbox" id="cb660" data-label="handwashing delicate fabrics" class="cb">
+<label for="cb660" class="chip">handwashing delicate fabrics</label>
+<input type="checkbox" id="cb661" data-label="cleaning kitchen counters" class="cb">
+<label for="cb661" class="chip">cleaning kitchen counters</label>
+<input type="checkbox" id="cb662" data-label="scrubbing pans" class="cb">
+<label for="cb662" class="chip">scrubbing pans</label>
+<input type="checkbox" id="cb663" data-label="disinfecting surfaces" class="cb">
+<label for="cb663" class="chip">disinfecting surfaces</label>
+<input type="checkbox" id="cb664" data-label="organizing pantries" class="cb">
+<label for="cb664" class="chip">organizing pantries</label>
+<input type="checkbox" id="cb665" data-label="stocking food" class="cb">
+<label for="cb665" class="chip">stocking food</label>
+<input type="checkbox" id="cb666" data-label="meal planning" class="cb">
+<label for="cb666" class="chip">meal planning</label>
+<input type="checkbox" id="cb667" data-label="chopping vegetables" class="cb">
+<label for="cb667" class="chip">chopping vegetables</label>
+<input type="checkbox" id="cb668" data-label="frying meals" class="cb">
+<label for="cb668" class="chip">frying meals</label>
+<input type="checkbox" id="cb669" data-label="roasting food" class="cb">
+<label for="cb669" class="chip">roasting food</label>
+<input type="checkbox" id="cb670" data-label="boiling pasta" class="cb">
+<label for="cb670" class="chip">boiling pasta</label>
+<input type="checkbox" id="cb671" data-label="making soups" class="cb">
+<label for="cb671" class="chip">making soups</label>
+<input type="checkbox" id="cb672" data-label="baking cakes" class="cb">
+<label for="cb672" class="chip">baking cakes</label>
+<input type="checkbox" id="cb673" data-label="making bread" class="cb">
+<label for="cb673" class="chip">making bread</label>
+<input type="checkbox" id="cb674" data-label="decorating pastries" class="cb">
+<label for="cb674" class="chip">decorating pastries</label>
+<input type="checkbox" id="cb675" data-label="setting the table" class="cb">
+<label for="cb675" class="chip">setting the table</label>
+<input type="checkbox" id="cb676" data-label="washing floors" class="cb">
+<label for="cb676" class="chip">washing floors</label>
+<input type="checkbox" id="cb677" data-label="vacuuming carpets" class="cb">
+<label for="cb677" class="chip">vacuuming carpets</label>
+<input type="checkbox" id="cb678" data-label="scrubbing bathrooms" class="cb">
+<label for="cb678" class="chip">scrubbing bathrooms</label>
+<input type="checkbox" id="cb679" data-label="unclogging drains" class="cb">
+<label for="cb679" class="chip">unclogging drains</label>
+<input type="checkbox" id="cb680" data-label="fixing leaks" class="cb">
+<label for="cb680" class="chip">fixing leaks</label>
+<input type="checkbox" id="cb681" data-label="organizing cables" class="cb">
+<label for="cb681" class="chip">organizing cables</label>
+<input type="checkbox" id="cb682" data-label="emptying trash bins" class="cb">
+<label for="cb682" class="chip">emptying trash bins</label>
+<input type="checkbox" id="cb683" data-label="recycling plastics" class="cb">
+<label for="cb683" class="chip">recycling plastics</label>
+<input type="checkbox" id="cb684" data-label="composting food scraps" class="cb">
+<label for="cb684" class="chip">composting food scraps</label>
+<input type="checkbox" id="cb685" data-label="maintaining tools" class="cb">
+<label for="cb685" class="chip">maintaining tools</label>
+<input type="checkbox" id="cb686" data-label="painting walls" class="cb">
+<label for="cb686" class="chip">painting walls</label>
+<input type="checkbox" id="cb687" data-label="hanging shelves" class="cb">
+<label for="cb687" class="chip">hanging shelves</label>
+<input type="checkbox" id="cb688" data-label="assembling furniture" class="cb">
+<label for="cb688" class="chip">assembling furniture</label>
+<input type="checkbox" id="cb689" data-label="cleaning windows" class="cb">
+<label for="cb689" class="chip">cleaning windows</label>
+<input type="checkbox" id="cb690" data-label="raising blinds" class="cb">
+<label for="cb690" class="chip">raising blinds</label>
+<input type="checkbox" id="cb691" data-label="lowering blinds" class="cb">
+<label for="cb691" class="chip">lowering blinds</label>
+<input type="checkbox" id="cb692" data-label="sweeping patios" class="cb">
+<label for="cb692" class="chip">sweeping patios</label>
+<input type="checkbox" id="cb693" data-label="watering gardens" class="cb">
+<label for="cb693" class="chip">watering gardens</label>
+<input type="checkbox" id="cb694" data-label="trimming plants" class="cb">
+<label for="cb694" class="chip">trimming plants</label>
+<input type="checkbox" id="cb695" data-label="raking leaves" class="cb">
+<label for="cb695" class="chip">raking leaves</label>
+<input type="checkbox" id="cb696" data-label="shoveling snow" class="cb">
+<label for="cb696" class="chip">shoveling snow</label>
+<input type="checkbox" id="cb697" data-label="salting sidewalks" class="cb">
+<label for="cb697" class="chip">salting sidewalks</label>
+<input type="checkbox" id="cb698" data-label="maintaining yard tools" class="cb">
+<label for="cb698" class="chip">maintaining yard tools</label>
+<input type="checkbox" id="cb699" data-label="maintaining appliances" class="cb">
+<label for="cb699" class="chip">maintaining appliances</label>
+<input type="checkbox" id="cb700" data-label="changing light bulbs" class="cb">
+<label for="cb700" class="chip">changing light bulbs</label>
+<input type="checkbox" id="cb701" data-label="changing smoke alarm batteries" class="cb">
+<label for="cb701" class="chip">changing smoke alarm batteries</label>
+<input type="checkbox" id="cb702" data-label="organizing drawers" class="cb">
+<label for="cb702" class="chip">organizing drawers</label>
+<input type="checkbox" id="cb703" data-label="decluttering rooms" class="cb">
+<label for="cb703" class="chip">decluttering rooms</label>
+<input type="checkbox" id="cb704" data-label="labeling boxes" class="cb">
+<label for="cb704" class="chip">labeling boxes</label>
+<input type="checkbox" id="cb705" data-label="storing seasonal items" class="cb">
+<label for="cb705" class="chip">storing seasonal items</label>
 
-<!-- ENTERTAINMENT & LEISURE -->
-<input type="checkbox"> watching movies <br>
-<input type="checkbox"> binge-watching shows <br>
-<input type="checkbox"> rewatching favorites <br>
-<input type="checkbox"> listening to music <br>
-<input type="checkbox"> discovering new artists <br>
-<input type="checkbox"> making playlists <br>
-<input type="checkbox"> attending concerts <br>
-<input type="checkbox"> going to festivals <br>
-<input type="checkbox"> watching plays <br>
-<input type="checkbox"> attending theatre <br>
-<input type="checkbox"> going to museums <br>
-<input type="checkbox"> going to art galleries <br>
-<input type="checkbox"> doing puzzles <br>
-<input type="checkbox"> solving sudoku <br>
-<input type="checkbox"> solving crosswords <br>
-<input type="checkbox"> reading novels <br>
-<input type="checkbox"> reading nonfiction <br>
-<input type="checkbox"> reading poetry <br>
-<input type="checkbox"> reading comics <br>
-<input type="checkbox"> collecting manga <br>
-<input type="checkbox"> visiting bookstores <br>
-<input type="checkbox"> joining book clubs <br>
-<input type="checkbox"> listening to podcasts <br>
-<input type="checkbox"> writing reviews <br>
-<input type="checkbox"> watching documentaries <br>
-<input type="checkbox"> going bowling <br>
-<input type="checkbox"> playing mini-golf <br>
-<input type="checkbox"> playing darts <br>
-<input type="checkbox"> playing billiards <br>
-<input type="checkbox"> board gaming <br>
-<input type="checkbox"> card gaming <br>
-<input type="checkbox"> tabletop RPGs <br>
-<input type="checkbox"> painting miniatures <br>
-<input type="checkbox"> cosplaying <br>
-<input type="checkbox"> attending conventions <br>
-<input type="checkbox"> karaoke <br>
-<input type="checkbox"> traveling for fun <br>
-<input type="checkbox"> trying new restaurants <br>
-<input type="checkbox"> visiting cafés <br>
-<input type="checkbox"> watching sports <br>
-<input type="checkbox"> participating in sports <br>
-<input type="checkbox"> collecting items <br>
-<input type="checkbox"> journaling memories <br>
-<input type="checkbox"> scrapbooking <br>
-<input type="checkbox"> making photo albums <br>
-<input type="checkbox"> practicing magic tricks <br>
-<input type="checkbox"> attending workshops <br>
-<input type="checkbox"> exploring hobbies <br>
-<input type="checkbox"> learning new recipes <br>
-<input type="checkbox"> doing taste tests <br>
-<input type="checkbox"> hiking trails <br>
-<input type="checkbox"> taking scenic photos <br>
-<!-- FINANCES, ERRANDS & PRACTICAL LIFE -->
-<input type="checkbox"> budgeting monthly expenses <br>
-<input type="checkbox"> tracking spending <br>
-<input type="checkbox"> updating spreadsheets <br>
-<input type="checkbox"> paying rent <br>
-<input type="checkbox"> paying utilities <br>
-<input type="checkbox"> reviewing bank statements <br>
-<input type="checkbox"> transferring funds <br>
-<input type="checkbox"> depositing checks <br>
-<input type="checkbox"> grocery shopping <br>
-<input type="checkbox"> comparing prices <br>
-<input type="checkbox"> coupon clipping <br>
-<input type="checkbox"> returning items <br>
-<input type="checkbox"> mailing packages <br>
-<input type="checkbox"> picking up parcels <br>
-<input type="checkbox"> renewing subscriptions <br>
-<input type="checkbox"> canceling subscriptions <br>
-<input type="checkbox"> repairing electronics <br>
-<input type="checkbox"> ordering supplies <br>
-<input type="checkbox"> replacing batteries <br>
-<input type="checkbox"> washing the car <br>
-<input type="checkbox"> refueling the car <br>
-<input type="checkbox"> checking tire pressure <br>
-<input type="checkbox"> changing oil <br>
-<input type="checkbox"> maintaining bicycles <br>
-<input type="checkbox"> fixing flat tires <br>
-<input type="checkbox"> booking maintenance <br>
-<input type="checkbox"> filling out forms <br>
-<input type="checkbox"> filing taxes <br>
-<input type="checkbox"> organizing receipts <br>
+<div class="section">ENTERTAINMENT &amp; LEISURE</div>
+<input type="checkbox" id="cb706" data-label="watching movies" class="cb">
+<label for="cb706" class="chip">watching movies</label>
+<input type="checkbox" id="cb707" data-label="binge-watching shows" class="cb">
+<label for="cb707" class="chip">binge-watching shows</label>
+<input type="checkbox" id="cb708" data-label="rewatching favorites" class="cb">
+<label for="cb708" class="chip">rewatching favorites</label>
+<input type="checkbox" id="cb709" data-label="listening to music" class="cb">
+<label for="cb709" class="chip">listening to music</label>
+<input type="checkbox" id="cb710" data-label="discovering new artists" class="cb">
+<label for="cb710" class="chip">discovering new artists</label>
+<input type="checkbox" id="cb711" data-label="making playlists" class="cb">
+<label for="cb711" class="chip">making playlists</label>
+<input type="checkbox" id="cb712" data-label="attending concerts" class="cb">
+<label for="cb712" class="chip">attending concerts</label>
+<input type="checkbox" id="cb713" data-label="going to festivals" class="cb">
+<label for="cb713" class="chip">going to festivals</label>
+<input type="checkbox" id="cb714" data-label="watching plays" class="cb">
+<label for="cb714" class="chip">watching plays</label>
+<input type="checkbox" id="cb715" data-label="attending theatre" class="cb">
+<label for="cb715" class="chip">attending theatre</label>
+<input type="checkbox" id="cb716" data-label="going to museums" class="cb">
+<label for="cb716" class="chip">going to museums</label>
+<input type="checkbox" id="cb717" data-label="going to art galleries" class="cb">
+<label for="cb717" class="chip">going to art galleries</label>
+<input type="checkbox" id="cb718" data-label="doing puzzles" class="cb">
+<label for="cb718" class="chip">doing puzzles</label>
+<input type="checkbox" id="cb719" data-label="solving sudoku" class="cb">
+<label for="cb719" class="chip">solving sudoku</label>
+<input type="checkbox" id="cb720" data-label="solving crosswords" class="cb">
+<label for="cb720" class="chip">solving crosswords</label>
+<input type="checkbox" id="cb721" data-label="reading novels" class="cb">
+<label for="cb721" class="chip">reading novels</label>
+<input type="checkbox" id="cb722" data-label="reading nonfiction" class="cb">
+<label for="cb722" class="chip">reading nonfiction</label>
+<input type="checkbox" id="cb723" data-label="reading poetry" class="cb">
+<label for="cb723" class="chip">reading poetry</label>
+<input type="checkbox" id="cb724" data-label="reading comics" class="cb">
+<label for="cb724" class="chip">reading comics</label>
+<input type="checkbox" id="cb725" data-label="collecting manga" class="cb">
+<label for="cb725" class="chip">collecting manga</label>
+<input type="checkbox" id="cb726" data-label="visiting bookstores" class="cb">
+<label for="cb726" class="chip">visiting bookstores</label>
+<input type="checkbox" id="cb727" data-label="joining book clubs" class="cb">
+<label for="cb727" class="chip">joining book clubs</label>
+<input type="checkbox" id="cb728" data-label="listening to podcasts" class="cb">
+<label for="cb728" class="chip">listening to podcasts</label>
+<input type="checkbox" id="cb729" data-label="writing reviews" class="cb">
+<label for="cb729" class="chip">writing reviews</label>
+<input type="checkbox" id="cb730" data-label="watching documentaries" class="cb">
+<label for="cb730" class="chip">watching documentaries</label>
+<input type="checkbox" id="cb731" data-label="going bowling" class="cb">
+<label for="cb731" class="chip">going bowling</label>
+<input type="checkbox" id="cb732" data-label="playing mini-golf" class="cb">
+<label for="cb732" class="chip">playing mini-golf</label>
+<input type="checkbox" id="cb733" data-label="playing darts" class="cb">
+<label for="cb733" class="chip">playing darts</label>
+<input type="checkbox" id="cb734" data-label="playing billiards" class="cb">
+<label for="cb734" class="chip">playing billiards</label>
+<input type="checkbox" id="cb735" data-label="board gaming" class="cb">
+<label for="cb735" class="chip">board gaming</label>
+<input type="checkbox" id="cb736" data-label="card gaming" class="cb">
+<label for="cb736" class="chip">card gaming</label>
+<input type="checkbox" id="cb737" data-label="tabletop RPGs" class="cb">
+<label for="cb737" class="chip">tabletop RPGs</label>
+<input type="checkbox" id="cb738" data-label="painting miniatures" class="cb">
+<label for="cb738" class="chip">painting miniatures</label>
+<input type="checkbox" id="cb739" data-label="cosplaying" class="cb">
+<label for="cb739" class="chip">cosplaying</label>
+<input type="checkbox" id="cb740" data-label="attending conventions" class="cb">
+<label for="cb740" class="chip">attending conventions</label>
+<input type="checkbox" id="cb741" data-label="karaoke" class="cb">
+<label for="cb741" class="chip">karaoke</label>
+<input type="checkbox" id="cb742" data-label="traveling for fun" class="cb">
+<label for="cb742" class="chip">traveling for fun</label>
+<input type="checkbox" id="cb743" data-label="trying new restaurants" class="cb">
+<label for="cb743" class="chip">trying new restaurants</label>
+<input type="checkbox" id="cb744" data-label="visiting cafés" class="cb">
+<label for="cb744" class="chip">visiting cafés</label>
+<input type="checkbox" id="cb745" data-label="watching sports" class="cb">
+<label for="cb745" class="chip">watching sports</label>
+<input type="checkbox" id="cb746" data-label="participating in sports" class="cb">
+<label for="cb746" class="chip">participating in sports</label>
+<input type="checkbox" id="cb747" data-label="collecting items" class="cb">
+<label for="cb747" class="chip">collecting items</label>
+<input type="checkbox" id="cb748" data-label="journaling memories" class="cb">
+<label for="cb748" class="chip">journaling memories</label>
+<input type="checkbox" id="cb749" data-label="scrapbooking" class="cb">
+<label for="cb749" class="chip">scrapbooking</label>
+<input type="checkbox" id="cb750" data-label="making photo albums" class="cb">
+<label for="cb750" class="chip">making photo albums</label>
+<input type="checkbox" id="cb751" data-label="practicing magic tricks" class="cb">
+<label for="cb751" class="chip">practicing magic tricks</label>
+<input type="checkbox" id="cb752" data-label="attending workshops" class="cb">
+<label for="cb752" class="chip">attending workshops</label>
+<input type="checkbox" id="cb753" data-label="exploring hobbies" class="cb">
+<label for="cb753" class="chip">exploring hobbies</label>
+<input type="checkbox" id="cb754" data-label="learning new recipes" class="cb">
+<label for="cb754" class="chip">learning new recipes</label>
+<input type="checkbox" id="cb755" data-label="doing taste tests" class="cb">
+<label for="cb755" class="chip">doing taste tests</label>
+<input type="checkbox" id="cb756" data-label="hiking trails" class="cb">
+<label for="cb756" class="chip">hiking trails</label>
+<input type="checkbox" id="cb757" data-label="taking scenic photos" class="cb">
+<label for="cb757" class="chip">taking scenic photos</label>
+<div class="section">FINANCES, ERRANDS &amp; PRACTICAL LIFE</div>
+<input type="checkbox" id="cb758" data-label="budgeting monthly expenses" class="cb">
+<label for="cb758" class="chip">budgeting monthly expenses</label>
+<input type="checkbox" id="cb759" data-label="tracking spending" class="cb">
+<label for="cb759" class="chip">tracking spending</label>
+<input type="checkbox" id="cb760" data-label="updating spreadsheets" class="cb">
+<label for="cb760" class="chip">updating spreadsheets</label>
+<input type="checkbox" id="cb761" data-label="paying rent" class="cb">
+<label for="cb761" class="chip">paying rent</label>
+<input type="checkbox" id="cb762" data-label="paying utilities" class="cb">
+<label for="cb762" class="chip">paying utilities</label>
+<input type="checkbox" id="cb763" data-label="reviewing bank statements" class="cb">
+<label for="cb763" class="chip">reviewing bank statements</label>
+<input type="checkbox" id="cb764" data-label="transferring funds" class="cb">
+<label for="cb764" class="chip">transferring funds</label>
+<input type="checkbox" id="cb765" data-label="depositing checks" class="cb">
+<label for="cb765" class="chip">depositing checks</label>
+<input type="checkbox" id="cb766" data-label="grocery shopping" class="cb">
+<label for="cb766" class="chip">grocery shopping</label>
+<input type="checkbox" id="cb767" data-label="comparing prices" class="cb">
+<label for="cb767" class="chip">comparing prices</label>
+<input type="checkbox" id="cb768" data-label="coupon clipping" class="cb">
+<label for="cb768" class="chip">coupon clipping</label>
+<input type="checkbox" id="cb769" data-label="returning items" class="cb">
+<label for="cb769" class="chip">returning items</label>
+<input type="checkbox" id="cb770" data-label="mailing packages" class="cb">
+<label for="cb770" class="chip">mailing packages</label>
+<input type="checkbox" id="cb771" data-label="picking up parcels" class="cb">
+<label for="cb771" class="chip">picking up parcels</label>
+<input type="checkbox" id="cb772" data-label="renewing subscriptions" class="cb">
+<label for="cb772" class="chip">renewing subscriptions</label>
+<input type="checkbox" id="cb773" data-label="canceling subscriptions" class="cb">
+<label for="cb773" class="chip">canceling subscriptions</label>
+<input type="checkbox" id="cb774" data-label="repairing electronics" class="cb">
+<label for="cb774" class="chip">repairing electronics</label>
+<input type="checkbox" id="cb775" data-label="ordering supplies" class="cb">
+<label for="cb775" class="chip">ordering supplies</label>
+<input type="checkbox" id="cb776" data-label="replacing batteries" class="cb">
+<label for="cb776" class="chip">replacing batteries</label>
+<input type="checkbox" id="cb777" data-label="washing the car" class="cb">
+<label for="cb777" class="chip">washing the car</label>
+<input type="checkbox" id="cb778" data-label="refueling the car" class="cb">
+<label for="cb778" class="chip">refueling the car</label>
+<input type="checkbox" id="cb779" data-label="checking tire pressure" class="cb">
+<label for="cb779" class="chip">checking tire pressure</label>
+<input type="checkbox" id="cb780" data-label="changing oil" class="cb">
+<label for="cb780" class="chip">changing oil</label>
+<input type="checkbox" id="cb781" data-label="maintaining bicycles" class="cb">
+<label for="cb781" class="chip">maintaining bicycles</label>
+<input type="checkbox" id="cb782" data-label="fixing flat tires" class="cb">
+<label for="cb782" class="chip">fixing flat tires</label>
+<input type="checkbox" id="cb783" data-label="booking maintenance" class="cb">
+<label for="cb783" class="chip">booking maintenance</label>
+<input type="checkbox" id="cb784" data-label="filling out forms" class="cb">
+<label for="cb784" class="chip">filling out forms</label>
+<input type="checkbox" id="cb785" data-label="filing taxes" class="cb">
+<label for="cb785" class="chip">filing taxes</label>
+<input type="checkbox" id="cb786" data-label="organizing receipts" class="cb">
+<label for="cb786" class="chip">organizing receipts</label>
 
-<!-- SOCIAL, RELATIONAL, COMMUNITY -->
-<input type="checkbox"> making new friends <br>
-<input type="checkbox"> maintaining friendships <br>
-<input type="checkbox"> comforting loved ones <br>
-<input type="checkbox"> planning hangouts <br>
-<input type="checkbox"> meeting for coffee <br>
-<input type="checkbox"> giving gifts <br>
-<input type="checkbox"> receiving gifts <br>
-<input type="checkbox"> writing letters <br>
-<input type="checkbox"> sending postcards <br>
-<input type="checkbox"> celebrating birthdays <br>
-<input type="checkbox"> celebrating anniversaries <br>
-<input type="checkbox"> attending weddings <br>
-<input type="checkbox"> attending funerals <br>
-<input type="checkbox"> visiting family <br>
-<input type="checkbox"> hosting gatherings <br>
-<input type="checkbox"> cooking for friends <br>
-<input type="checkbox"> sharing meals <br>
-<input type="checkbox"> checking in on people <br>
-<input type="checkbox"> mediating conflicts <br>
-<input type="checkbox"> resolving misunderstandings <br>
-<input type="checkbox"> offering support <br>
-<input type="checkbox"> asking for support <br>
-<input type="checkbox"> learning boundaries <br>
-<input type="checkbox"> practicing assertiveness <br>
-<input type="checkbox"> giving compliments <br>
-<input type="checkbox"> receiving compliments <br>
-<input type="checkbox"> flirting <br>
-<input type="checkbox"> dating <br>
-<input type="checkbox"> introspecting about relationships <br>
-<input type="checkbox"> navigating heartbreak <br>
-<input type="checkbox"> rebuilding confidence <br>
-<input type="checkbox"> expressing affection <br>
-<input type="checkbox"> expressing gratitude <br>
-<input type="checkbox"> saying goodbye <br>
-<input type="checkbox"> saying hello <br>
-<input type="checkbox"> apologizing sincerely <br>
-<input type="checkbox"> initiating conversations <br>
-<input type="checkbox"> deep listening <br>
-<input type="checkbox"> empathizing deeply <br>
+<div class="section">SOCIAL, RELATIONAL, COMMUNITY</div>
+<input type="checkbox" id="cb787" data-label="making new friends" class="cb">
+<label for="cb787" class="chip">making new friends</label>
+<input type="checkbox" id="cb788" data-label="maintaining friendships" class="cb">
+<label for="cb788" class="chip">maintaining friendships</label>
+<input type="checkbox" id="cb789" data-label="comforting loved ones" class="cb">
+<label for="cb789" class="chip">comforting loved ones</label>
+<input type="checkbox" id="cb790" data-label="planning hangouts" class="cb">
+<label for="cb790" class="chip">planning hangouts</label>
+<input type="checkbox" id="cb791" data-label="meeting for coffee" class="cb">
+<label for="cb791" class="chip">meeting for coffee</label>
+<input type="checkbox" id="cb792" data-label="giving gifts" class="cb">
+<label for="cb792" class="chip">giving gifts</label>
+<input type="checkbox" id="cb793" data-label="receiving gifts" class="cb">
+<label for="cb793" class="chip">receiving gifts</label>
+<input type="checkbox" id="cb794" data-label="writing letters" class="cb">
+<label for="cb794" class="chip">writing letters</label>
+<input type="checkbox" id="cb795" data-label="sending postcards" class="cb">
+<label for="cb795" class="chip">sending postcards</label>
+<input type="checkbox" id="cb796" data-label="celebrating birthdays" class="cb">
+<label for="cb796" class="chip">celebrating birthdays</label>
+<input type="checkbox" id="cb797" data-label="celebrating anniversaries" class="cb">
+<label for="cb797" class="chip">celebrating anniversaries</label>
+<input type="checkbox" id="cb798" data-label="attending weddings" class="cb">
+<label for="cb798" class="chip">attending weddings</label>
+<input type="checkbox" id="cb799" data-label="attending funerals" class="cb">
+<label for="cb799" class="chip">attending funerals</label>
+<input type="checkbox" id="cb800" data-label="visiting family" class="cb">
+<label for="cb800" class="chip">visiting family</label>
+<input type="checkbox" id="cb801" data-label="hosting gatherings" class="cb">
+<label for="cb801" class="chip">hosting gatherings</label>
+<input type="checkbox" id="cb802" data-label="cooking for friends" class="cb">
+<label for="cb802" class="chip">cooking for friends</label>
+<input type="checkbox" id="cb803" data-label="sharing meals" class="cb">
+<label for="cb803" class="chip">sharing meals</label>
+<input type="checkbox" id="cb804" data-label="checking in on people" class="cb">
+<label for="cb804" class="chip">checking in on people</label>
+<input type="checkbox" id="cb805" data-label="mediating conflicts" class="cb">
+<label for="cb805" class="chip">mediating conflicts</label>
+<input type="checkbox" id="cb806" data-label="resolving misunderstandings" class="cb">
+<label for="cb806" class="chip">resolving misunderstandings</label>
+<input type="checkbox" id="cb807" data-label="offering support" class="cb">
+<label for="cb807" class="chip">offering support</label>
+<input type="checkbox" id="cb808" data-label="asking for support" class="cb">
+<label for="cb808" class="chip">asking for support</label>
+<input type="checkbox" id="cb809" data-label="learning boundaries" class="cb">
+<label for="cb809" class="chip">learning boundaries</label>
+<input type="checkbox" id="cb810" data-label="practicing assertiveness" class="cb">
+<label for="cb810" class="chip">practicing assertiveness</label>
+<input type="checkbox" id="cb811" data-label="giving compliments" class="cb">
+<label for="cb811" class="chip">giving compliments</label>
+<input type="checkbox" id="cb812" data-label="receiving compliments" class="cb">
+<label for="cb812" class="chip">receiving compliments</label>
+<input type="checkbox" id="cb813" data-label="flirting" class="cb">
+<label for="cb813" class="chip">flirting</label>
+<input type="checkbox" id="cb814" data-label="dating" class="cb">
+<label for="cb814" class="chip">dating</label>
+<input type="checkbox" id="cb815" data-label="introspecting about relationships" class="cb">
+<label for="cb815" class="chip">introspecting about relationships</label>
+<input type="checkbox" id="cb816" data-label="navigating heartbreak" class="cb">
+<label for="cb816" class="chip">navigating heartbreak</label>
+<input type="checkbox" id="cb817" data-label="rebuilding confidence" class="cb">
+<label for="cb817" class="chip">rebuilding confidence</label>
+<input type="checkbox" id="cb818" data-label="expressing affection" class="cb">
+<label for="cb818" class="chip">expressing affection</label>
+<input type="checkbox" id="cb819" data-label="expressing gratitude" class="cb">
+<label for="cb819" class="chip">expressing gratitude</label>
+<input type="checkbox" id="cb820" data-label="saying goodbye" class="cb">
+<label for="cb820" class="chip">saying goodbye</label>
+<input type="checkbox" id="cb821" data-label="saying hello" class="cb">
+<label for="cb821" class="chip">saying hello</label>
+<input type="checkbox" id="cb822" data-label="apologizing sincerely" class="cb">
+<label for="cb822" class="chip">apologizing sincerely</label>
+<input type="checkbox" id="cb823" data-label="initiating conversations" class="cb">
+<label for="cb823" class="chip">initiating conversations</label>
+<input type="checkbox" id="cb824" data-label="deep listening" class="cb">
+<label for="cb824" class="chip">deep listening</label>
+<input type="checkbox" id="cb825" data-label="empathizing deeply" class="cb">
+<label for="cb825" class="chip">empathizing deeply</label>
 
-<!-- SPIRITUALITY & REFLECTION -->
-<input type="checkbox"> praying <br>
-<input type="checkbox"> meditating in silence <br>
-<input type="checkbox"> lighting incense <br>
-<input type="checkbox"> reading sacred texts <br>
-<input type="checkbox"> contemplating existence <br>
-<input type="checkbox"> practicing gratitude <br>
-<input type="checkbox"> attending spiritual gatherings <br>
-<input type="checkbox"> connecting with nature <br>
-<input type="checkbox"> walking labyrinths <br>
-<input type="checkbox"> chanting <br>
-<input type="checkbox"> journaling spiritually <br>
-<input type="checkbox"> making altars <br>
-<input type="checkbox"> leaving offerings <br>
-<input type="checkbox"> mindful breathing <br>
-<input type="checkbox"> vow setting <br>
+<div class="section">SPIRITUALITY &amp; REFLECTION</div>
+<input type="checkbox" id="cb826" data-label="praying" class="cb">
+<label for="cb826" class="chip">praying</label>
+<input type="checkbox" id="cb827" data-label="meditating in silence" class="cb">
+<label for="cb827" class="chip">meditating in silence</label>
+<input type="checkbox" id="cb828" data-label="lighting incense" class="cb">
+<label for="cb828" class="chip">lighting incense</label>
+<input type="checkbox" id="cb829" data-label="reading sacred texts" class="cb">
+<label for="cb829" class="chip">reading sacred texts</label>
+<input type="checkbox" id="cb830" data-label="contemplating existence" class="cb">
+<label for="cb830" class="chip">contemplating existence</label>
+<input type="checkbox" id="cb831" data-label="practicing gratitude" class="cb">
+<label for="cb831" class="chip">practicing gratitude</label>
+<input type="checkbox" id="cb832" data-label="attending spiritual gatherings" class="cb">
+<label for="cb832" class="chip">attending spiritual gatherings</label>
+<input type="checkbox" id="cb833" data-label="connecting with nature" class="cb">
+<label for="cb833" class="chip">connecting with nature</label>
+<input type="checkbox" id="cb834" data-label="walking labyrinths" class="cb">
+<label for="cb834" class="chip">walking labyrinths</label>
+<input type="checkbox" id="cb835" data-label="chanting" class="cb">
+<label for="cb835" class="chip">chanting</label>
+<input type="checkbox" id="cb836" data-label="journaling spiritually" class="cb">
+<label for="cb836" class="chip">journaling spiritually</label>
+<input type="checkbox" id="cb837" data-label="making altars" class="cb">
+<label for="cb837" class="chip">making altars</label>
+<input type="checkbox" id="cb838" data-label="leaving offerings" class="cb">
+<label for="cb838" class="chip">leaving offerings</label>
+<input type="checkbox" id="cb839" data-label="mindful breathing" class="cb">
+<label for="cb839" class="chip">mindful breathing</label>
+<input type="checkbox" id="cb840" data-label="vow setting" class="cb">
+<label for="cb840" class="chip">vow setting</label>
 
-<!-- CREATIVE, ARTISTIC, EXPRESSIVE -->
-<input type="checkbox"> storytelling <br>
-<input type="checkbox"> creating characters <br>
-<input type="checkbox"> worldbuilding <br>
-<input type="checkbox"> writing essays <br>
-<input type="checkbox"> writing scripts <br>
-<input type="checkbox"> podcast scripting <br>
-<input type="checkbox"> painting murals <br>
-<input type="checkbox"> sculpting clay <br>
-<input type="checkbox"> composing music <br>
-<input type="checkbox"> mixing music <br>
-<input type="checkbox"> beat making <br>
-<input type="checkbox"> singing in harmonies <br>
-<input type="checkbox"> dancing freestyle <br>
-<input type="checkbox"> choreographing dances <br>
-<input type="checkbox"> writing poetry <br>
-<input type="checkbox"> performing poetry <br>
-<input type="checkbox"> creating zines <br>
-<input type="checkbox"> designing posters <br>
-<input type="checkbox"> journaling fiction ideas <br>
-<input type="checkbox"> scrapbooking memories <br>
-<input type="checkbox"> collecting art references <br>
-<input type="checkbox"> photographing nature <br>
-<input type="checkbox"> photographing people <br>
-<input type="checkbox"> staging photoshoots <br>
-<input type="checkbox"> retouching photos <br>
-<input type="checkbox"> animating 2D art <br>
-<input type="checkbox"> animating 3D scenes <br>
-<input type="checkbox"> drawing digitally <br>
-<input type="checkbox"> pixel art design <br>
-<input type="checkbox"> sprite sheet creation <br>
-<input type="checkbox"> VFX design <br>
-<input type="checkbox"> storyboard creation <br>
-<input type="checkbox"> writing comic panels <br>
-<input type="checkbox"> designing outfits <br>
-<input type="checkbox"> costuming <br>
-<input type="checkbox"> prop making <br>
+<div class="section">CREATIVE, ARTISTIC, EXPRESSIVE</div>
+<input type="checkbox" id="cb841" data-label="storytelling" class="cb">
+<label for="cb841" class="chip">storytelling</label>
+<input type="checkbox" id="cb842" data-label="creating characters" class="cb">
+<label for="cb842" class="chip">creating characters</label>
+<input type="checkbox" id="cb843" data-label="worldbuilding" class="cb">
+<label for="cb843" class="chip">worldbuilding</label>
+<input type="checkbox" id="cb844" data-label="writing essays" class="cb">
+<label for="cb844" class="chip">writing essays</label>
+<input type="checkbox" id="cb845" data-label="writing scripts" class="cb">
+<label for="cb845" class="chip">writing scripts</label>
+<input type="checkbox" id="cb846" data-label="podcast scripting" class="cb">
+<label for="cb846" class="chip">podcast scripting</label>
+<input type="checkbox" id="cb847" data-label="painting murals" class="cb">
+<label for="cb847" class="chip">painting murals</label>
+<input type="checkbox" id="cb848" data-label="sculpting clay" class="cb">
+<label for="cb848" class="chip">sculpting clay</label>
+<input type="checkbox" id="cb849" data-label="composing music" class="cb">
+<label for="cb849" class="chip">composing music</label>
+<input type="checkbox" id="cb850" data-label="mixing music" class="cb">
+<label for="cb850" class="chip">mixing music</label>
+<input type="checkbox" id="cb851" data-label="beat making" class="cb">
+<label for="cb851" class="chip">beat making</label>
+<input type="checkbox" id="cb852" data-label="singing in harmonies" class="cb">
+<label for="cb852" class="chip">singing in harmonies</label>
+<input type="checkbox" id="cb853" data-label="dancing freestyle" class="cb">
+<label for="cb853" class="chip">dancing freestyle</label>
+<input type="checkbox" id="cb854" data-label="choreographing dances" class="cb">
+<label for="cb854" class="chip">choreographing dances</label>
+<input type="checkbox" id="cb855" data-label="writing poetry" class="cb">
+<label for="cb855" class="chip">writing poetry</label>
+<input type="checkbox" id="cb856" data-label="performing poetry" class="cb">
+<label for="cb856" class="chip">performing poetry</label>
+<input type="checkbox" id="cb857" data-label="creating zines" class="cb">
+<label for="cb857" class="chip">creating zines</label>
+<input type="checkbox" id="cb858" data-label="designing posters" class="cb">
+<label for="cb858" class="chip">designing posters</label>
+<input type="checkbox" id="cb859" data-label="journaling fiction ideas" class="cb">
+<label for="cb859" class="chip">journaling fiction ideas</label>
+<input type="checkbox" id="cb860" data-label="scrapbooking memories" class="cb">
+<label for="cb860" class="chip">scrapbooking memories</label>
+<input type="checkbox" id="cb861" data-label="collecting art references" class="cb">
+<label for="cb861" class="chip">collecting art references</label>
+<input type="checkbox" id="cb862" data-label="photographing nature" class="cb">
+<label for="cb862" class="chip">photographing nature</label>
+<input type="checkbox" id="cb863" data-label="photographing people" class="cb">
+<label for="cb863" class="chip">photographing people</label>
+<input type="checkbox" id="cb864" data-label="staging photoshoots" class="cb">
+<label for="cb864" class="chip">staging photoshoots</label>
+<input type="checkbox" id="cb865" data-label="retouching photos" class="cb">
+<label for="cb865" class="chip">retouching photos</label>
+<input type="checkbox" id="cb866" data-label="animating 2D art" class="cb">
+<label for="cb866" class="chip">animating 2D art</label>
+<input type="checkbox" id="cb867" data-label="animating 3D scenes" class="cb">
+<label for="cb867" class="chip">animating 3D scenes</label>
+<input type="checkbox" id="cb868" data-label="drawing digitally" class="cb">
+<label for="cb868" class="chip">drawing digitally</label>
+<input type="checkbox" id="cb869" data-label="pixel art design" class="cb">
+<label for="cb869" class="chip">pixel art design</label>
+<input type="checkbox" id="cb870" data-label="sprite sheet creation" class="cb">
+<label for="cb870" class="chip">sprite sheet creation</label>
+<input type="checkbox" id="cb871" data-label="VFX design" class="cb">
+<label for="cb871" class="chip">VFX design</label>
+<input type="checkbox" id="cb872" data-label="storyboard creation" class="cb">
+<label for="cb872" class="chip">storyboard creation</label>
+<input type="checkbox" id="cb873" data-label="writing comic panels" class="cb">
+<label for="cb873" class="chip">writing comic panels</label>
+<input type="checkbox" id="cb874" data-label="designing outfits" class="cb">
+<label for="cb874" class="chip">designing outfits</label>
+<input type="checkbox" id="cb875" data-label="costuming" class="cb">
+<label for="cb875" class="chip">costuming</label>
+<input type="checkbox" id="cb876" data-label="prop making" class="cb">
+<label for="cb876" class="chip">prop making</label>
 
-<!-- SCIENCE, CURIOSITY, LEARNING -->
-<input type="checkbox"> observing nature <br>
-<input type="checkbox"> collecting samples <br>
-<input type="checkbox"> cataloging findings <br>
-<input type="checkbox"> doing science experiments <br>
-<input type="checkbox"> tracking weather <br>
-<input type="checkbox"> building simple machines <br>
-<input type="checkbox"> studying physics <br>
-<input type="checkbox"> studying chemistry <br>
-<input type="checkbox"> studying biology <br>
-<input type="checkbox"> studying astronomy <br>
-<input type="checkbox"> solving math problems <br>
-<input type="checkbox"> writing equations <br>
-<input type="checkbox"> modeling data <br>
-<input type="checkbox"> observing stars <br>
-<input type="checkbox"> using telescopes <br>
-<input type="checkbox"> collecting rocks <br>
-<input type="checkbox"> identifying minerals <br>
-<input type="checkbox"> logging field notes <br>
-<input type="checkbox"> reading research articles <br>
-<input type="checkbox"> participating in citizen science <br>
-<input type="checkbox"> exploring museums <br>
+<div class="section">SCIENCE, CURIOSITY, LEARNING</div>
+<input type="checkbox" id="cb877" data-label="observing nature" class="cb">
+<label for="cb877" class="chip">observing nature</label>
+<input type="checkbox" id="cb878" data-label="collecting samples" class="cb">
+<label for="cb878" class="chip">collecting samples</label>
+<input type="checkbox" id="cb879" data-label="cataloging findings" class="cb">
+<label for="cb879" class="chip">cataloging findings</label>
+<input type="checkbox" id="cb880" data-label="doing science experiments" class="cb">
+<label for="cb880" class="chip">doing science experiments</label>
+<input type="checkbox" id="cb881" data-label="tracking weather" class="cb">
+<label for="cb881" class="chip">tracking weather</label>
+<input type="checkbox" id="cb882" data-label="building simple machines" class="cb">
+<label for="cb882" class="chip">building simple machines</label>
+<input type="checkbox" id="cb883" data-label="studying physics" class="cb">
+<label for="cb883" class="chip">studying physics</label>
+<input type="checkbox" id="cb884" data-label="studying chemistry" class="cb">
+<label for="cb884" class="chip">studying chemistry</label>
+<input type="checkbox" id="cb885" data-label="studying biology" class="cb">
+<label for="cb885" class="chip">studying biology</label>
+<input type="checkbox" id="cb886" data-label="studying astronomy" class="cb">
+<label for="cb886" class="chip">studying astronomy</label>
+<input type="checkbox" id="cb887" data-label="solving math problems" class="cb">
+<label for="cb887" class="chip">solving math problems</label>
+<input type="checkbox" id="cb888" data-label="writing equations" class="cb">
+<label for="cb888" class="chip">writing equations</label>
+<input type="checkbox" id="cb889" data-label="modeling data" class="cb">
+<label for="cb889" class="chip">modeling data</label>
+<input type="checkbox" id="cb890" data-label="observing stars" class="cb">
+<label for="cb890" class="chip">observing stars</label>
+<input type="checkbox" id="cb891" data-label="using telescopes" class="cb">
+<label for="cb891" class="chip">using telescopes</label>
+<input type="checkbox" id="cb892" data-label="collecting rocks" class="cb">
+<label for="cb892" class="chip">collecting rocks</label>
+<input type="checkbox" id="cb893" data-label="identifying minerals" class="cb">
+<label for="cb893" class="chip">identifying minerals</label>
+<input type="checkbox" id="cb894" data-label="logging field notes" class="cb">
+<label for="cb894" class="chip">logging field notes</label>
+<input type="checkbox" id="cb895" data-label="reading research articles" class="cb">
+<label for="cb895" class="chip">reading research articles</label>
+<input type="checkbox" id="cb896" data-label="participating in citizen science" class="cb">
+<label for="cb896" class="chip">participating in citizen science</label>
+<input type="checkbox" id="cb897" data-label="exploring museums" class="cb">
+<label for="cb897" class="chip">exploring museums</label>
 
-<!-- FINAL 200: EVERYTHING ELSE HUMANS DO -->
-<input type="checkbox"> stretching after sleep <br>
-<input type="checkbox"> reacting to news <br>
-<input type="checkbox"> forming opinions <br>
-<input type="checkbox"> changing opinions <br>
-<input type="checkbox"> feeling inspired <br>
-<input type="checkbox"> feeling discouraged <br>
-<input type="checkbox"> overcoming fear <br>
-<input type="checkbox"> procrastinating <br>
-<input type="checkbox"> planning future goals <br>
-<input type="checkbox"> sharing experiences <br>
-<input type="checkbox"> rewriting memories <br>
-<input type="checkbox"> replaying conversations <br>
-<input type="checkbox"> laughing at memes <br>
-<input type="checkbox"> sending voice notes <br>
-<input type="checkbox"> reacting with emojis <br>
-<input type="checkbox"> analyzing dreams <br>
-<input type="checkbox"> making wishes <br>
-<input type="checkbox"> evaluating risks <br>
-<input type="checkbox"> managing impulses <br>
-<input type="checkbox"> resisting temptations <br>
-<input type="checkbox"> indulging desires <br>
-<input type="checkbox"> oversharing <br>
-<input type="checkbox"> holding back <br>
-<input type="checkbox"> expressing vulnerability <br>
-<input type="checkbox"> rehearsing conversations <br>
-<input type="checkbox"> feeling déjà vu <br>
-<input type="checkbox"> sensing danger <br>
-<input type="checkbox"> adapting to change <br>
-<input type="checkbox"> seeking closure <br>
-<input type="checkbox"> embracing new routines <br>
-<input type="checkbox"> reshaping identity <br>
-<input type="checkbox"> grieving past versions of yourself <br>
-<input type="checkbox"> romanticizing life <br>
-<input type="checkbox"> savoring moments <br>
-<input type="checkbox"> cherishing memories <br>
-<input type="checkbox"> striving for purpose <br>
-<input type="checkbox"> nurturing curiosity <br>
-<input type="checkbox"> exploring possibilities <br>
-<input type="checkbox"> wandering aimlessly <br>
-<input type="checkbox"> cultivating patience <br>
-<input type="checkbox"> navigating uncertainty <br>
-<input type="checkbox"> repairing mistakes <br>
-<input type="checkbox"> creating new habits <br>
-<input type="checkbox"> breaking old habits <br>
-<input type="checkbox"> evolving <br>
-<input type="checkbox"> learning continuously <br>
-<input type="checkbox"> being human <br>
+<div class="section">FINAL 200: EVERYTHING ELSE HUMANS DO</div>
+<input type="checkbox" id="cb898" data-label="stretching after sleep" class="cb">
+<label for="cb898" class="chip">stretching after sleep</label>
+<input type="checkbox" id="cb899" data-label="reacting to news" class="cb">
+<label for="cb899" class="chip">reacting to news</label>
+<input type="checkbox" id="cb900" data-label="forming opinions" class="cb">
+<label for="cb900" class="chip">forming opinions</label>
+<input type="checkbox" id="cb901" data-label="changing opinions" class="cb">
+<label for="cb901" class="chip">changing opinions</label>
+<input type="checkbox" id="cb902" data-label="feeling inspired" class="cb">
+<label for="cb902" class="chip">feeling inspired</label>
+<input type="checkbox" id="cb903" data-label="feeling discouraged" class="cb">
+<label for="cb903" class="chip">feeling discouraged</label>
+<input type="checkbox" id="cb904" data-label="overcoming fear" class="cb">
+<label for="cb904" class="chip">overcoming fear</label>
+<input type="checkbox" id="cb905" data-label="procrastinating" class="cb">
+<label for="cb905" class="chip">procrastinating</label>
+<input type="checkbox" id="cb906" data-label="planning future goals" class="cb">
+<label for="cb906" class="chip">planning future goals</label>
+<input type="checkbox" id="cb907" data-label="sharing experiences" class="cb">
+<label for="cb907" class="chip">sharing experiences</label>
+<input type="checkbox" id="cb908" data-label="rewriting memories" class="cb">
+<label for="cb908" class="chip">rewriting memories</label>
+<input type="checkbox" id="cb909" data-label="replaying conversations" class="cb">
+<label for="cb909" class="chip">replaying conversations</label>
+<input type="checkbox" id="cb910" data-label="laughing at memes" class="cb">
+<label for="cb910" class="chip">laughing at memes</label>
+<input type="checkbox" id="cb911" data-label="sending voice notes" class="cb">
+<label for="cb911" class="chip">sending voice notes</label>
+<input type="checkbox" id="cb912" data-label="reacting with emojis" class="cb">
+<label for="cb912" class="chip">reacting with emojis</label>
+<input type="checkbox" id="cb913" data-label="analyzing dreams" class="cb">
+<label for="cb913" class="chip">analyzing dreams</label>
+<input type="checkbox" id="cb914" data-label="making wishes" class="cb">
+<label for="cb914" class="chip">making wishes</label>
+<input type="checkbox" id="cb915" data-label="evaluating risks" class="cb">
+<label for="cb915" class="chip">evaluating risks</label>
+<input type="checkbox" id="cb916" data-label="managing impulses" class="cb">
+<label for="cb916" class="chip">managing impulses</label>
+<input type="checkbox" id="cb917" data-label="resisting temptations" class="cb">
+<label for="cb917" class="chip">resisting temptations</label>
+<input type="checkbox" id="cb918" data-label="indulging desires" class="cb">
+<label for="cb918" class="chip">indulging desires</label>
+<input type="checkbox" id="cb919" data-label="oversharing" class="cb">
+<label for="cb919" class="chip">oversharing</label>
+<input type="checkbox" id="cb920" data-label="holding back" class="cb">
+<label for="cb920" class="chip">holding back</label>
+<input type="checkbox" id="cb921" data-label="expressing vulnerability" class="cb">
+<label for="cb921" class="chip">expressing vulnerability</label>
+<input type="checkbox" id="cb922" data-label="rehearsing conversations" class="cb">
+<label for="cb922" class="chip">rehearsing conversations</label>
+<input type="checkbox" id="cb923" data-label="feeling déjà vu" class="cb">
+<label for="cb923" class="chip">feeling déjà vu</label>
+<input type="checkbox" id="cb924" data-label="sensing danger" class="cb">
+<label for="cb924" class="chip">sensing danger</label>
+<input type="checkbox" id="cb925" data-label="adapting to change" class="cb">
+<label for="cb925" class="chip">adapting to change</label>
+<input type="checkbox" id="cb926" data-label="seeking closure" class="cb">
+<label for="cb926" class="chip">seeking closure</label>
+<input type="checkbox" id="cb927" data-label="embracing new routines" class="cb">
+<label for="cb927" class="chip">embracing new routines</label>
+<input type="checkbox" id="cb928" data-label="reshaping identity" class="cb">
+<label for="cb928" class="chip">reshaping identity</label>
+<input type="checkbox" id="cb929" data-label="grieving past versions of yourself" class="cb">
+<label for="cb929" class="chip">grieving past versions of yourself</label>
+<input type="checkbox" id="cb930" data-label="romanticizing life" class="cb">
+<label for="cb930" class="chip">romanticizing life</label>
+<input type="checkbox" id="cb931" data-label="savoring moments" class="cb">
+<label for="cb931" class="chip">savoring moments</label>
+<input type="checkbox" id="cb932" data-label="cherishing memories" class="cb">
+<label for="cb932" class="chip">cherishing memories</label>
+<input type="checkbox" id="cb933" data-label="striving for purpose" class="cb">
+<label for="cb933" class="chip">striving for purpose</label>
+<input type="checkbox" id="cb934" data-label="nurturing curiosity" class="cb">
+<label for="cb934" class="chip">nurturing curiosity</label>
+<input type="checkbox" id="cb935" data-label="exploring possibilities" class="cb">
+<label for="cb935" class="chip">exploring possibilities</label>
+<input type="checkbox" id="cb936" data-label="wandering aimlessly" class="cb">
+<label for="cb936" class="chip">wandering aimlessly</label>
+<input type="checkbox" id="cb937" data-label="cultivating patience" class="cb">
+<label for="cb937" class="chip">cultivating patience</label>
+<input type="checkbox" id="cb938" data-label="navigating uncertainty" class="cb">
+<label for="cb938" class="chip">navigating uncertainty</label>
+<input type="checkbox" id="cb939" data-label="repairing mistakes" class="cb">
+<label for="cb939" class="chip">repairing mistakes</label>
+<input type="checkbox" id="cb940" data-label="creating new habits" class="cb">
+<label for="cb940" class="chip">creating new habits</label>
+<input type="checkbox" id="cb941" data-label="breaking old habits" class="cb">
+<label for="cb941" class="chip">breaking old habits</label>
+<input type="checkbox" id="cb942" data-label="evolving" class="cb">
+<label for="cb942" class="chip">evolving</label>
+<input type="checkbox" id="cb943" data-label="learning continuously" class="cb">
+<label for="cb943" class="chip">learning continuously</label>
+<input type="checkbox" id="cb944" data-label="being human" class="cb">
+<label for="cb944" class="chip">being human</label>
 
+</div>
+<div class="actions">
+<button type="button" class="copybtn" onclick="copyChecked()">Copy selected (comma-separated)</button>
+<button type="button" class="copybtn" onclick="clearAll()">Clear all</button>
+<div class="hint">Tip: after copying, paste into Discord / email / notes.</div>
+</div>
 </form>
-</body>
-</html>
-<button type="button" onclick="copyChecked()">Copy Selected Items</button>
 
 <script>
-function copyChecked() {
-  const checkboxes = document.querySelectorAll('input[type=checkbox]');
-  let output = [];
-  checkboxes.forEach((box) => {
-    if (box.checked) {
-      // Extract the label text (text after the checkbox)
-      let label = box.nextSibling.textContent.trim();
-      output.push(label);
-    }
-  });
-
-  if (output.length === 0) {
+function getCheckedLabels(){
+  const checked = document.querySelectorAll('input.cb:checked');
+  const out = [];
+  checked.forEach(cb => out.push(cb.dataset.label));
+  return out;
+}
+function copyChecked(){
+  const items = getCheckedLabels();
+  if(items.length === 0){
     alert("No items selected.");
     return;
   }
-
-  navigator.clipboard.writeText(output.join("\n")).then(() => {
-    alert("Your selected items have been copied!");
+  const text = items.join(", ");
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Copied " + items.length + " item(s) to clipboard.");
+  }).catch(() => {
+    // Fallback: prompt
+    window.prompt("Copy your selections:", text);
   });
+}
+function clearAll(){
+  document.querySelectorAll('input.cb:checked').forEach(cb => cb.checked = false);
 }
 </script>
 
+</body>
+</html>
