@@ -339,7 +339,7 @@ footer {
   box-shadow: 0 6px 18px rgba(0,0,0,0.22);
 }
 
-.btn.btnPlop {
+.btn.btnSfx {
   background: linear-gradient(135deg, rgba(0,255,170,0.22), rgba(0,255,255,0.12));
 }
 
@@ -446,7 +446,7 @@ body[data-guided="true"] #collapseBtn {
     
     
     
-    <button class="btn btnAudio btnPlop" id="plopToggleBtn" type="button" aria-pressed="true" title="Toggle plop sounds">Plop: On</button>
+    <button class="btn btnAudio btnSfx" id="sfxToggleBtn" type="button" aria-pressed="true" title="Toggle Sound FX">Sound FX: On</button>
     <button class="btn btnAudio btnMusic" id="musicToggleBtn" type="button" aria-pressed="false" title="Toggle synthwave background">Music: Off</button>
     <span id="count" class="sectionMeta"></span>
   </div>
@@ -466,7 +466,7 @@ body[data-guided="true"] #collapseBtn {
         Drop a <code>david_vaporwave.mp4</code> file next to this HTML to see the rotating David head here.
       </div>
     </div>
-    <div class="heroSub">Synthwave is off by default • Plop is on by default</div>
+    <div class="heroSub">Synthwave is off by default • Sound FX is on by default</div>
   </div>
 </div>
 
@@ -482,11 +482,24 @@ body[data-guided="true"] #collapseBtn {
 
 <script>
 
-// --- Audio state (plop + synthwave) ---
-let plopEnabled = true;   // plop is ON by default
+// --- Audio state (sound fx + synthwave) ---
+let sfxEnabled = true;   // sound fx is ON by default
 let musicEnabled = false; // music is OFF by default
-const LS_PLOP = "vap_plop_on";
+const LS_SFX = "vap_sfx_on";
 const LS_MUSIC = "vap_music_on";
+
+// Keep the viewport steady: no surprise jumps (only the user scrolls).
+function keepScrollStable(fn) {
+  const x = window.pageXOffset || 0;
+  const y = window.pageYOffset || 0;
+  fn();
+  // Two RAFs to beat layout + focus scroll in most browsers.
+  requestAnimationFrame(() => {
+    window.scrollTo(x, y);
+    requestAnimationFrame(() => window.scrollTo(x, y));
+  });
+}
+
 
 const ITEMS = ['breathing','blinking','swallowing','chewing','stretching','yawning','standing','sitting','walking','running','jogging','jumping','crawling','balancing','bending','lifting','carrying','pulling','pushing','climbing','falling asleep','waking up','sneezing','coughing','sweating','shivering','napping','sleeping','warming up','cooling down','drinking','eating','tasting','sniffing','touching','hearing','seeing','smelling','speaking','whispering','humming','singing','laughing','crying','smiling','frowning','sighing','groaning','daydreaming','thinking','cooking','boiling water','frying food','baking','washing dishes','vacuuming','sweeping','mopping','folding clothes','doing laundry','ironing','cleaning windows','making the bed','showering','brushing teeth','shaving','combing hair','applying lotion','getting dressed','undressing','grocery shopping','refilling prescriptions','paying bills','budgeting','taking out the trash','recycling','opening mail','organizing drawers','writing lists','meal prepping','packing bags','unpacking','calling someone','texting','sending emails','waiting in line','commuting','checking the weather','reading instructions','setting reminders','locking doors','charging devices','making coffee','making tea','watering plants','feeding pets','taking medication','using the bathroom','washing hands','tidying up','listening','empathizing','consoling someone','encouraging someone','complimenting','apologizing','forgiving','debating','arguing','negotiating','mediating','comforting someone','reflecting on feelings','journaling emotions','setting boundaries','giving advice','asking questions','telling stories','meeting new people','introducing yourself','attending a party','hosting guests','networking','hugging','handshaking','high-fiving','waving','nodding','making eye contact','avoiding eye contact','confessing something','comfort eating','venting','cry-laughing','feeling nostalgia','feeling anxiety','feeling joy','feeling frustration','feeling excitement','feeling curiosity','caring for others','caring for yourself','practicing gratitude','setting goals','daydreaming about the future','reminiscing','missing someone','letting go','sharing secrets','keeping secrets','reading','writing','editing','brainstorming','proofreading','memorizing','solving puzzles','analyzing data','calculating','strategizing','planning','organizing','designing','drawing','sketching','painting','sculpting','crafting','knitting','crocheting','sewing','quilting','woodworking','pottery','photography','filming','video editing','sound recording','mixing audio','playing music','improvising','composing','acting','dancing','choreographing','storyboarding','illustrating','calligraphy','graphic design','making memes','collaging','worldbuilding','writing poetry','writing fiction','solving riddles','strategizing games','making playlists','mapping routes','inventing things','hiking','biking','swimming','surfing','kayaking','canoeing','sailing','paddleboarding','trail running','rock climbing','bouldering','skateboarding','rollerblading','ice skating','skiing','snowboarding','snowshoeing','sledding','fishing','hunting','gardening','planting trees','mowing the lawn','weeding','composting','feeding wildlife','birdwatching','stargazing','camping','building a campfire','pitching a tent','orienteering','foraging','mushroom hunting','chopping wood','jogging with a dog','throwing a frisbee','playing catch','yoga','pilates','weightlifting','boxing','kickboxing','stretching routines','aerobics','martial arts','tai chi','qi gong','fencing','archery','horseback riding','barrel racing','vaulting','mountain hiking','trail clearing','parkour','jump roping','trampoline jumping','rowing','scuba diving','snorkeling','spearfishing','cliff jumping','paragliding','skydiving','ziplining','uphill biking','downhill biking','inline skating','cross-country skiing','sprinting','playing soccer','playing basketball','playing volleyball','playing tennis','playing badminton','table tennis','wrestling','swimming laps','diving','water polo','long jumping','high jumping','javelin throwing','hammer throw','shot put','gymnastics','cheerleading','tumbling','baton twirling','handstands','cartwheeling','unicycling','balance beam practice','slacklining','running errands','walking a dog','exploring parks','watching sunsets','browsing the internet','watching YouTube','streaming shows','doomscrolling','online shopping','scrolling social media','posting photos','commenting','liking posts','sharing content','messaging friends','video calling','voice chatting','gaming','speedrunning','modding games','streaming on Twitch','editing VODs','coding','programming','debugging','writing scripts','designing websites','UI/UX design','building apps','learning languages online','taking digital notes','using spreadsheets','managing calendars','file organizing','running virtual meetings','using AI tools','typing','copy-pasting','dragging files','installing software','updating drivers','troubleshooting tech','building PCs','backing up data','creating presentations','graphic editing','photo retouching','3D modeling','Blender sculpting','creating animations','writing code snippets','creating bots','API testing','cybersecurity practice','ethical hacking','data entry','data analysis','spreadsheet modeling','managing digital finances','using crypto wallets','VR gaming','AR experiences','drone flying','making digital art','editing sprite sheets','creating GIFs','using filters','coding neural networks','training ML models','animating sprites','writing fanfic','curating Pinterest boards','designing wallpapers','blogging','vlogging','creating tutorials','recording podcasts','scheduling posts','writing newsletters','troubleshooting Wi-Fi','updating firmware','creating databases','tagging metadata','using digital to-do lists','playing online chess','solving captchas','saving bookmarks','password managing','pixel art creation','using Discord','managing servers','moderating communities','setting server roles','creating channels','uploading emojis','building Notion dashboards','automating workflows','meditating','deep breathing','grounding exercises','mindfulness practice','mantra chanting','self-soothing','emotional regulation','identifying triggers','unpacking memories','visualizing success','reframing thoughts','body scanning','progressive muscle relaxation','shadow work','affirmations','seeking comfort','asking for help','therapy homework','introspection','goal tracking','building routines','habit stacking','reflecting on choices','reading self-help','journaling insights','writing affirmations','spending time alone','reconnecting with others','healing old wounds','forgiving yourself','practicing stillness','taking breaks','crying intentionally','understanding emotions','naming feelings','resting','napping intentionally','regulating stress','walking to think','pacing','dissociating','grounding in nature','cleansing your space','rearranging furniture','taking long showers','listening to calming music','singing in the shower','dancing alone','stretching in the morning','stimming','sensory seeking','sensory avoidance','aromatherapy','lighting candles','tidying your desk','drinking cold water','drinking warm tea','hugging a pillow','watching comfort shows','wearing soft clothes','petting animals','feeding birds','helping a friend','talking through problems','venting safely','asking clarifying questions','researching solutions','making decisions','delaying decisions','prioritizing tasks','saying no','saying yes','compromising','self-advocating','setting boundaries','maintaining boundaries','repairing relationships','ending relationships','grieving','celebrating','feeling pride','feeling relief','feeling anticipation','feeling uncertainty','working','commuting','replying to emails','attending meetings','brainstorming with coworkers','presenting ideas','taking notes','leading teams','collaborating','negotiating contracts','onboarding','training others','fixing equipment','restocking supplies','organizing inventory','project planning','scheduling tasks','time management','delegating','filing documents','archiving','reading reports','writing reports','troubleshooting systems','learning new skills','mentoring others','reviewing work','quality control','manufacturing tasks','customer service','answering phones','greeting clients','processing orders','transporting goods','driving cars','riding buses','cycling to work','navigating maps','booking appointments','managing finances','balancing accounts','calculating taxes','signing papers','reading legal documents','researching laws','contacting support','renewing licenses','studying','taking tests','attending classes','listening to lectures','writing essays','reading textbooks','highlighting notes','group study','memorization drills','practicing skills','prepping presentations','learning instruments','rehearsing music','conducting experiments','observing results','writing hypotheses','designing posters','participating in labs','attending workshops','joining clubs','tutoring','volunteering','donating items','participating in charity events','mentoring youth','community organizing','activism','advocacy','protesting','voting','writing petitions','speaking publicly','debating ideas','educating others','raising awareness','fundraising','building community projects','stretching before exercise','cooling down after workouts','taking vitamins','applying sunscreen','moisturizing','trimming nails','clipping toenails','brushing hair','conditioning hair','exfoliating skin','shaving body hair','shaving beard','brushing teeth','flossing','mouthwash rinsing','applying deodorant','massaging muscles','self-checking vitals','first aid','treating cuts','bandaging wounds','using ice packs','heating pads','stretching injured muscles','physical therapy exercises','med tracking','taking prescriptions','scheduling appointments','attending medical checkups','attending therapy','researching symptoms','doing breathwork','resting in bed','lowering stress','drinking electrolytes','improving posture','stretching neck','standing breaks at desk','drinking herbal tea','meditating with apps','taking long baths','aromatherapy showers','going for health walks','cooking healthy meals','reducing sugar intake','tracking calories','measuring weight','getting massages','chiropractic visits','stretching hamstrings','stretching back','stretching shoulders','planning trips','packing luggage','unpacking luggage','booking flights','booking hotels','riding taxis','taking buses','riding subways','taking ferries','boarding planes','going through security','waiting in airports','traveling abroad','learning travel phrases','sampling foreign foods','sightseeing','hiking mountains','exploring forests','visiting lakes','visiting beaches','walking in cities','taking photos','navigating new places','collecting souvenirs','meeting locals','renting bikes','stargazing outdoors','camping under stars','exploring caves','swimming in rivers','visiting waterfalls','taking scenic drives','road tripping','using maps','booking tours','traveling solo','traveling with friends','navigating airports','trying local cafés','trying new cuisines','washing clothes','drying clothes','folding clothes','ironing clothes','organizing closets','sorting laundry','repairing clothes','sewing buttons','handwashing delicate fabrics','cleaning kitchen counters','scrubbing pans','disinfecting surfaces','organizing pantries','stocking food','meal planning','chopping vegetables','frying meals','roasting food','boiling pasta','making soups','baking cakes','making bread','decorating pastries','setting the table','washing floors','vacuuming carpets','scrubbing bathrooms','unclogging drains','fixing leaks','organizing cables','emptying trash bins','recycling plastics','composting food scraps','maintaining tools','painting walls','hanging shelves','assembling furniture','cleaning windows','raising blinds','lowering blinds','sweeping patios','watering gardens','trimming plants','raking leaves','shoveling snow','salting sidewalks','maintaining yard tools','maintaining appliances','changing light bulbs','changing smoke alarm batteries','organizing drawers','decluttering rooms','labeling boxes','storing seasonal items','watching movies','binge-watching shows','rewatching favorites','listening to music','discovering new artists','making playlists','attending concerts','going to festivals','watching plays','attending theatre','going to museums','going to art galleries','doing puzzles','solving sudoku','solving crosswords','reading novels','reading nonfiction','reading poetry','reading comics','collecting manga','visiting bookstores','joining book clubs','listening to podcasts','writing reviews','watching documentaries','going bowling','playing mini-golf','playing darts','playing billiards','board gaming','card gaming','tabletop RPGs','painting miniatures','cosplaying','attending conventions','karaoke','traveling for fun','trying new restaurants','visiting cafés','watching sports','participating in sports','collecting items','journaling memories','scrapbooking','making photo albums','practicing magic tricks','attending workshops','exploring hobbies','learning new recipes','doing taste tests','hiking trails','taking scenic photos','budgeting monthly expenses','tracking spending','updating spreadsheets','paying rent','paying utilities','reviewing bank statements','transferring funds','depositing checks','grocery shopping','comparing prices','coupon clipping','returning items','mailing packages','picking up parcels','renewing subscriptions','canceling subscriptions','repairing electronics','ordering supplies','replacing batteries','washing the car','refueling the car','checking tire pressure','changing oil','maintaining bicycles','fixing flat tires','booking maintenance','filling out forms','filing taxes','organizing receipts','making new friends','maintaining friendships','comforting loved ones','planning hangouts','meeting for coffee','giving gifts','receiving gifts','writing letters','sending postcards','celebrating birthdays','celebrating anniversaries','attending weddings','attending funerals','visiting family','hosting gatherings','cooking for friends','sharing meals','checking in on people','mediating conflicts','resolving misunderstandings','offering support','asking for support','learning boundaries','practicing assertiveness','giving compliments','receiving compliments','flirting','dating','introspecting about relationships','navigating heartbreak','rebuilding confidence','expressing affection','expressing gratitude','saying goodbye','saying hello','apologizing sincerely','initiating conversations','deep listening','empathizing deeply','praying','meditating in silence','lighting incense','reading sacred texts','contemplating existence','practicing gratitude','attending spiritual gatherings','connecting with nature','walking labyrinths','chanting','journaling spiritually','making altars','leaving offerings','mindful breathing','vow setting','storytelling','creating characters','worldbuilding','writing essays','writing scripts','podcast scripting','painting murals','sculpting clay','composing music','mixing music','beat making','singing in harmonies','dancing freestyle','choreographing dances','writing poetry','performing poetry','creating zines','designing posters','journaling fiction ideas','scrapbooking memories','collecting art references','photographing nature','photographing people','staging photoshoots','retouching photos','animating 2D art','animating 3D scenes','drawing digitally','pixel art design','sprite sheet creation','VFX design','storyboard creation','writing comic panels','designing outfits','costuming','prop making','observing nature','collecting samples','cataloging findings','doing science experiments','tracking weather','building simple machines','studying physics','studying chemistry','studying biology','studying astronomy','solving math problems','writing equations','modeling data','observing stars','using telescopes','collecting rocks','identifying minerals','logging field notes','reading research articles','participating in citizen science','exploring museums','stretching after sleep','reacting to news','forming opinions','changing opinions','feeling inspired','feeling discouraged','overcoming fear','procrastinating','planning future goals','sharing experiences','rewriting memories','replaying conversations','laughing at memes','sending voice notes','reacting with emojis','analyzing dreams','making wishes','evaluating risks','managing impulses','resisting temptations','indulging desires','oversharing','holding back','expressing vulnerability','rehearsing conversations','feeling déjà vu','sensing danger','adapting to change','seeking closure','embracing new routines','reshaping identity','grieving past versions of yourself','romanticizing life','savoring moments','cherishing memories','striving for purpose','nurturing curiosity','exploring possibilities','wandering aimlessly','cultivating patience','navigating uncertainty','repairing mistakes','creating new habits','breaking old habits','evolving','learning continuously','being human'];
 
@@ -512,15 +525,15 @@ const app = document.getElementById("app");
 const q = document.getElementById("q");
 const countEl = document.getElementById("count");
 const toast = document.getElementById("toast");
-const plopToggleBtn = document.getElementById("plopToggleBtn");
+const sfxToggleBtn = document.getElementById("sfxToggleBtn");
 const musicToggleBtn = document.getElementById("musicToggleBtn");
 const bgMusic = document.getElementById("bgMusic");
 if (bgMusic) { bgMusic.volume = 0.22; }
 
 function syncAudioButtons() {
-  if (plopToggleBtn) {
-    plopToggleBtn.setAttribute("aria-pressed", plopEnabled ? "true" : "false");
-    plopToggleBtn.textContent = plopEnabled ? "Plop: On" : "Plop: Off";
+  if (sfxToggleBtn) {
+    sfxToggleBtn.setAttribute("aria-pressed", sfxEnabled ? "true" : "false");
+    sfxToggleBtn.textContent = sfxEnabled ? "Sound FX: On" : "Sound FX: Off";
   }
   if (musicToggleBtn) {
     musicToggleBtn.setAttribute("aria-pressed", musicEnabled ? "true" : "false");
@@ -528,10 +541,10 @@ function syncAudioButtons() {
   }
 }
 
-// restore saved states (plop defaults ON, music defaults OFF)
+// restore saved states (sound fx defaults ON, music defaults OFF)
 try {
-  const p = localStorage.getItem(LS_PLOP);
-  if (p !== null) plopEnabled = (p === "1");
+  const p = localStorage.getItem(LS_SFX);
+  if (p !== null) sfxEnabled = (p === "1");
   // Music intentionally defaults OFF on load.
 } catch(e) {}
 
@@ -879,10 +892,12 @@ if (modeToggleBtn) {
   modeToggleBtn.addEventListener("click", (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
-    setGuided(!guidedMode);
-    syncStepper();
-    render();
-    plop();
+    keepScrollStable(() => {
+      setGuided(!guidedMode);
+      syncStepper();
+      render();
+      playSfx();
+    });
   });
 }
 
@@ -890,26 +905,32 @@ if (prevSegBtn) {
   prevSegBtn.addEventListener("click", (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
-    if (!guidedMode) return;
-    setSegIdx(segIdx - 1);
-    syncStepper();
-    render();
-    document.getElementById("app").scrollIntoView({behavior:"smooth", block:"start"});
+    keepScrollStable(() => {
+      if (!guidedMode) return;
+      setSegIdx(segIdx - 1);
+      syncStepper();
+      render();
+    });
+    try { prevSegBtn.focus({preventScroll:true}); } catch(e) { try { prevSegBtn.focus(); } catch(_) {} }
   });
 }
+
 
 if (nextSegBtn) {
   nextSegBtn.addEventListener("click", (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
-    if (!guidedMode) return;
-    if (segIdx >= TOTAL_SEGS - 1) return;
-    setSegIdx(segIdx + 1);
-    syncStepper();
-    render();
-    document.getElementById("app").scrollIntoView({behavior:"smooth", block:"start"});
+    keepScrollStable(() => {
+      if (!guidedMode) return;
+      if (segIdx >= TOTAL_SEGS - 1) return;
+      setSegIdx(segIdx + 1);
+      syncStepper();
+      render();
+    });
+    try { nextSegBtn.focus({preventScroll:true}); } catch(e) { try { nextSegBtn.focus(); } catch(_) {} }
   });
 }
+
 function render() {
   const term = normalize(q.value);
 
@@ -1005,22 +1026,27 @@ function render() {
       prev2.addEventListener("click", (ev) => {
         ev.preventDefault();
         ev.stopPropagation();
-        if (!guidedMode || segIdx <= 0) return;
-        setSegIdx(segIdx - 1);
-        syncStepper();
-        render();
-        // Keep focus sane for keyboard users
-        document.getElementById("app").scrollIntoView({behavior:"smooth", block:"start"});
+        keepScrollStable(() => {
+          if (!guidedMode || segIdx <= 0) return;
+          setSegIdx(segIdx - 1);
+          syncStepper();
+          render();
+        });
+        const p = document.getElementById("prevSegBtn");
+        try { p && p.focus({preventScroll:true}); } catch(e) { try { p && p.focus(); } catch(_) {} }
       });
 
       next2.addEventListener("click", (ev) => {
         ev.preventDefault();
         ev.stopPropagation();
-        if (!guidedMode || segIdx >= TOTAL_SEGS - 1) return;
-        setSegIdx(segIdx + 1);
-        syncStepper();
-        render();
-        document.getElementById("app").scrollIntoView({behavior:"smooth", block:"start"});
+        keepScrollStable(() => {
+          if (!guidedMode || segIdx >= TOTAL_SEGS - 1) return;
+          setSegIdx(segIdx + 1);
+          syncStepper();
+          render();
+        });
+        const n = document.getElementById("nextSegBtn");
+        try { n && n.focus({preventScroll:true}); } catch(e) { try { n && n.focus(); } catch(_) {} }
       });
 
       bottomNav.appendChild(prev2);
@@ -1051,11 +1077,11 @@ function updateSectionMetaFast() {
   countEl.textContent = `${app.querySelectorAll(".pill").length} shown • ${selected.size} selected`;
 }
 
-// Gentle plop sound (WebAudio)
+// Gentle sound fx sound (WebAudio)
 let audioCtx = null;
 
-function plop() {
-  if (!plopEnabled) return;
+function playSfx() {
+  if (!sfxEnabled) return;
   try {
     audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
     if (audioCtx.state === "suspended") audioCtx.resume();
@@ -1399,9 +1425,9 @@ function setMusic(on) {
   try { localStorage.setItem(LS_MUSIC, on ? "1" : "0"); } catch(e) {}
 }
 
-function setPlop(on) {
-  plopEnabled = !!on;
-  try { localStorage.setItem(LS_PLOP, plopEnabled ? "1" : "0"); } catch(e) {}
+function setSfx(on) {
+  sfxEnabled = !!on;
+  try { localStorage.setItem(LS_SFX, sfxEnabled ? "1" : "0"); } catch(e) {}
 }
 
 
@@ -1449,7 +1475,7 @@ function toggleLabel(label, pillEl) {
     applyAccent(pillEl, label);
   }
   saveSelected();
-  plop();
+  playSfx();
   updateSectionMetaFast();
 }
 app.addEventListener("click", (ev) => {
@@ -1457,7 +1483,7 @@ app.addEventListener("click", (ev) => {
   if (!pill) return;
   ev.preventDefault();
   ev.stopPropagation();
-  toggleLabel(pill.dataset.label, pill);
+  keepScrollStable(() => toggleLabel(pill.dataset.label, pill));
 });
 
 app.addEventListener("keydown", (ev) => {
@@ -1465,7 +1491,7 @@ app.addEventListener("keydown", (ev) => {
   if (!pill) return;
   if (ev.key === "Enter" || ev.key === " ") {
     ev.preventDefault();
-    toggleLabel(pill.dataset.label, pill);
+    keepScrollStable(() => toggleLabel(pill.dataset.label, pill));
   }
 });
 
@@ -1529,15 +1555,15 @@ q.addEventListener("input", () => {
 
 
 // --- Audio toggle button wiring ---
-if (plopToggleBtn) {
-  plopToggleBtn.addEventListener("click", (ev) => {
+if (sfxToggleBtn) {
+  sfxToggleBtn.addEventListener("click", (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
-    const next = !plopEnabled;
-    setPlop(next);
+    const next = !sfxEnabled;
+    setSfx(next);
     syncAudioButtons();
-    // Give a confirmation plop only when turning ON
-    if (plopEnabled) plop();
+    // Give a confirmation sound fx only when turning ON
+    if (sfxEnabled) playSfx();
   });
 }
 
@@ -1548,8 +1574,8 @@ if (musicToggleBtn) {
     const next = !musicEnabled;
     setMusic(next);
     syncAudioButtons();
-    // Optional tactile feedback (respects plop toggle)
-    plop();
+    // Optional tactile feedback (respects sound fx toggle)
+    playSfx();
   });
 }
 
