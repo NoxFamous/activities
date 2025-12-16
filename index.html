@@ -361,17 +361,21 @@ function plop() {
     const gain = audioCtx.createGain();
     const filt = audioCtx.createBiquadFilter();
 
-    const base = 180 + Math.random()*120; // 180–300 Hz
+    // Slightly wider pitch variation + tiny detune so repeats feel less identical
+    const base = 170 + Math.random() * 160; // 170–330 Hz (was 180–300)
+    const drop = 0.68 + Math.random() * 0.18; // 0.68–0.86 (was 0.75)
+
     osc.type = "sine";
+    osc.detune.setValueAtTime((Math.random() * 2 - 1) * 12, t); // ±12 cents
     osc.frequency.setValueAtTime(base, t);
-    osc.frequency.exponentialRampToValueAtTime(base * 0.75, t + 0.10);
+    osc.frequency.exponentialRampToValueAtTime(Math.max(60, base * drop), t + 0.10);
 
     filt.type = "lowpass";
     filt.frequency.setValueAtTime(1200, t);
     filt.frequency.exponentialRampToValueAtTime(500, t + 0.12);
 
     gain.gain.setValueAtTime(0.0001, t);
-    gain.gain.exponentialRampToValueAtTime(0.10, t + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.30, t + 0.01); // ~3× louder (was 0.10)
     gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.14);
 
     osc.connect(filt);
@@ -382,6 +386,7 @@ function plop() {
     osc.stop(t + 0.16);
   } catch(e) {}
 }
+
 
 function toggleLabel(label, pillEl) {
   if (selected.has(label)) {
