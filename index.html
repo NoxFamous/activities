@@ -168,6 +168,19 @@ summary::-webkit-details-marker { display:none; }
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
+
+
+.bottomNav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 14px 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.bottomNav .btnNav {
+  /* keep existing .btnNav sizing */
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
@@ -188,9 +201,15 @@ summary::-webkit-details-marker { display:none; }
   box-shadow: 0 0 0 3px rgba(66,245,255,0.12);
 }
 .pill[aria-pressed="true"] {
-  background: linear-gradient(135deg, rgba(255,92,244,0.22), rgba(66,245,255,0.14));
-  border-color: rgba(255,92,244,0.70);
-  box-shadow: 0 0 0 3px rgba(255,92,244,0.12), 0 0 24px rgba(255,92,244,0.10);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--h, 300), 95%, 65%, 0.30),
+    hsla(var(--h2, 190), 95%, 65%, 0.18)
+  );
+  border-color: hsla(var(--h, 300), 95%, 75%, 0.78);
+  box-shadow:
+    0 0 0 3px hsla(var(--h, 300), 95%, 65%, 0.14),
+    0 0 28px hsla(var(--h2, 190), 95%, 65%, 0.16);
 }
 .pill:active {
   transform: translateY(1px);
@@ -408,22 +427,6 @@ body[data-guided="true"] #collapseBtn {
 </style>
 </head>
 <body>
-<div id="heroWrap">
-  <div class="heroCard" aria-label="Vaporwave intro">
-    <div class="heroTitle">N o x ' s   A c t i v i t y   S e l e c t o r</div>
-    <div class="heroVidFrame">
-      <video id="davidVid" autoplay loop muted playsinline preload="metadata">
-        <source src="david_vaporwave.mp4" type="video/mp4">
-      </video>
-      <div class="heroOverlay" aria-hidden="true"></div>
-      <div class="heroFallback" id="heroFallback">
-        Drop a <code>david_vaporwave.mp4</code> file next to this HTML to see the rotating David head here.
-      </div>
-    </div>
-    <div class="heroSub">Synthwave is off by default • Plop is on by default</div>
-  </div>
-</div>
-
 <header>
   <h1>Select the Activities that Bring You Joy</h1>
   <p class="sub">Click to toggle. Search to filter. Sections are collapsible. Your selections autosave on this device. Copy exports selected items comma-separated.</p>
@@ -433,7 +436,7 @@ body[data-guided="true"] #collapseBtn {
     <button class="btn btnStep btnNav" id="prevSegBtn" type="button" title="Previous section">◀ Previous</button>
     <button class="btn btnStep btnNav" id="nextSegBtn" type="button" title="Next section">Next ▶</button>
     <span id="segLabel" class="sectionMeta"></span>
-    <input id="q" type="search" placeholder="Search (e.g., breathe, cook, program) — 944 items" autocomplete="off">
+    <input id="q" type="search" placeholder="Search (e.g., breathe, cook, program)" autocomplete="off">
     
     <button class="btn btnCopy" id="copyBtn" type="button">Click here to Copy</button>
     <button class="btn" id="clearBtn" type="button">Clear all</button>
@@ -450,6 +453,23 @@ body[data-guided="true"] #collapseBtn {
 </header>
 
 <main id="app"></main>
+
+<div id="heroWrap">
+  <div class="heroCard" aria-label="Vaporwave intro">
+    <div class="heroTitle">N o x ' s   A c t i v i t y   S e l e c t o r</div>
+    <div class="heroVidFrame">
+      <video id="davidVid" autoplay loop muted playsinline preload="metadata">
+        <source src="david_vaporwave.mp4" type="video/mp4">
+      </video>
+      <div class="heroOverlay" aria-hidden="true"></div>
+      <div class="heroFallback" id="heroFallback">
+        Drop a <code>david_vaporwave.mp4</code> file next to this HTML to see the rotating David head here.
+      </div>
+    </div>
+    <div class="heroSub">Synthwave is off by default • Plop is on by default</div>
+  </div>
+</div>
+
 
 <footer>
   Created by Nox Famous December 16th 2025 [Contributors: Slizer].
@@ -559,25 +579,246 @@ function normalize(s) {
 }
 
 
-// --- Guided section mode (10 segments + Next/Prev) ---
-const SEG_SIZE = 100;
-const SEGMENTS = chunk(ITEMS, SEG_SIZE);
-const TOTAL_SEGS = SEGMENTS.length;
+// --- Guided section mode (25 segments + Next/Previous) ---
+// We build 25 sections total: 24 slices of the big list + 1 dedicated "Stimming" section.
+// Stimming section includes clinical / medical-ish terminology, and we remove any overlap from the main pool
+// so nothing appears twice.
 
-// Topic names for orientation (you can rename these safely)
-const TOPICS = [
-  "Body basics",
-  "Home & daily chores",
-  "Social & feelings",
-  "Creativity & art",
-  "Outdoors & adventure",
-  "Sports & movement",
-  "Digital life",
-  "Mind & self-care",
-  "Work & learning",
-  "Travel & life admin"
+const STIM_TITLE = "Stimming";
+const STIM_TERMS = [
+  "stimming",
+  "pacing",
+  "self-stimulation",
+  "self-stimulatory behavior",
+  "self-stimulatory activity",
+  "stereotypy",
+  "stereotypic behavior",
+  "stereotypic movements",
+  "motor stereotypy",
+  "vocal stereotypy",
+  "stereotyped movements",
+  "stereotyped and repetitive motor movements",
+  "repetitive motor behaviors",
+  "repetitive behaviors",
+  "sensorimotor stimulation",
+  "sensory seeking",
+  "sensory avoidance",
+  "sensory modulation",
+  "sensory regulation",
+  "sensory self-regulation",
+  "sensory processing",
+  "self-regulation",
+  "self-soothing",
+  "proprioceptive input seeking",
+  "vestibular seeking",
+  "tactile seeking",
+  "auditory seeking",
+  "visual seeking",
+  "oral sensory seeking",
+  "perseveration",
+  "echolalia",
+  "palilalia",
+  "body-focused repetitive behavior",
+  "bfrb",
+  "trichotillomania",
+  "excoriation disorder",
+  "dermatillomania",
+  "onychophagia",
+  "onychotillomania",
+  "morsicatio buccarum",
+  "bruxism",
+  "stereotypic movement disorder"
 ];
 
+const TITLE_RULES = [
+  { title: "Body & senses", keywords: ["breath","blink","swallow","chew","stretch","yawn","sleep","wake","sneeze","cough","shiver","sweat","hear","see","smell","touch"] },
+  { title: "Hygiene & self-care", keywords: ["shower","brush teeth","floss","deodor","shave","comb","lotion","get dressed","undress","nails","exfol","moistur","sunscreen","bath"] },
+  { title: "Home reset & chores", keywords: ["clean","vacuum","sweep","mop","laundry","fold","iron","trash","recycl","tidy","declutter","organiz","dish","counter","pantry"] },
+  { title: "Food & kitchen", keywords: ["cook","bake","boil","fry","roast","chop","meal","prep","coffee","tea","pasta","soup","bread","cake","recipe","taste"] },
+  { title: "Social & communication", keywords: ["talk","text","email","call","message","meet","party","host","friend","hug","handshake","listen","comfort","compliment","apolog","forgiv","debate"] },
+  { title: "Emotions & relationships", keywords: ["feel","grief","celebrat","pride","relief","anxiety","joy","frustr","excite","miss","let go","boundar","relationship","dating","heartbreak"] },
+  { title: "Creativity & art", keywords: ["draw","sketch","paint","sculpt","craft","knit","crochet","sew","quilt","wood","pottery","calligraphy","illustrat","design","collage","zine"] },
+  { title: "Writing & storytelling", keywords: ["read","write","edit","proof","poetry","fiction","essay","script","story","worldbuild","journal","blog","newsletter","review"] },
+  { title: "Music & performance", keywords: ["music","sing","humm","compose","improv","dance","act","karaoke","choreo","rehears","perform","podcast","record","mix"] },
+  { title: "Outdoors & nature", keywords: ["hike","trail","camp","garden","plant","bird","stargaz","forest","lake","beach","waterfall","forag","mushroom","compost","wildlife"] },
+  { title: "Sports & training", keywords: ["run","jog","sprint","swim","yoga","pilates","lift","boxing","martial","tennis","soccer","basketball","volley","climb","skate","ski"] },
+  { title: "Digital & tech", keywords: ["internet","youtube","stream","scroll","discord","gaming","code","program","debug","website","ui/ux","app","api","database","wifi","firmware","ai","vr","ar"] },
+  { title: "Work & productivity", keywords: ["work","meeting","cowork","present","project","schedule","time management","delegat","inventory","customer service","report","quality control","manufactur"] },
+  { title: "Study & learning", keywords: ["study","test","class","lecture","textbook","notes","lab","experiment","hypothes","workshop","tutor","homework","learn"] },
+  { title: "Health & appointments", keywords: ["medication","prescription","therapy","checkup","symptom","first aid","bandag","vitamin","massage","physical therapy","chiropr","appointment"] },
+  { title: "Travel & exploring", keywords: ["travel","airport","flight","hotel","tour","luggage","passport","security","taxi","subway","map","sightsee","souvenir","café"] },
+  { title: STIM_TITLE, keywords: ["stimm","stereotyp","sensory","self-sooth","echol","palil","bfrb","trich","excori","dermatill","brux","onych","morsicatio"] }
+];
+
+function scoreByKeywords(items, keywords) {
+  let s = 0;
+  for (const it of items) {
+    const t = normalize(it);
+    for (const kw of keywords) {
+      if (t.includes(kw)) { s += 1; break; }
+    }
+  }
+  return s;
+}
+
+function inferSegmentTitle(items) {
+  let bestTitle = "Mixed";
+  let bestScore = -1;
+  for (const rule of TITLE_RULES) {
+    if (rule.title === STIM_TITLE) continue;
+    const sc = scoreByKeywords(items, rule.keywords);
+    if (sc > bestScore) {
+      bestScore = sc;
+      bestTitle = rule.title;
+    }
+  }
+  // If a segment is truly mixed, keep it honest.
+  const ratio = items.length ? (bestScore / items.length) : 0;
+  if (bestScore < 2 && ratio < 0.10) return "Mixed";
+  return bestTitle;
+}
+
+function tokenizeForTitle(s) {
+  return (s || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+// Words that are too generic to help name a section
+const TITLE_STOP = new Set([
+  "a","an","and","or","the","to","of","in","on","for","with","at","by","from","into","over","under","about",
+  "do","doing","done","make","making","made","take","taking","go","going","went","get","getting","got",
+  "play","playing","practice","practicing","use","using","work","working","learn","learning","study","studying",
+  "listen","listening","watch","watching","read","reading","write","writing","try","trying",
+  "your","my","our","their","someone","something","things","thing",
+  "day","days","night","nights","week","weeks","month","months","year","years",
+  "new","old","good","better","best","little","big","small",
+  "activity","activities"
+]);
+
+const TITLE_ACRONYMS = new Set(["ai","vr","ar","ui","ux","api","sql","cpu","gpu","ios","android","html","css","js","uxui"]);
+
+
+function prettyBaseTitle(s) {
+  return (s || "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map(w => (w === "&" ? "&" : (w.charAt(0).toUpperCase() + w.slice(1))))
+    .join(" ");
+}
+
+function niceToken(t) {
+  if (!t) return "";
+  if (TITLE_ACRONYMS.has(t)) return t.toUpperCase();
+  if (/^\d+$/.test(t)) return t; // keep numbers inside tokens (e.g., 5k)
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
+
+function signatureTokens(items, docFreq, N, take) {
+  const tf = Object.create(null);
+  for (const it of items) {
+    for (const tok of tokenizeForTitle(it)) {
+      if (tok.length < 3) continue;
+      if (TITLE_STOP.has(tok)) continue;
+      tf[tok] = (tf[tok] || 0) + 1;
+    }
+  }
+  const scored = Object.keys(tf).map(tok => {
+    const df = docFreq[tok] || 0;
+    const idf = Math.log((N + 1) / (df + 1));
+    return { tok, score: tf[tok] * idf };
+  }).sort((a, b) => b.score - a.score);
+
+  const out = [];
+  for (const s of scored) {
+    if (out.length >= take) break;
+    out.push(s.tok);
+  }
+  return out;
+}
+
+function buildSegmentTitle(items, docFreq, N, take) {
+  let base = inferSegmentTitle(items);
+  if (base === "Mixed") base = "Mix & Match";
+  base = prettyBaseTitle(base);
+
+  const toks = signatureTokens(items, docFreq, N, take);
+  const desc = toks.map(niceToken).filter(Boolean).slice(0, take).join(" & ");
+
+  // If we couldn't find good signature tokens, just return the base.
+  if (!desc) return base;
+  return `${base} — ${desc}`;
+}
+
+function buildSegments(items) {
+  const stimUnique = Array.from(new Set(STIM_TERMS.map(normalize))).filter(Boolean);
+  const stimSet = new Set(stimUnique);
+
+  // Remove any stim terms from the main pool so nothing is duplicated.
+  const pool = [];
+  for (const it of items) {
+    const n = normalize(it);
+    if (!n) continue;
+    if (stimSet.has(n)) continue;
+    pool.push(it);
+  }
+
+  const slicesWanted = 24; // +1 stimming section = 25 total
+  const size = Math.max(1, Math.ceil(pool.length / slicesWanted));
+  const slices = chunk(pool, size).slice(0, slicesWanted);
+  while (slices.length < slicesWanted) slices.push([]);
+
+  // Build document-frequency for naming (across non-stimming slices).
+  const docFreq = Object.create(null);
+  for (const seg of slices) {
+    const seen = new Set();
+    for (const it of seg) {
+      for (const tok of tokenizeForTitle(it)) {
+        if (tok.length < 3) continue;
+        if (TITLE_STOP.has(tok)) continue;
+        seen.add(tok);
+      }
+    }
+    for (const tok of seen) docFreq[tok] = (docFreq[tok] || 0) + 1;
+  }
+
+  // Stimming is always Section 1 (as requested).
+  const out = [{ title: STIM_TITLE, items: stimUnique }];
+
+  // Generate unique, descriptive titles for every other section (no numeric suffixes).
+  const used = new Set([STIM_TITLE]);
+  for (let i = 0; i < slicesWanted; i++) {
+    const segItems = slices[i];
+
+    let take = 2;
+    let title = buildSegmentTitle(segItems, docFreq, slicesWanted, take);
+    while (used.has(title) && take < 5) {
+      take += 1;
+      title = buildSegmentTitle(segItems, docFreq, slicesWanted, take);
+    }
+    // Ultra-rare collision fallback: add one more distinct token word (still no numbers).
+    if (used.has(title)) {
+      const extra = signatureTokens(segItems, docFreq, slicesWanted, 6).slice(5, 6)[0];
+      if (extra) title = `${title} — ${niceToken(extra)}`;
+    }
+
+    used.add(title);
+    out.push({ title, items: segItems });
+  }
+
+  return out.slice(0, 25);
+}
+
+
+const SEGMENTS = buildSegments(ITEMS);
+const TOTAL_SEGS = SEGMENTS.length;
+const TOTAL_ITEMS = SEGMENTS.reduce((n, s) => n + (s.items ? s.items.length : 0), 0);
+
+// Update placeholder count dynamically (so it stays true even if the list changes)
+try { q.placeholder = `Search (e.g., breathe, cook, program) — ${TOTAL_ITEMS} items`; } catch(e) {}
 const LS_SEGIDX = "vap_seg_idx";
 const LS_GUIDED = "vap_guided";
 
@@ -621,7 +862,7 @@ function setSegIdx(nextIdx) {
 
 function syncStepper() {
   document.body.dataset.guided = guidedMode ? "true" : "false";
-  const topic = TOPICS[segIdx] || `Segment ${segIdx+1}`;
+  const topic = (SEGMENTS[segIdx] && SEGMENTS[segIdx].title) || `Segment ${segIdx+1}`;
   if (segLabel) segLabel.textContent = `Section ${segIdx+1}/${TOTAL_SEGS} • ${topic}`;
   if (prevSegBtn) prevSegBtn.disabled = !guidedMode || segIdx <= 0;
   if (nextSegBtn) nextSegBtn.disabled = !guidedMode || segIdx >= TOTAL_SEGS - 1;
@@ -680,14 +921,12 @@ function render() {
   let shown = 0;
 
   segOrder.forEach((seg) => {
-    const base = SEGMENTS[seg] || [];
+    const base = (SEGMENTS[seg] && SEGMENTS[seg].items) || [];
     const g = term ? base.filter(x => normalize(x).includes(term)) : base.slice();
 
     // When browsing all sections and searching, hide empty sections for sanity.
     if (!guidedMode && term && g.length === 0) return;
 
-    const start = seg * SEG_SIZE + 1;
-    const end = seg * SEG_SIZE + base.length;
     const key = `sec_${seg}`;
 
     const det = document.createElement("details");
@@ -708,13 +947,13 @@ function render() {
 
     const title = document.createElement("div");
     title.className = "sectionTitle";
-    const topic = TOPICS[seg] || `Segment ${seg + 1}`;
+    const topic = (SEGMENTS[seg] && SEGMENTS[seg].title) || `Segment ${seg + 1}`;
     title.textContent = topic;
 
     const meta = document.createElement("div");
     meta.className = "sectionMeta";
     const secSelected = base.filter(x => selected.has(x)).length;
-    meta.textContent = `${start}–${end} • ${secSelected} selected`;
+    meta.textContent = `${secSelected}/${base.length} selected`;
 
     left.appendChild(title);
     left.appendChild(meta);
@@ -734,7 +973,9 @@ function render() {
       b.className = "pill";
       b.setAttribute("role", "button");
       b.setAttribute("tabindex", "0");
-      b.setAttribute("aria-pressed", selected.has(label) ? "true" : "false");
+      const isSel = selected.has(label);
+      b.setAttribute("aria-pressed", isSel ? "true" : "false");
+      if (isSel) applyAccent(b, label);
       b.dataset.label = label;
       b.textContent = label;
       pills.appendChild(b);
@@ -743,6 +984,50 @@ function render() {
 
     det.appendChild(sum);
     det.appendChild(pills);
+
+    // In Guided mode, put navigation AFTER the last option in the segment (better ergonomics).
+    if (guidedMode) {
+      const bottomNav = document.createElement("div");
+      bottomNav.className = "bottomNav";
+
+      const prev2 = document.createElement("button");
+      prev2.className = "btn btnStep btnNav";
+      prev2.type = "button";
+      prev2.textContent = "◀ Previous";
+      prev2.disabled = segIdx <= 0;
+
+      const next2 = document.createElement("button");
+      next2.className = "btn btnStep btnNav";
+      next2.type = "button";
+      next2.textContent = "Next ▶";
+      next2.disabled = segIdx >= TOTAL_SEGS - 1;
+
+      prev2.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (!guidedMode || segIdx <= 0) return;
+        setSegIdx(segIdx - 1);
+        syncStepper();
+        render();
+        // Keep focus sane for keyboard users
+        document.getElementById("app").scrollIntoView({behavior:"smooth", block:"start"});
+      });
+
+      next2.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (!guidedMode || segIdx >= TOTAL_SEGS - 1) return;
+        setSegIdx(segIdx + 1);
+        syncStepper();
+        render();
+        document.getElementById("app").scrollIntoView({behavior:"smooth", block:"start"});
+      });
+
+      bottomNav.appendChild(prev2);
+      bottomNav.appendChild(next2);
+      det.appendChild(bottomNav);
+    }
+
     app.appendChild(det);
   });
 
@@ -759,7 +1044,9 @@ function updateSectionMetaFast() {
       if (p.getAttribute("aria-pressed") === "true") secSel++;
     });
     const meta = det.querySelector(".summaryLeft .sectionMeta");
-    if (meta) meta.textContent = `${secSel} selected`;
+    const sec = parseInt(det.dataset.sec || "0", 10);
+    const baseLen = (SEGMENTS[sec] && SEGMENTS[sec].items) ? SEGMENTS[sec].items.length : pills.length;
+    if (meta) meta.textContent = `${secSel}/${baseLen} selected`;
   });
   countEl.textContent = `${app.querySelectorAll(".pill").length} shown • ${selected.size} selected`;
 }
@@ -1117,19 +1404,54 @@ function setPlop(on) {
   try { localStorage.setItem(LS_PLOP, plopEnabled ? "1" : "0"); } catch(e) {}
 }
 
+
+// --- Selection accent randomness (noticeable but still cozy) ---
+const accentByLabel = new Map();
+
+function pickAccentPair() {
+  // A small curated palette of vapor-ish hues (degrees on the HSL hue wheel)
+  const pairs = [
+    [300, 190], // pink + cyan
+    [320, 200], // magenta + aqua
+    [340, 175], // hot pink + teal
+    [280, 210], // purple + blue-cyan
+    [25,  200], // peach + cyan
+    [210, 320], // blue + magenta
+    [160, 300], // mint + pink
+    [45,  190], // gold + cyan
+  ];
+  const [h1, h2] = pairs[Math.floor(Math.random() * pairs.length)];
+  const jitter = (h) => h + (Math.random() * 12 - 6); // ±6 degrees
+  return { h: jitter(h1), h2: jitter(h2) };
+}
+
+function applyAccent(el, label) {
+  const a = accentByLabel.get(label) || pickAccentPair();
+  accentByLabel.set(label, a);
+  el.style.setProperty("--h", a.h);
+  el.style.setProperty("--h2", a.h2);
+}
+
+function clearAccent(el, label) {
+  accentByLabel.delete(label);
+  el.style.removeProperty("--h");
+  el.style.removeProperty("--h2");
+}
+
 function toggleLabel(label, pillEl) {
   if (selected.has(label)) {
     selected.delete(label);
     pillEl.setAttribute("aria-pressed", "false");
+    clearAccent(pillEl, label);
   } else {
     selected.add(label);
     pillEl.setAttribute("aria-pressed", "true");
+    applyAccent(pillEl, label);
   }
   saveSelected();
   plop();
   updateSectionMetaFast();
 }
-
 app.addEventListener("click", (ev) => {
   const pill = ev.target.closest(".pill");
   if (!pill) return;
@@ -1170,8 +1492,13 @@ document.getElementById("copyBtn").addEventListener("click", async () => {
 
 document.getElementById("clearBtn").addEventListener("click", () => {
   selected.clear();
+  accentByLabel.clear();
   saveSelected();
-  app.querySelectorAll(".pill").forEach(p => p.setAttribute("aria-pressed", "false"));
+  app.querySelectorAll(".pill").forEach(p => {
+    p.setAttribute("aria-pressed", "false");
+    p.style.removeProperty("--h");
+    p.style.removeProperty("--h2");
+  });
   updateSectionMetaFast();
   showToast("Cleared.");
 });
