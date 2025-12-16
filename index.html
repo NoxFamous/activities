@@ -2,116 +2,30 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>Activities Checklist</title>
 <style>
-body {
-  font-family: 'Courier New', monospace;
-  line-height: 1.4;
-  padding: 18px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
-  color: #fff;
+body{font-family:Arial,sans-serif;line-height:1.4;padding:18px;max-width:1200px;margin:0 auto;}
+.controls{position:sticky;top:0;background:white;padding:10px 0 12px 0;z-index:10;border-bottom:1px solid #ddd;}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+#search{padding:10px 12px;border:1px solid #aaa;border-radius:10px;min-width:260px;flex:1;}
+.btn{padding:10px 14px;border:1px solid #555;border-radius:10px;cursor:pointer;background:#f3f3f3;}
+.btn:active{transform:translateY(1px);}
+.meta{opacity:.75;font-size:.95em;}
+details{border:1px solid #e5e5e5;border-radius:12px;padding:8px 10px;margin:12px 0;background:#fafafa;}
+summary{cursor:pointer;font-weight:600;user-select:none;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;padding:10px 2px 6px 2px;}
+.chip{
+  border:1px solid #999;
+  border-radius:999px;
+  padding:8px 12px;
+  background:#f6f6f6;
+  cursor:pointer;
+  user-select:none;
 }
-.controls {
-  position: sticky;
-  top: 0;
-  background: rgba(30, 30, 30, 0.8);
-  padding: 10px 0 12px 0;
-  z-index: 10;
-  border-bottom: 1px solid #444;
+.chip[aria-pressed="true"]{
+  background:#222;color:#fff;border-color:#222;
 }
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-#search {
-  padding: 10px 12px;
-  border: 1px solid #ff76a2;
-  border-radius: 20px;
-  min-width: 260px;
-  flex: 1;
-  background: rgba(255, 118, 162, 0.1);
-  color: #fff;
-}
-#search::placeholder {
-  color: #ff9ecf;
-}
-.btn {
-  padding: 10px 14px;
-  border: 2px solid #ff76a2;
-  border-radius: 20px;
-  cursor: pointer;
-  background: rgba(255, 118, 162, 0.2);
-  color: #fff;
-  text-shadow: 1px 1px 2px #ff76a2;
-}
-.btn:active {
-  transform: translateY(1px);
-}
-.meta {
-  opacity: 0.8;
-  font-size: 0.95em;
-}
-details {
-  border: 2px solid #f6a7c1;
-  border-radius: 12px;
-  padding: 8px 10px;
-  margin: 12px 0;
-  background: rgba(255, 182, 193, 0.1);
-}
-summary {
-  cursor: pointer;
-  font-weight: 600;
-  user-select: none;
-  text-shadow: 1px 1px 2px #ff76a2;
-}
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: flex-start;
-  padding: 10px 2px 6px 2px;
-}
-.chip {
-  border: 1px solid #ff9ecf;
-  border-radius: 999px;
-  padding: 8px 12px;
-  background: linear-gradient(to top right, #ff96c8, #ff8ab9);
-  cursor: pointer;
-  user-select: none;
-  color: #fff;
-  text-shadow: 1px 1px 2px #900c3f;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.chip[aria-pressed="true"] {
-  background: #900c3f;
-  color: #fff;
-  border-color: #e60073;
-}
-.chip:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 4px 8px rgba(255, 118, 162, 0.5);
-}
-.chip:focus {
-  outline: 2px solid #4c9ffe;
-  outline-offset: 2px;
-}
-.hidden {
-  display: none !important;
-}
-.footer {
-  margin-top: 12px;
-  text-align: center;
-  color: #ff76a2;
-}
-.footer a {
-  color: #f6a7c1;
-  text-decoration: none;
-}
-.footer a:hover {
-  text-decoration: underline;
-}
+.chip:focus{outline:2px solid #4c9ffe; outline-offset:2px;}
+.hidden{display:none !important;}
+.footer{margin-top:12px;}
 </style>
 </head><body>
 <h1>Activities Checklist</h1>
@@ -124,7 +38,7 @@ summary {
 <div class='row meta'><span id='count'>0 selected</span><span id='status'></span></div>
 </div>
 <div id='sections'>
-<details open data-sec='sec1'><summary>[Basic Functions]</summary>
+<details open data-sec='sec1'><summary>Section 1 (1–100)</summary>
 <div class='chips'>
 <button type='button' class='chip' data-id='1' data-label='breathing' aria-pressed='false'>breathing</button>
 <button type='button' class='chip' data-id='2' data-label='blinking' aria-pressed='false'>blinking</button>
@@ -176,5 +90,1071 @@ summary {
 <button type='button' class='chip' data-id='48' data-label='groaning' aria-pressed='false'>groaning</button>
 <button type='button' class='chip' data-id='49' data-label='daydreaming' aria-pressed='false'>daydreaming</button>
 <button type='button' class='chip' data-id='50' data-label='thinking' aria-pressed='false'>thinking</button>
-
+<button type='button' class='chip' data-id='51' data-label='cooking' aria-pressed='false'>cooking</button>
+<button type='button' class='chip' data-id='52' data-label='boiling water' aria-pressed='false'>boiling water</button>
+<button type='button' class='chip' data-id='53' data-label='frying food' aria-pressed='false'>frying food</button>
+<button type='button' class='chip' data-id='54' data-label='baking' aria-pressed='false'>baking</button>
+<button type='button' class='chip' data-id='55' data-label='washing dishes' aria-pressed='false'>washing dishes</button>
+<button type='button' class='chip' data-id='56' data-label='vacuuming' aria-pressed='false'>vacuuming</button>
+<button type='button' class='chip' data-id='57' data-label='sweeping' aria-pressed='false'>sweeping</button>
+<button type='button' class='chip' data-id='58' data-label='mopping' aria-pressed='false'>mopping</button>
+<button type='button' class='chip' data-id='59' data-label='folding clothes' aria-pressed='false'>folding clothes</button>
+<button type='button' class='chip' data-id='60' data-label='doing laundry' aria-pressed='false'>doing laundry</button>
+<button type='button' class='chip' data-id='61' data-label='ironing' aria-pressed='false'>ironing</button>
+<button type='button' class='chip' data-id='62' data-label='cleaning windows' aria-pressed='false'>cleaning windows</button>
+<button type='button' class='chip' data-id='63' data-label='making the bed' aria-pressed='false'>making the bed</button>
+<button type='button' class='chip' data-id='64' data-label='showering' aria-pressed='false'>showering</button>
+<button type='button' class='chip' data-id='65' data-label='brushing teeth' aria-pressed='false'>brushing teeth</button>
+<button type='button' class='chip' data-id='66' data-label='shaving' aria-pressed='false'>shaving</button>
+<button type='button' class='chip' data-id='67' data-label='combing hair' aria-pressed='false'>combing hair</button>
+<button type='button' class='chip' data-id='68' data-label='applying lotion' aria-pressed='false'>applying lotion</button>
+<button type='button' class='chip' data-id='69' data-label='getting dressed' aria-pressed='false'>getting dressed</button>
+<button type='button' class='chip' data-id='70' data-label='undressing' aria-pressed='false'>undressing</button>
+<button type='button' class='chip' data-id='71' data-label='grocery shopping' aria-pressed='false'>grocery shopping</button>
+<button type='button' class='chip' data-id='72' data-label='refilling prescriptions' aria-pressed='false'>refilling prescriptions</button>
+<button type='button' class='chip' data-id='73' data-label='paying bills' aria-pressed='false'>paying bills</button>
+<button type='button' class='chip' data-id='74' data-label='budgeting' aria-pressed='false'>budgeting</button>
+<button type='button' class='chip' data-id='75' data-label='taking out the trash' aria-pressed='false'>taking out the trash</button>
+<button type='button' class='chip' data-id='76' data-label='recycling' aria-pressed='false'>recycling</button>
+<button type='button' class='chip' data-id='77' data-label='opening mail' aria-pressed='false'>opening mail</button>
+<button type='button' class='chip' data-id='78' data-label='organizing drawers' aria-pressed='false'>organizing drawers</button>
+<button type='button' class='chip' data-id='79' data-label='writing lists' aria-pressed='false'>writing lists</button>
+<button type='button' class='chip' data-id='80' data-label='meal prepping' aria-pressed='false'>meal prepping</button>
+<button type='button' class='chip' data-id='81' data-label='packing bags' aria-pressed='false'>packing bags</button>
+<button type='button' class='chip' data-id='82' data-label='unpacking' aria-pressed='false'>unpacking</button>
+<button type='button' class='chip' data-id='83' data-label='calling someone' aria-pressed='false'>calling someone</button>
+<button type='button' class='chip' data-id='84' data-label='texting' aria-pressed='false'>texting</button>
+<button type='button' class='chip' data-id='85' data-label='sending emails' aria-pressed='false'>sending emails</button>
+<button type='button' class='chip' data-id='86' data-label='waiting in line' aria-pressed='false'>waiting in line</button>
+<button type='button' class='chip' data-id='87' data-label='commuting' aria-pressed='false'>commuting</button>
+<button type='button' class='chip' data-id='88' data-label='checking the weather' aria-pressed='false'>checking the weather</button>
+<button type='button' class='chip' data-id='89' data-label='reading instructions' aria-pressed='false'>reading instructions</button>
+<button type='button' class='chip' data-id='90' data-label='setting reminders' aria-pressed='false'>setting reminders</button>
+<button type='button' class='chip' data-id='91' data-label='locking doors' aria-pressed='false'>locking doors</button>
+<button type='button' class='chip' data-id='92' data-label='charging devices' aria-pressed='false'>charging devices</button>
+<button type='button' class='chip' data-id='93' data-label='making coffee' aria-pressed='false'>making coffee</button>
+<button type='button' class='chip' data-id='94' data-label='making tea' aria-pressed='false'>making tea</button>
+<button type='button' class='chip' data-id='95' data-label='watering plants' aria-pressed='false'>watering plants</button>
+<button type='button' class='chip' data-id='96' data-label='feeding pets' aria-pressed='false'>feeding pets</button>
+<button type='button' class='chip' data-id='97' data-label='taking medication' aria-pressed='false'>taking medication</button>
+<button type='button' class='chip' data-id='98' data-label='using the bathroom' aria-pressed='false'>using the bathroom</button>
+<button type='button' class='chip' data-id='99' data-label='washing hands' aria-pressed='false'>washing hands</button>
+<button type='button' class='chip' data-id='100' data-label='tidying up' aria-pressed='false'>tidying up</button>
 </div></details>
+<details open data-sec='sec2'><summary>Section 2 (101–200)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='101' data-label='listening' aria-pressed='false'>listening</button>
+<button type='button' class='chip' data-id='102' data-label='empathizing' aria-pressed='false'>empathizing</button>
+<button type='button' class='chip' data-id='103' data-label='consoling someone' aria-pressed='false'>consoling someone</button>
+<button type='button' class='chip' data-id='104' data-label='encouraging someone' aria-pressed='false'>encouraging someone</button>
+<button type='button' class='chip' data-id='105' data-label='complimenting' aria-pressed='false'>complimenting</button>
+<button type='button' class='chip' data-id='106' data-label='apologizing' aria-pressed='false'>apologizing</button>
+<button type='button' class='chip' data-id='107' data-label='forgiving' aria-pressed='false'>forgiving</button>
+<button type='button' class='chip' data-id='108' data-label='debating' aria-pressed='false'>debating</button>
+<button type='button' class='chip' data-id='109' data-label='arguing' aria-pressed='false'>arguing</button>
+<button type='button' class='chip' data-id='110' data-label='negotiating' aria-pressed='false'>negotiating</button>
+<button type='button' class='chip' data-id='111' data-label='mediating' aria-pressed='false'>mediating</button>
+<button type='button' class='chip' data-id='112' data-label='comforting someone' aria-pressed='false'>comforting someone</button>
+<button type='button' class='chip' data-id='113' data-label='reflecting on feelings' aria-pressed='false'>reflecting on feelings</button>
+<button type='button' class='chip' data-id='114' data-label='journaling emotions' aria-pressed='false'>journaling emotions</button>
+<button type='button' class='chip' data-id='115' data-label='setting boundaries' aria-pressed='false'>setting boundaries</button>
+<button type='button' class='chip' data-id='116' data-label='giving advice' aria-pressed='false'>giving advice</button>
+<button type='button' class='chip' data-id='117' data-label='asking questions' aria-pressed='false'>asking questions</button>
+<button type='button' class='chip' data-id='118' data-label='telling stories' aria-pressed='false'>telling stories</button>
+<button type='button' class='chip' data-id='119' data-label='meeting new people' aria-pressed='false'>meeting new people</button>
+<button type='button' class='chip' data-id='120' data-label='introducing yourself' aria-pressed='false'>introducing yourself</button>
+<button type='button' class='chip' data-id='121' data-label='attending a party' aria-pressed='false'>attending a party</button>
+<button type='button' class='chip' data-id='122' data-label='hosting guests' aria-pressed='false'>hosting guests</button>
+<button type='button' class='chip' data-id='123' data-label='networking' aria-pressed='false'>networking</button>
+<button type='button' class='chip' data-id='124' data-label='hugging' aria-pressed='false'>hugging</button>
+<button type='button' class='chip' data-id='125' data-label='handshaking' aria-pressed='false'>handshaking</button>
+<button type='button' class='chip' data-id='126' data-label='high-fiving' aria-pressed='false'>high-fiving</button>
+<button type='button' class='chip' data-id='127' data-label='waving' aria-pressed='false'>waving</button>
+<button type='button' class='chip' data-id='128' data-label='nodding' aria-pressed='false'>nodding</button>
+<button type='button' class='chip' data-id='129' data-label='making eye contact' aria-pressed='false'>making eye contact</button>
+<button type='button' class='chip' data-id='130' data-label='avoiding eye contact' aria-pressed='false'>avoiding eye contact</button>
+<button type='button' class='chip' data-id='131' data-label='confessing something' aria-pressed='false'>confessing something</button>
+<button type='button' class='chip' data-id='132' data-label='comfort eating' aria-pressed='false'>comfort eating</button>
+<button type='button' class='chip' data-id='133' data-label='venting' aria-pressed='false'>venting</button>
+<button type='button' class='chip' data-id='134' data-label='cry-laughing' aria-pressed='false'>cry-laughing</button>
+<button type='button' class='chip' data-id='135' data-label='feeling nostalgia' aria-pressed='false'>feeling nostalgia</button>
+<button type='button' class='chip' data-id='136' data-label='feeling anxiety' aria-pressed='false'>feeling anxiety</button>
+<button type='button' class='chip' data-id='137' data-label='feeling joy' aria-pressed='false'>feeling joy</button>
+<button type='button' class='chip' data-id='138' data-label='feeling frustration' aria-pressed='false'>feeling frustration</button>
+<button type='button' class='chip' data-id='139' data-label='feeling excitement' aria-pressed='false'>feeling excitement</button>
+<button type='button' class='chip' data-id='140' data-label='feeling curiosity' aria-pressed='false'>feeling curiosity</button>
+<button type='button' class='chip' data-id='141' data-label='caring for others' aria-pressed='false'>caring for others</button>
+<button type='button' class='chip' data-id='142' data-label='caring for yourself' aria-pressed='false'>caring for yourself</button>
+<button type='button' class='chip' data-id='143' data-label='practicing gratitude' aria-pressed='false'>practicing gratitude</button>
+<button type='button' class='chip' data-id='144' data-label='setting goals' aria-pressed='false'>setting goals</button>
+<button type='button' class='chip' data-id='145' data-label='daydreaming about the future' aria-pressed='false'>daydreaming about the future</button>
+<button type='button' class='chip' data-id='146' data-label='reminiscing' aria-pressed='false'>reminiscing</button>
+<button type='button' class='chip' data-id='147' data-label='missing someone' aria-pressed='false'>missing someone</button>
+<button type='button' class='chip' data-id='148' data-label='letting go' aria-pressed='false'>letting go</button>
+<button type='button' class='chip' data-id='149' data-label='sharing secrets' aria-pressed='false'>sharing secrets</button>
+<button type='button' class='chip' data-id='150' data-label='keeping secrets' aria-pressed='false'>keeping secrets</button>
+<button type='button' class='chip' data-id='151' data-label='reading' aria-pressed='false'>reading</button>
+<button type='button' class='chip' data-id='152' data-label='writing' aria-pressed='false'>writing</button>
+<button type='button' class='chip' data-id='153' data-label='editing' aria-pressed='false'>editing</button>
+<button type='button' class='chip' data-id='154' data-label='brainstorming' aria-pressed='false'>brainstorming</button>
+<button type='button' class='chip' data-id='155' data-label='proofreading' aria-pressed='false'>proofreading</button>
+<button type='button' class='chip' data-id='156' data-label='memorizing' aria-pressed='false'>memorizing</button>
+<button type='button' class='chip' data-id='157' data-label='solving puzzles' aria-pressed='false'>solving puzzles</button>
+<button type='button' class='chip' data-id='158' data-label='analyzing data' aria-pressed='false'>analyzing data</button>
+<button type='button' class='chip' data-id='159' data-label='calculating' aria-pressed='false'>calculating</button>
+<button type='button' class='chip' data-id='160' data-label='strategizing' aria-pressed='false'>strategizing</button>
+<button type='button' class='chip' data-id='161' data-label='planning' aria-pressed='false'>planning</button>
+<button type='button' class='chip' data-id='162' data-label='organizing' aria-pressed='false'>organizing</button>
+<button type='button' class='chip' data-id='163' data-label='designing' aria-pressed='false'>designing</button>
+<button type='button' class='chip' data-id='164' data-label='drawing' aria-pressed='false'>drawing</button>
+<button type='button' class='chip' data-id='165' data-label='sketching' aria-pressed='false'>sketching</button>
+<button type='button' class='chip' data-id='166' data-label='painting' aria-pressed='false'>painting</button>
+<button type='button' class='chip' data-id='167' data-label='sculpting' aria-pressed='false'>sculpting</button>
+<button type='button' class='chip' data-id='168' data-label='crafting' aria-pressed='false'>crafting</button>
+<button type='button' class='chip' data-id='169' data-label='knitting' aria-pressed='false'>knitting</button>
+<button type='button' class='chip' data-id='170' data-label='crocheting' aria-pressed='false'>crocheting</button>
+<button type='button' class='chip' data-id='171' data-label='sewing' aria-pressed='false'>sewing</button>
+<button type='button' class='chip' data-id='172' data-label='quilting' aria-pressed='false'>quilting</button>
+<button type='button' class='chip' data-id='173' data-label='woodworking' aria-pressed='false'>woodworking</button>
+<button type='button' class='chip' data-id='174' data-label='pottery' aria-pressed='false'>pottery</button>
+<button type='button' class='chip' data-id='175' data-label='photography' aria-pressed='false'>photography</button>
+<button type='button' class='chip' data-id='176' data-label='filming' aria-pressed='false'>filming</button>
+<button type='button' class='chip' data-id='177' data-label='video editing' aria-pressed='false'>video editing</button>
+<button type='button' class='chip' data-id='178' data-label='sound recording' aria-pressed='false'>sound recording</button>
+<button type='button' class='chip' data-id='179' data-label='mixing audio' aria-pressed='false'>mixing audio</button>
+<button type='button' class='chip' data-id='180' data-label='playing music' aria-pressed='false'>playing music</button>
+<button type='button' class='chip' data-id='181' data-label='improvising' aria-pressed='false'>improvising</button>
+<button type='button' class='chip' data-id='182' data-label='composing' aria-pressed='false'>composing</button>
+<button type='button' class='chip' data-id='183' data-label='acting' aria-pressed='false'>acting</button>
+<button type='button' class='chip' data-id='184' data-label='dancing' aria-pressed='false'>dancing</button>
+<button type='button' class='chip' data-id='185' data-label='choreographing' aria-pressed='false'>choreographing</button>
+<button type='button' class='chip' data-id='186' data-label='storyboarding' aria-pressed='false'>storyboarding</button>
+<button type='button' class='chip' data-id='187' data-label='illustrating' aria-pressed='false'>illustrating</button>
+<button type='button' class='chip' data-id='188' data-label='calligraphy' aria-pressed='false'>calligraphy</button>
+<button type='button' class='chip' data-id='189' data-label='graphic design' aria-pressed='false'>graphic design</button>
+<button type='button' class='chip' data-id='190' data-label='making memes' aria-pressed='false'>making memes</button>
+<button type='button' class='chip' data-id='191' data-label='collaging' aria-pressed='false'>collaging</button>
+<button type='button' class='chip' data-id='192' data-label='worldbuilding' aria-pressed='false'>worldbuilding</button>
+<button type='button' class='chip' data-id='193' data-label='writing poetry' aria-pressed='false'>writing poetry</button>
+<button type='button' class='chip' data-id='194' data-label='writing fiction' aria-pressed='false'>writing fiction</button>
+<button type='button' class='chip' data-id='195' data-label='solving riddles' aria-pressed='false'>solving riddles</button>
+<button type='button' class='chip' data-id='196' data-label='strategizing games' aria-pressed='false'>strategizing games</button>
+<button type='button' class='chip' data-id='197' data-label='making playlists' aria-pressed='false'>making playlists</button>
+<button type='button' class='chip' data-id='198' data-label='mapping routes' aria-pressed='false'>mapping routes</button>
+<button type='button' class='chip' data-id='199' data-label='inventing things' aria-pressed='false'>inventing things</button>
+<button type='button' class='chip' data-id='200' data-label='hiking' aria-pressed='false'>hiking</button>
+</div></details>
+<details open data-sec='sec3'><summary>Section 3 (201–300)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='201' data-label='biking' aria-pressed='false'>biking</button>
+<button type='button' class='chip' data-id='202' data-label='swimming' aria-pressed='false'>swimming</button>
+<button type='button' class='chip' data-id='203' data-label='surfing' aria-pressed='false'>surfing</button>
+<button type='button' class='chip' data-id='204' data-label='kayaking' aria-pressed='false'>kayaking</button>
+<button type='button' class='chip' data-id='205' data-label='canoeing' aria-pressed='false'>canoeing</button>
+<button type='button' class='chip' data-id='206' data-label='sailing' aria-pressed='false'>sailing</button>
+<button type='button' class='chip' data-id='207' data-label='paddleboarding' aria-pressed='false'>paddleboarding</button>
+<button type='button' class='chip' data-id='208' data-label='trail running' aria-pressed='false'>trail running</button>
+<button type='button' class='chip' data-id='209' data-label='rock climbing' aria-pressed='false'>rock climbing</button>
+<button type='button' class='chip' data-id='210' data-label='bouldering' aria-pressed='false'>bouldering</button>
+<button type='button' class='chip' data-id='211' data-label='skateboarding' aria-pressed='false'>skateboarding</button>
+<button type='button' class='chip' data-id='212' data-label='rollerblading' aria-pressed='false'>rollerblading</button>
+<button type='button' class='chip' data-id='213' data-label='ice skating' aria-pressed='false'>ice skating</button>
+<button type='button' class='chip' data-id='214' data-label='skiing' aria-pressed='false'>skiing</button>
+<button type='button' class='chip' data-id='215' data-label='snowboarding' aria-pressed='false'>snowboarding</button>
+<button type='button' class='chip' data-id='216' data-label='snowshoeing' aria-pressed='false'>snowshoeing</button>
+<button type='button' class='chip' data-id='217' data-label='sledding' aria-pressed='false'>sledding</button>
+<button type='button' class='chip' data-id='218' data-label='fishing' aria-pressed='false'>fishing</button>
+<button type='button' class='chip' data-id='219' data-label='hunting' aria-pressed='false'>hunting</button>
+<button type='button' class='chip' data-id='220' data-label='gardening' aria-pressed='false'>gardening</button>
+<button type='button' class='chip' data-id='221' data-label='planting trees' aria-pressed='false'>planting trees</button>
+<button type='button' class='chip' data-id='222' data-label='mowing the lawn' aria-pressed='false'>mowing the lawn</button>
+<button type='button' class='chip' data-id='223' data-label='weeding' aria-pressed='false'>weeding</button>
+<button type='button' class='chip' data-id='224' data-label='composting' aria-pressed='false'>composting</button>
+<button type='button' class='chip' data-id='225' data-label='feeding wildlife' aria-pressed='false'>feeding wildlife</button>
+<button type='button' class='chip' data-id='226' data-label='birdwatching' aria-pressed='false'>birdwatching</button>
+<button type='button' class='chip' data-id='227' data-label='stargazing' aria-pressed='false'>stargazing</button>
+<button type='button' class='chip' data-id='228' data-label='camping' aria-pressed='false'>camping</button>
+<button type='button' class='chip' data-id='229' data-label='building a campfire' aria-pressed='false'>building a campfire</button>
+<button type='button' class='chip' data-id='230' data-label='pitching a tent' aria-pressed='false'>pitching a tent</button>
+<button type='button' class='chip' data-id='231' data-label='orienteering' aria-pressed='false'>orienteering</button>
+<button type='button' class='chip' data-id='232' data-label='foraging' aria-pressed='false'>foraging</button>
+<button type='button' class='chip' data-id='233' data-label='mushroom hunting' aria-pressed='false'>mushroom hunting</button>
+<button type='button' class='chip' data-id='234' data-label='chopping wood' aria-pressed='false'>chopping wood</button>
+<button type='button' class='chip' data-id='235' data-label='jogging with a dog' aria-pressed='false'>jogging with a dog</button>
+<button type='button' class='chip' data-id='236' data-label='throwing a frisbee' aria-pressed='false'>throwing a frisbee</button>
+<button type='button' class='chip' data-id='237' data-label='playing catch' aria-pressed='false'>playing catch</button>
+<button type='button' class='chip' data-id='238' data-label='yoga' aria-pressed='false'>yoga</button>
+<button type='button' class='chip' data-id='239' data-label='pilates' aria-pressed='false'>pilates</button>
+<button type='button' class='chip' data-id='240' data-label='weightlifting' aria-pressed='false'>weightlifting</button>
+<button type='button' class='chip' data-id='241' data-label='boxing' aria-pressed='false'>boxing</button>
+<button type='button' class='chip' data-id='242' data-label='kickboxing' aria-pressed='false'>kickboxing</button>
+<button type='button' class='chip' data-id='243' data-label='stretching routines' aria-pressed='false'>stretching routines</button>
+<button type='button' class='chip' data-id='244' data-label='aerobics' aria-pressed='false'>aerobics</button>
+<button type='button' class='chip' data-id='245' data-label='martial arts' aria-pressed='false'>martial arts</button>
+<button type='button' class='chip' data-id='246' data-label='tai chi' aria-pressed='false'>tai chi</button>
+<button type='button' class='chip' data-id='247' data-label='qi gong' aria-pressed='false'>qi gong</button>
+<button type='button' class='chip' data-id='248' data-label='fencing' aria-pressed='false'>fencing</button>
+<button type='button' class='chip' data-id='249' data-label='archery' aria-pressed='false'>archery</button>
+<button type='button' class='chip' data-id='250' data-label='horseback riding' aria-pressed='false'>horseback riding</button>
+<button type='button' class='chip' data-id='251' data-label='barrel racing' aria-pressed='false'>barrel racing</button>
+<button type='button' class='chip' data-id='252' data-label='vaulting' aria-pressed='false'>vaulting</button>
+<button type='button' class='chip' data-id='253' data-label='mountain hiking' aria-pressed='false'>mountain hiking</button>
+<button type='button' class='chip' data-id='254' data-label='trail clearing' aria-pressed='false'>trail clearing</button>
+<button type='button' class='chip' data-id='255' data-label='parkour' aria-pressed='false'>parkour</button>
+<button type='button' class='chip' data-id='256' data-label='jump roping' aria-pressed='false'>jump roping</button>
+<button type='button' class='chip' data-id='257' data-label='trampoline jumping' aria-pressed='false'>trampoline jumping</button>
+<button type='button' class='chip' data-id='258' data-label='rowing' aria-pressed='false'>rowing</button>
+<button type='button' class='chip' data-id='259' data-label='scuba diving' aria-pressed='false'>scuba diving</button>
+<button type='button' class='chip' data-id='260' data-label='snorkeling' aria-pressed='false'>snorkeling</button>
+<button type='button' class='chip' data-id='261' data-label='spearfishing' aria-pressed='false'>spearfishing</button>
+<button type='button' class='chip' data-id='262' data-label='cliff jumping' aria-pressed='false'>cliff jumping</button>
+<button type='button' class='chip' data-id='263' data-label='paragliding' aria-pressed='false'>paragliding</button>
+<button type='button' class='chip' data-id='264' data-label='skydiving' aria-pressed='false'>skydiving</button>
+<button type='button' class='chip' data-id='265' data-label='ziplining' aria-pressed='false'>ziplining</button>
+<button type='button' class='chip' data-id='266' data-label='uphill biking' aria-pressed='false'>uphill biking</button>
+<button type='button' class='chip' data-id='267' data-label='downhill biking' aria-pressed='false'>downhill biking</button>
+<button type='button' class='chip' data-id='268' data-label='inline skating' aria-pressed='false'>inline skating</button>
+<button type='button' class='chip' data-id='269' data-label='cross-country skiing' aria-pressed='false'>cross-country skiing</button>
+<button type='button' class='chip' data-id='270' data-label='sprinting' aria-pressed='false'>sprinting</button>
+<button type='button' class='chip' data-id='271' data-label='playing soccer' aria-pressed='false'>playing soccer</button>
+<button type='button' class='chip' data-id='272' data-label='playing basketball' aria-pressed='false'>playing basketball</button>
+<button type='button' class='chip' data-id='273' data-label='playing volleyball' aria-pressed='false'>playing volleyball</button>
+<button type='button' class='chip' data-id='274' data-label='playing tennis' aria-pressed='false'>playing tennis</button>
+<button type='button' class='chip' data-id='275' data-label='playing badminton' aria-pressed='false'>playing badminton</button>
+<button type='button' class='chip' data-id='276' data-label='table tennis' aria-pressed='false'>table tennis</button>
+<button type='button' class='chip' data-id='277' data-label='wrestling' aria-pressed='false'>wrestling</button>
+<button type='button' class='chip' data-id='278' data-label='swimming laps' aria-pressed='false'>swimming laps</button>
+<button type='button' class='chip' data-id='279' data-label='diving' aria-pressed='false'>diving</button>
+<button type='button' class='chip' data-id='280' data-label='water polo' aria-pressed='false'>water polo</button>
+<button type='button' class='chip' data-id='281' data-label='long jumping' aria-pressed='false'>long jumping</button>
+<button type='button' class='chip' data-id='282' data-label='high jumping' aria-pressed='false'>high jumping</button>
+<button type='button' class='chip' data-id='283' data-label='javelin throwing' aria-pressed='false'>javelin throwing</button>
+<button type='button' class='chip' data-id='284' data-label='hammer throw' aria-pressed='false'>hammer throw</button>
+<button type='button' class='chip' data-id='285' data-label='shot put' aria-pressed='false'>shot put</button>
+<button type='button' class='chip' data-id='286' data-label='gymnastics' aria-pressed='false'>gymnastics</button>
+<button type='button' class='chip' data-id='287' data-label='cheerleading' aria-pressed='false'>cheerleading</button>
+<button type='button' class='chip' data-id='288' data-label='tumbling' aria-pressed='false'>tumbling</button>
+<button type='button' class='chip' data-id='289' data-label='baton twirling' aria-pressed='false'>baton twirling</button>
+<button type='button' class='chip' data-id='290' data-label='handstands' aria-pressed='false'>handstands</button>
+<button type='button' class='chip' data-id='291' data-label='cartwheeling' aria-pressed='false'>cartwheeling</button>
+<button type='button' class='chip' data-id='292' data-label='unicycling' aria-pressed='false'>unicycling</button>
+<button type='button' class='chip' data-id='293' data-label='balance beam practice' aria-pressed='false'>balance beam practice</button>
+<button type='button' class='chip' data-id='294' data-label='slacklining' aria-pressed='false'>slacklining</button>
+<button type='button' class='chip' data-id='295' data-label='running errands' aria-pressed='false'>running errands</button>
+<button type='button' class='chip' data-id='296' data-label='walking a dog' aria-pressed='false'>walking a dog</button>
+<button type='button' class='chip' data-id='297' data-label='exploring parks' aria-pressed='false'>exploring parks</button>
+<button type='button' class='chip' data-id='298' data-label='watching sunsets' aria-pressed='false'>watching sunsets</button>
+<button type='button' class='chip' data-id='299' data-label='browsing the internet' aria-pressed='false'>browsing the internet</button>
+<button type='button' class='chip' data-id='300' data-label='watching YouTube' aria-pressed='false'>watching YouTube</button>
+</div></details>
+<details open data-sec='sec4'><summary>Section 4 (301–400)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='301' data-label='streaming shows' aria-pressed='false'>streaming shows</button>
+<button type='button' class='chip' data-id='302' data-label='doomscrolling' aria-pressed='false'>doomscrolling</button>
+<button type='button' class='chip' data-id='303' data-label='online shopping' aria-pressed='false'>online shopping</button>
+<button type='button' class='chip' data-id='304' data-label='scrolling social media' aria-pressed='false'>scrolling social media</button>
+<button type='button' class='chip' data-id='305' data-label='posting photos' aria-pressed='false'>posting photos</button>
+<button type='button' class='chip' data-id='306' data-label='commenting' aria-pressed='false'>commenting</button>
+<button type='button' class='chip' data-id='307' data-label='liking posts' aria-pressed='false'>liking posts</button>
+<button type='button' class='chip' data-id='308' data-label='sharing content' aria-pressed='false'>sharing content</button>
+<button type='button' class='chip' data-id='309' data-label='messaging friends' aria-pressed='false'>messaging friends</button>
+<button type='button' class='chip' data-id='310' data-label='video calling' aria-pressed='false'>video calling</button>
+<button type='button' class='chip' data-id='311' data-label='voice chatting' aria-pressed='false'>voice chatting</button>
+<button type='button' class='chip' data-id='312' data-label='gaming' aria-pressed='false'>gaming</button>
+<button type='button' class='chip' data-id='313' data-label='speedrunning' aria-pressed='false'>speedrunning</button>
+<button type='button' class='chip' data-id='314' data-label='modding games' aria-pressed='false'>modding games</button>
+<button type='button' class='chip' data-id='315' data-label='streaming on Twitch' aria-pressed='false'>streaming on Twitch</button>
+<button type='button' class='chip' data-id='316' data-label='editing VODs' aria-pressed='false'>editing VODs</button>
+<button type='button' class='chip' data-id='317' data-label='coding' aria-pressed='false'>coding</button>
+<button type='button' class='chip' data-id='318' data-label='programming' aria-pressed='false'>programming</button>
+<button type='button' class='chip' data-id='319' data-label='debugging' aria-pressed='false'>debugging</button>
+<button type='button' class='chip' data-id='320' data-label='writing scripts' aria-pressed='false'>writing scripts</button>
+<button type='button' class='chip' data-id='321' data-label='designing websites' aria-pressed='false'>designing websites</button>
+<button type='button' class='chip' data-id='322' data-label='UI/UX design' aria-pressed='false'>UI/UX design</button>
+<button type='button' class='chip' data-id='323' data-label='building apps' aria-pressed='false'>building apps</button>
+<button type='button' class='chip' data-id='324' data-label='learning languages online' aria-pressed='false'>learning languages online</button>
+<button type='button' class='chip' data-id='325' data-label='taking digital notes' aria-pressed='false'>taking digital notes</button>
+<button type='button' class='chip' data-id='326' data-label='using spreadsheets' aria-pressed='false'>using spreadsheets</button>
+<button type='button' class='chip' data-id='327' data-label='managing calendars' aria-pressed='false'>managing calendars</button>
+<button type='button' class='chip' data-id='328' data-label='file organizing' aria-pressed='false'>file organizing</button>
+<button type='button' class='chip' data-id='329' data-label='running virtual meetings' aria-pressed='false'>running virtual meetings</button>
+<button type='button' class='chip' data-id='330' data-label='using AI tools' aria-pressed='false'>using AI tools</button>
+<button type='button' class='chip' data-id='331' data-label='typing' aria-pressed='false'>typing</button>
+<button type='button' class='chip' data-id='332' data-label='copy-pasting' aria-pressed='false'>copy-pasting</button>
+<button type='button' class='chip' data-id='333' data-label='dragging files' aria-pressed='false'>dragging files</button>
+<button type='button' class='chip' data-id='334' data-label='installing software' aria-pressed='false'>installing software</button>
+<button type='button' class='chip' data-id='335' data-label='updating drivers' aria-pressed='false'>updating drivers</button>
+<button type='button' class='chip' data-id='336' data-label='troubleshooting tech' aria-pressed='false'>troubleshooting tech</button>
+<button type='button' class='chip' data-id='337' data-label='building PCs' aria-pressed='false'>building PCs</button>
+<button type='button' class='chip' data-id='338' data-label='backing up data' aria-pressed='false'>backing up data</button>
+<button type='button' class='chip' data-id='339' data-label='creating presentations' aria-pressed='false'>creating presentations</button>
+<button type='button' class='chip' data-id='340' data-label='graphic editing' aria-pressed='false'>graphic editing</button>
+<button type='button' class='chip' data-id='341' data-label='photo retouching' aria-pressed='false'>photo retouching</button>
+<button type='button' class='chip' data-id='342' data-label='3D modeling' aria-pressed='false'>3D modeling</button>
+<button type='button' class='chip' data-id='343' data-label='Blender sculpting' aria-pressed='false'>Blender sculpting</button>
+<button type='button' class='chip' data-id='344' data-label='creating animations' aria-pressed='false'>creating animations</button>
+<button type='button' class='chip' data-id='345' data-label='writing code snippets' aria-pressed='false'>writing code snippets</button>
+<button type='button' class='chip' data-id='346' data-label='creating bots' aria-pressed='false'>creating bots</button>
+<button type='button' class='chip' data-id='347' data-label='API testing' aria-pressed='false'>API testing</button>
+<button type='button' class='chip' data-id='348' data-label='cybersecurity practice' aria-pressed='false'>cybersecurity practice</button>
+<button type='button' class='chip' data-id='349' data-label='ethical hacking' aria-pressed='false'>ethical hacking</button>
+<button type='button' class='chip' data-id='350' data-label='data entry' aria-pressed='false'>data entry</button>
+<button type='button' class='chip' data-id='351' data-label='data analysis' aria-pressed='false'>data analysis</button>
+<button type='button' class='chip' data-id='352' data-label='spreadsheet modeling' aria-pressed='false'>spreadsheet modeling</button>
+<button type='button' class='chip' data-id='353' data-label='managing digital finances' aria-pressed='false'>managing digital finances</button>
+<button type='button' class='chip' data-id='354' data-label='using crypto wallets' aria-pressed='false'>using crypto wallets</button>
+<button type='button' class='chip' data-id='355' data-label='VR gaming' aria-pressed='false'>VR gaming</button>
+<button type='button' class='chip' data-id='356' data-label='AR experiences' aria-pressed='false'>AR experiences</button>
+<button type='button' class='chip' data-id='357' data-label='drone flying' aria-pressed='false'>drone flying</button>
+<button type='button' class='chip' data-id='358' data-label='making digital art' aria-pressed='false'>making digital art</button>
+<button type='button' class='chip' data-id='359' data-label='editing sprite sheets' aria-pressed='false'>editing sprite sheets</button>
+<button type='button' class='chip' data-id='360' data-label='creating GIFs' aria-pressed='false'>creating GIFs</button>
+<button type='button' class='chip' data-id='361' data-label='using filters' aria-pressed='false'>using filters</button>
+<button type='button' class='chip' data-id='362' data-label='coding neural networks' aria-pressed='false'>coding neural networks</button>
+<button type='button' class='chip' data-id='363' data-label='training ML models' aria-pressed='false'>training ML models</button>
+<button type='button' class='chip' data-id='364' data-label='animating sprites' aria-pressed='false'>animating sprites</button>
+<button type='button' class='chip' data-id='365' data-label='writing fanfic' aria-pressed='false'>writing fanfic</button>
+<button type='button' class='chip' data-id='366' data-label='curating Pinterest boards' aria-pressed='false'>curating Pinterest boards</button>
+<button type='button' class='chip' data-id='367' data-label='designing wallpapers' aria-pressed='false'>designing wallpapers</button>
+<button type='button' class='chip' data-id='368' data-label='blogging' aria-pressed='false'>blogging</button>
+<button type='button' class='chip' data-id='369' data-label='vlogging' aria-pressed='false'>vlogging</button>
+<button type='button' class='chip' data-id='370' data-label='creating tutorials' aria-pressed='false'>creating tutorials</button>
+<button type='button' class='chip' data-id='371' data-label='recording podcasts' aria-pressed='false'>recording podcasts</button>
+<button type='button' class='chip' data-id='372' data-label='scheduling posts' aria-pressed='false'>scheduling posts</button>
+<button type='button' class='chip' data-id='373' data-label='writing newsletters' aria-pressed='false'>writing newsletters</button>
+<button type='button' class='chip' data-id='374' data-label='troubleshooting Wi-Fi' aria-pressed='false'>troubleshooting Wi-Fi</button>
+<button type='button' class='chip' data-id='375' data-label='updating firmware' aria-pressed='false'>updating firmware</button>
+<button type='button' class='chip' data-id='376' data-label='creating databases' aria-pressed='false'>creating databases</button>
+<button type='button' class='chip' data-id='377' data-label='tagging metadata' aria-pressed='false'>tagging metadata</button>
+<button type='button' class='chip' data-id='378' data-label='using digital to-do lists' aria-pressed='false'>using digital to-do lists</button>
+<button type='button' class='chip' data-id='379' data-label='playing online chess' aria-pressed='false'>playing online chess</button>
+<button type='button' class='chip' data-id='380' data-label='solving captchas' aria-pressed='false'>solving captchas</button>
+<button type='button' class='chip' data-id='381' data-label='saving bookmarks' aria-pressed='false'>saving bookmarks</button>
+<button type='button' class='chip' data-id='382' data-label='password managing' aria-pressed='false'>password managing</button>
+<button type='button' class='chip' data-id='383' data-label='pixel art creation' aria-pressed='false'>pixel art creation</button>
+<button type='button' class='chip' data-id='384' data-label='using Discord' aria-pressed='false'>using Discord</button>
+<button type='button' class='chip' data-id='385' data-label='managing servers' aria-pressed='false'>managing servers</button>
+<button type='button' class='chip' data-id='386' data-label='moderating communities' aria-pressed='false'>moderating communities</button>
+<button type='button' class='chip' data-id='387' data-label='setting server roles' aria-pressed='false'>setting server roles</button>
+<button type='button' class='chip' data-id='388' data-label='creating channels' aria-pressed='false'>creating channels</button>
+<button type='button' class='chip' data-id='389' data-label='uploading emojis' aria-pressed='false'>uploading emojis</button>
+<button type='button' class='chip' data-id='390' data-label='building Notion dashboards' aria-pressed='false'>building Notion dashboards</button>
+<button type='button' class='chip' data-id='391' data-label='automating workflows' aria-pressed='false'>automating workflows</button>
+<button type='button' class='chip' data-id='392' data-label='meditating' aria-pressed='false'>meditating</button>
+<button type='button' class='chip' data-id='393' data-label='deep breathing' aria-pressed='false'>deep breathing</button>
+<button type='button' class='chip' data-id='394' data-label='grounding exercises' aria-pressed='false'>grounding exercises</button>
+<button type='button' class='chip' data-id='395' data-label='mindfulness practice' aria-pressed='false'>mindfulness practice</button>
+<button type='button' class='chip' data-id='396' data-label='mantra chanting' aria-pressed='false'>mantra chanting</button>
+<button type='button' class='chip' data-id='397' data-label='self-soothing' aria-pressed='false'>self-soothing</button>
+<button type='button' class='chip' data-id='398' data-label='emotional regulation' aria-pressed='false'>emotional regulation</button>
+<button type='button' class='chip' data-id='399' data-label='identifying triggers' aria-pressed='false'>identifying triggers</button>
+<button type='button' class='chip' data-id='400' data-label='unpacking memories' aria-pressed='false'>unpacking memories</button>
+</div></details>
+<details open data-sec='sec5'><summary>Section 5 (401–500)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='401' data-label='visualizing success' aria-pressed='false'>visualizing success</button>
+<button type='button' class='chip' data-id='402' data-label='reframing thoughts' aria-pressed='false'>reframing thoughts</button>
+<button type='button' class='chip' data-id='403' data-label='body scanning' aria-pressed='false'>body scanning</button>
+<button type='button' class='chip' data-id='404' data-label='progressive muscle relaxation' aria-pressed='false'>progressive muscle relaxation</button>
+<button type='button' class='chip' data-id='405' data-label='shadow work' aria-pressed='false'>shadow work</button>
+<button type='button' class='chip' data-id='406' data-label='affirmations' aria-pressed='false'>affirmations</button>
+<button type='button' class='chip' data-id='407' data-label='seeking comfort' aria-pressed='false'>seeking comfort</button>
+<button type='button' class='chip' data-id='408' data-label='asking for help' aria-pressed='false'>asking for help</button>
+<button type='button' class='chip' data-id='409' data-label='therapy homework' aria-pressed='false'>therapy homework</button>
+<button type='button' class='chip' data-id='410' data-label='introspection' aria-pressed='false'>introspection</button>
+<button type='button' class='chip' data-id='411' data-label='goal tracking' aria-pressed='false'>goal tracking</button>
+<button type='button' class='chip' data-id='412' data-label='building routines' aria-pressed='false'>building routines</button>
+<button type='button' class='chip' data-id='413' data-label='habit stacking' aria-pressed='false'>habit stacking</button>
+<button type='button' class='chip' data-id='414' data-label='reflecting on choices' aria-pressed='false'>reflecting on choices</button>
+<button type='button' class='chip' data-id='415' data-label='reading self-help' aria-pressed='false'>reading self-help</button>
+<button type='button' class='chip' data-id='416' data-label='journaling insights' aria-pressed='false'>journaling insights</button>
+<button type='button' class='chip' data-id='417' data-label='writing affirmations' aria-pressed='false'>writing affirmations</button>
+<button type='button' class='chip' data-id='418' data-label='spending time alone' aria-pressed='false'>spending time alone</button>
+<button type='button' class='chip' data-id='419' data-label='reconnecting with others' aria-pressed='false'>reconnecting with others</button>
+<button type='button' class='chip' data-id='420' data-label='healing old wounds' aria-pressed='false'>healing old wounds</button>
+<button type='button' class='chip' data-id='421' data-label='forgiving yourself' aria-pressed='false'>forgiving yourself</button>
+<button type='button' class='chip' data-id='422' data-label='practicing stillness' aria-pressed='false'>practicing stillness</button>
+<button type='button' class='chip' data-id='423' data-label='taking breaks' aria-pressed='false'>taking breaks</button>
+<button type='button' class='chip' data-id='424' data-label='crying intentionally' aria-pressed='false'>crying intentionally</button>
+<button type='button' class='chip' data-id='425' data-label='understanding emotions' aria-pressed='false'>understanding emotions</button>
+<button type='button' class='chip' data-id='426' data-label='naming feelings' aria-pressed='false'>naming feelings</button>
+<button type='button' class='chip' data-id='427' data-label='resting' aria-pressed='false'>resting</button>
+<button type='button' class='chip' data-id='428' data-label='napping intentionally' aria-pressed='false'>napping intentionally</button>
+<button type='button' class='chip' data-id='429' data-label='regulating stress' aria-pressed='false'>regulating stress</button>
+<button type='button' class='chip' data-id='430' data-label='walking to think' aria-pressed='false'>walking to think</button>
+<button type='button' class='chip' data-id='431' data-label='pacing' aria-pressed='false'>pacing</button>
+<button type='button' class='chip' data-id='432' data-label='dissociating' aria-pressed='false'>dissociating</button>
+<button type='button' class='chip' data-id='433' data-label='grounding in nature' aria-pressed='false'>grounding in nature</button>
+<button type='button' class='chip' data-id='434' data-label='cleansing your space' aria-pressed='false'>cleansing your space</button>
+<button type='button' class='chip' data-id='435' data-label='rearranging furniture' aria-pressed='false'>rearranging furniture</button>
+<button type='button' class='chip' data-id='436' data-label='taking long showers' aria-pressed='false'>taking long showers</button>
+<button type='button' class='chip' data-id='437' data-label='listening to calming music' aria-pressed='false'>listening to calming music</button>
+<button type='button' class='chip' data-id='438' data-label='singing in the shower' aria-pressed='false'>singing in the shower</button>
+<button type='button' class='chip' data-id='439' data-label='dancing alone' aria-pressed='false'>dancing alone</button>
+<button type='button' class='chip' data-id='440' data-label='stretching in the morning' aria-pressed='false'>stretching in the morning</button>
+<button type='button' class='chip' data-id='441' data-label='stimming' aria-pressed='false'>stimming</button>
+<button type='button' class='chip' data-id='442' data-label='sensory seeking' aria-pressed='false'>sensory seeking</button>
+<button type='button' class='chip' data-id='443' data-label='sensory avoidance' aria-pressed='false'>sensory avoidance</button>
+<button type='button' class='chip' data-id='444' data-label='aromatherapy' aria-pressed='false'>aromatherapy</button>
+<button type='button' class='chip' data-id='445' data-label='lighting candles' aria-pressed='false'>lighting candles</button>
+<button type='button' class='chip' data-id='446' data-label='tidying your desk' aria-pressed='false'>tidying your desk</button>
+<button type='button' class='chip' data-id='447' data-label='drinking cold water' aria-pressed='false'>drinking cold water</button>
+<button type='button' class='chip' data-id='448' data-label='drinking warm tea' aria-pressed='false'>drinking warm tea</button>
+<button type='button' class='chip' data-id='449' data-label='hugging a pillow' aria-pressed='false'>hugging a pillow</button>
+<button type='button' class='chip' data-id='450' data-label='watching comfort shows' aria-pressed='false'>watching comfort shows</button>
+<button type='button' class='chip' data-id='451' data-label='wearing soft clothes' aria-pressed='false'>wearing soft clothes</button>
+<button type='button' class='chip' data-id='452' data-label='petting animals' aria-pressed='false'>petting animals</button>
+<button type='button' class='chip' data-id='453' data-label='feeding birds' aria-pressed='false'>feeding birds</button>
+<button type='button' class='chip' data-id='454' data-label='helping a friend' aria-pressed='false'>helping a friend</button>
+<button type='button' class='chip' data-id='455' data-label='talking through problems' aria-pressed='false'>talking through problems</button>
+<button type='button' class='chip' data-id='456' data-label='venting safely' aria-pressed='false'>venting safely</button>
+<button type='button' class='chip' data-id='457' data-label='asking clarifying questions' aria-pressed='false'>asking clarifying questions</button>
+<button type='button' class='chip' data-id='458' data-label='researching solutions' aria-pressed='false'>researching solutions</button>
+<button type='button' class='chip' data-id='459' data-label='making decisions' aria-pressed='false'>making decisions</button>
+<button type='button' class='chip' data-id='460' data-label='delaying decisions' aria-pressed='false'>delaying decisions</button>
+<button type='button' class='chip' data-id='461' data-label='prioritizing tasks' aria-pressed='false'>prioritizing tasks</button>
+<button type='button' class='chip' data-id='462' data-label='saying no' aria-pressed='false'>saying no</button>
+<button type='button' class='chip' data-id='463' data-label='saying yes' aria-pressed='false'>saying yes</button>
+<button type='button' class='chip' data-id='464' data-label='compromising' aria-pressed='false'>compromising</button>
+<button type='button' class='chip' data-id='465' data-label='self-advocating' aria-pressed='false'>self-advocating</button>
+<button type='button' class='chip' data-id='466' data-label='setting boundaries' aria-pressed='false'>setting boundaries</button>
+<button type='button' class='chip' data-id='467' data-label='maintaining boundaries' aria-pressed='false'>maintaining boundaries</button>
+<button type='button' class='chip' data-id='468' data-label='repairing relationships' aria-pressed='false'>repairing relationships</button>
+<button type='button' class='chip' data-id='469' data-label='ending relationships' aria-pressed='false'>ending relationships</button>
+<button type='button' class='chip' data-id='470' data-label='grieving' aria-pressed='false'>grieving</button>
+<button type='button' class='chip' data-id='471' data-label='celebrating' aria-pressed='false'>celebrating</button>
+<button type='button' class='chip' data-id='472' data-label='feeling pride' aria-pressed='false'>feeling pride</button>
+<button type='button' class='chip' data-id='473' data-label='feeling relief' aria-pressed='false'>feeling relief</button>
+<button type='button' class='chip' data-id='474' data-label='feeling anticipation' aria-pressed='false'>feeling anticipation</button>
+<button type='button' class='chip' data-id='475' data-label='feeling uncertainty' aria-pressed='false'>feeling uncertainty</button>
+<button type='button' class='chip' data-id='476' data-label='working' aria-pressed='false'>working</button>
+<button type='button' class='chip' data-id='477' data-label='commuting' aria-pressed='false'>commuting</button>
+<button type='button' class='chip' data-id='478' data-label='replying to emails' aria-pressed='false'>replying to emails</button>
+<button type='button' class='chip' data-id='479' data-label='attending meetings' aria-pressed='false'>attending meetings</button>
+<button type='button' class='chip' data-id='480' data-label='brainstorming with coworkers' aria-pressed='false'>brainstorming with coworkers</button>
+<button type='button' class='chip' data-id='481' data-label='presenting ideas' aria-pressed='false'>presenting ideas</button>
+<button type='button' class='chip' data-id='482' data-label='taking notes' aria-pressed='false'>taking notes</button>
+<button type='button' class='chip' data-id='483' data-label='leading teams' aria-pressed='false'>leading teams</button>
+<button type='button' class='chip' data-id='484' data-label='collaborating' aria-pressed='false'>collaborating</button>
+<button type='button' class='chip' data-id='485' data-label='negotiating contracts' aria-pressed='false'>negotiating contracts</button>
+<button type='button' class='chip' data-id='486' data-label='onboarding' aria-pressed='false'>onboarding</button>
+<button type='button' class='chip' data-id='487' data-label='training others' aria-pressed='false'>training others</button>
+<button type='button' class='chip' data-id='488' data-label='fixing equipment' aria-pressed='false'>fixing equipment</button>
+<button type='button' class='chip' data-id='489' data-label='restocking supplies' aria-pressed='false'>restocking supplies</button>
+<button type='button' class='chip' data-id='490' data-label='organizing inventory' aria-pressed='false'>organizing inventory</button>
+<button type='button' class='chip' data-id='491' data-label='project planning' aria-pressed='false'>project planning</button>
+<button type='button' class='chip' data-id='492' data-label='scheduling tasks' aria-pressed='false'>scheduling tasks</button>
+<button type='button' class='chip' data-id='493' data-label='time management' aria-pressed='false'>time management</button>
+<button type='button' class='chip' data-id='494' data-label='delegating' aria-pressed='false'>delegating</button>
+<button type='button' class='chip' data-id='495' data-label='filing documents' aria-pressed='false'>filing documents</button>
+<button type='button' class='chip' data-id='496' data-label='archiving' aria-pressed='false'>archiving</button>
+<button type='button' class='chip' data-id='497' data-label='reading reports' aria-pressed='false'>reading reports</button>
+<button type='button' class='chip' data-id='498' data-label='writing reports' aria-pressed='false'>writing reports</button>
+<button type='button' class='chip' data-id='499' data-label='troubleshooting systems' aria-pressed='false'>troubleshooting systems</button>
+<button type='button' class='chip' data-id='500' data-label='learning new skills' aria-pressed='false'>learning new skills</button>
+</div></details>
+<details open data-sec='sec6'><summary>Section 6 (501–600)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='501' data-label='mentoring others' aria-pressed='false'>mentoring others</button>
+<button type='button' class='chip' data-id='502' data-label='reviewing work' aria-pressed='false'>reviewing work</button>
+<button type='button' class='chip' data-id='503' data-label='quality control' aria-pressed='false'>quality control</button>
+<button type='button' class='chip' data-id='504' data-label='manufacturing tasks' aria-pressed='false'>manufacturing tasks</button>
+<button type='button' class='chip' data-id='505' data-label='customer service' aria-pressed='false'>customer service</button>
+<button type='button' class='chip' data-id='506' data-label='answering phones' aria-pressed='false'>answering phones</button>
+<button type='button' class='chip' data-id='507' data-label='greeting clients' aria-pressed='false'>greeting clients</button>
+<button type='button' class='chip' data-id='508' data-label='processing orders' aria-pressed='false'>processing orders</button>
+<button type='button' class='chip' data-id='509' data-label='transporting goods' aria-pressed='false'>transporting goods</button>
+<button type='button' class='chip' data-id='510' data-label='driving cars' aria-pressed='false'>driving cars</button>
+<button type='button' class='chip' data-id='511' data-label='riding buses' aria-pressed='false'>riding buses</button>
+<button type='button' class='chip' data-id='512' data-label='cycling to work' aria-pressed='false'>cycling to work</button>
+<button type='button' class='chip' data-id='513' data-label='navigating maps' aria-pressed='false'>navigating maps</button>
+<button type='button' class='chip' data-id='514' data-label='booking appointments' aria-pressed='false'>booking appointments</button>
+<button type='button' class='chip' data-id='515' data-label='managing finances' aria-pressed='false'>managing finances</button>
+<button type='button' class='chip' data-id='516' data-label='balancing accounts' aria-pressed='false'>balancing accounts</button>
+<button type='button' class='chip' data-id='517' data-label='calculating taxes' aria-pressed='false'>calculating taxes</button>
+<button type='button' class='chip' data-id='518' data-label='signing papers' aria-pressed='false'>signing papers</button>
+<button type='button' class='chip' data-id='519' data-label='reading legal documents' aria-pressed='false'>reading legal documents</button>
+<button type='button' class='chip' data-id='520' data-label='researching laws' aria-pressed='false'>researching laws</button>
+<button type='button' class='chip' data-id='521' data-label='contacting support' aria-pressed='false'>contacting support</button>
+<button type='button' class='chip' data-id='522' data-label='renewing licenses' aria-pressed='false'>renewing licenses</button>
+<button type='button' class='chip' data-id='523' data-label='studying' aria-pressed='false'>studying</button>
+<button type='button' class='chip' data-id='524' data-label='taking tests' aria-pressed='false'>taking tests</button>
+<button type='button' class='chip' data-id='525' data-label='attending classes' aria-pressed='false'>attending classes</button>
+<button type='button' class='chip' data-id='526' data-label='listening to lectures' aria-pressed='false'>listening to lectures</button>
+<button type='button' class='chip' data-id='527' data-label='writing essays' aria-pressed='false'>writing essays</button>
+<button type='button' class='chip' data-id='528' data-label='reading textbooks' aria-pressed='false'>reading textbooks</button>
+<button type='button' class='chip' data-id='529' data-label='highlighting notes' aria-pressed='false'>highlighting notes</button>
+<button type='button' class='chip' data-id='530' data-label='group study' aria-pressed='false'>group study</button>
+<button type='button' class='chip' data-id='531' data-label='memorization drills' aria-pressed='false'>memorization drills</button>
+<button type='button' class='chip' data-id='532' data-label='practicing skills' aria-pressed='false'>practicing skills</button>
+<button type='button' class='chip' data-id='533' data-label='prepping presentations' aria-pressed='false'>prepping presentations</button>
+<button type='button' class='chip' data-id='534' data-label='learning instruments' aria-pressed='false'>learning instruments</button>
+<button type='button' class='chip' data-id='535' data-label='rehearsing music' aria-pressed='false'>rehearsing music</button>
+<button type='button' class='chip' data-id='536' data-label='conducting experiments' aria-pressed='false'>conducting experiments</button>
+<button type='button' class='chip' data-id='537' data-label='observing results' aria-pressed='false'>observing results</button>
+<button type='button' class='chip' data-id='538' data-label='writing hypotheses' aria-pressed='false'>writing hypotheses</button>
+<button type='button' class='chip' data-id='539' data-label='designing posters' aria-pressed='false'>designing posters</button>
+<button type='button' class='chip' data-id='540' data-label='participating in labs' aria-pressed='false'>participating in labs</button>
+<button type='button' class='chip' data-id='541' data-label='attending workshops' aria-pressed='false'>attending workshops</button>
+<button type='button' class='chip' data-id='542' data-label='joining clubs' aria-pressed='false'>joining clubs</button>
+<button type='button' class='chip' data-id='543' data-label='tutoring' aria-pressed='false'>tutoring</button>
+<button type='button' class='chip' data-id='544' data-label='volunteering' aria-pressed='false'>volunteering</button>
+<button type='button' class='chip' data-id='545' data-label='donating items' aria-pressed='false'>donating items</button>
+<button type='button' class='chip' data-id='546' data-label='participating in charity events' aria-pressed='false'>participating in charity events</button>
+<button type='button' class='chip' data-id='547' data-label='mentoring youth' aria-pressed='false'>mentoring youth</button>
+<button type='button' class='chip' data-id='548' data-label='community organizing' aria-pressed='false'>community organizing</button>
+<button type='button' class='chip' data-id='549' data-label='activism' aria-pressed='false'>activism</button>
+<button type='button' class='chip' data-id='550' data-label='advocacy' aria-pressed='false'>advocacy</button>
+<button type='button' class='chip' data-id='551' data-label='protesting' aria-pressed='false'>protesting</button>
+<button type='button' class='chip' data-id='552' data-label='voting' aria-pressed='false'>voting</button>
+<button type='button' class='chip' data-id='553' data-label='writing petitions' aria-pressed='false'>writing petitions</button>
+<button type='button' class='chip' data-id='554' data-label='speaking publicly' aria-pressed='false'>speaking publicly</button>
+<button type='button' class='chip' data-id='555' data-label='debating ideas' aria-pressed='false'>debating ideas</button>
+<button type='button' class='chip' data-id='556' data-label='educating others' aria-pressed='false'>educating others</button>
+<button type='button' class='chip' data-id='557' data-label='raising awareness' aria-pressed='false'>raising awareness</button>
+<button type='button' class='chip' data-id='558' data-label='fundraising' aria-pressed='false'>fundraising</button>
+<button type='button' class='chip' data-id='559' data-label='building community projects' aria-pressed='false'>building community projects</button>
+<button type='button' class='chip' data-id='560' data-label='stretching before exercise' aria-pressed='false'>stretching before exercise</button>
+<button type='button' class='chip' data-id='561' data-label='cooling down after workouts' aria-pressed='false'>cooling down after workouts</button>
+<button type='button' class='chip' data-id='562' data-label='taking vitamins' aria-pressed='false'>taking vitamins</button>
+<button type='button' class='chip' data-id='563' data-label='applying sunscreen' aria-pressed='false'>applying sunscreen</button>
+<button type='button' class='chip' data-id='564' data-label='moisturizing' aria-pressed='false'>moisturizing</button>
+<button type='button' class='chip' data-id='565' data-label='trimming nails' aria-pressed='false'>trimming nails</button>
+<button type='button' class='chip' data-id='566' data-label='clipping toenails' aria-pressed='false'>clipping toenails</button>
+<button type='button' class='chip' data-id='567' data-label='brushing hair' aria-pressed='false'>brushing hair</button>
+<button type='button' class='chip' data-id='568' data-label='conditioning hair' aria-pressed='false'>conditioning hair</button>
+<button type='button' class='chip' data-id='569' data-label='exfoliating skin' aria-pressed='false'>exfoliating skin</button>
+<button type='button' class='chip' data-id='570' data-label='shaving body hair' aria-pressed='false'>shaving body hair</button>
+<button type='button' class='chip' data-id='571' data-label='shaving beard' aria-pressed='false'>shaving beard</button>
+<button type='button' class='chip' data-id='572' data-label='brushing teeth' aria-pressed='false'>brushing teeth</button>
+<button type='button' class='chip' data-id='573' data-label='flossing' aria-pressed='false'>flossing</button>
+<button type='button' class='chip' data-id='574' data-label='mouthwash rinsing' aria-pressed='false'>mouthwash rinsing</button>
+<button type='button' class='chip' data-id='575' data-label='applying deodorant' aria-pressed='false'>applying deodorant</button>
+<button type='button' class='chip' data-id='576' data-label='massaging muscles' aria-pressed='false'>massaging muscles</button>
+<button type='button' class='chip' data-id='577' data-label='self-checking vitals' aria-pressed='false'>self-checking vitals</button>
+<button type='button' class='chip' data-id='578' data-label='first aid' aria-pressed='false'>first aid</button>
+<button type='button' class='chip' data-id='579' data-label='treating cuts' aria-pressed='false'>treating cuts</button>
+<button type='button' class='chip' data-id='580' data-label='bandaging wounds' aria-pressed='false'>bandaging wounds</button>
+<button type='button' class='chip' data-id='581' data-label='using ice packs' aria-pressed='false'>using ice packs</button>
+<button type='button' class='chip' data-id='582' data-label='heating pads' aria-pressed='false'>heating pads</button>
+<button type='button' class='chip' data-id='583' data-label='stretching injured muscles' aria-pressed='false'>stretching injured muscles</button>
+<button type='button' class='chip' data-id='584' data-label='physical therapy exercises' aria-pressed='false'>physical therapy exercises</button>
+<button type='button' class='chip' data-id='585' data-label='med tracking' aria-pressed='false'>med tracking</button>
+<button type='button' class='chip' data-id='586' data-label='taking prescriptions' aria-pressed='false'>taking prescriptions</button>
+<button type='button' class='chip' data-id='587' data-label='scheduling appointments' aria-pressed='false'>scheduling appointments</button>
+<button type='button' class='chip' data-id='588' data-label='attending medical checkups' aria-pressed='false'>attending medical checkups</button>
+<button type='button' class='chip' data-id='589' data-label='attending therapy' aria-pressed='false'>attending therapy</button>
+<button type='button' class='chip' data-id='590' data-label='researching symptoms' aria-pressed='false'>researching symptoms</button>
+<button type='button' class='chip' data-id='591' data-label='doing breathwork' aria-pressed='false'>doing breathwork</button>
+<button type='button' class='chip' data-id='592' data-label='resting in bed' aria-pressed='false'>resting in bed</button>
+<button type='button' class='chip' data-id='593' data-label='lowering stress' aria-pressed='false'>lowering stress</button>
+<button type='button' class='chip' data-id='594' data-label='drinking electrolytes' aria-pressed='false'>drinking electrolytes</button>
+<button type='button' class='chip' data-id='595' data-label='improving posture' aria-pressed='false'>improving posture</button>
+<button type='button' class='chip' data-id='596' data-label='stretching neck' aria-pressed='false'>stretching neck</button>
+<button type='button' class='chip' data-id='597' data-label='standing breaks at desk' aria-pressed='false'>standing breaks at desk</button>
+<button type='button' class='chip' data-id='598' data-label='drinking herbal tea' aria-pressed='false'>drinking herbal tea</button>
+<button type='button' class='chip' data-id='599' data-label='meditating with apps' aria-pressed='false'>meditating with apps</button>
+<button type='button' class='chip' data-id='600' data-label='taking long baths' aria-pressed='false'>taking long baths</button>
+</div></details>
+<details open data-sec='sec7'><summary>Section 7 (601–700)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='601' data-label='aromatherapy showers' aria-pressed='false'>aromatherapy showers</button>
+<button type='button' class='chip' data-id='602' data-label='going for health walks' aria-pressed='false'>going for health walks</button>
+<button type='button' class='chip' data-id='603' data-label='cooking healthy meals' aria-pressed='false'>cooking healthy meals</button>
+<button type='button' class='chip' data-id='604' data-label='reducing sugar intake' aria-pressed='false'>reducing sugar intake</button>
+<button type='button' class='chip' data-id='605' data-label='tracking calories' aria-pressed='false'>tracking calories</button>
+<button type='button' class='chip' data-id='606' data-label='measuring weight' aria-pressed='false'>measuring weight</button>
+<button type='button' class='chip' data-id='607' data-label='getting massages' aria-pressed='false'>getting massages</button>
+<button type='button' class='chip' data-id='608' data-label='chiropractic visits' aria-pressed='false'>chiropractic visits</button>
+<button type='button' class='chip' data-id='609' data-label='stretching hamstrings' aria-pressed='false'>stretching hamstrings</button>
+<button type='button' class='chip' data-id='610' data-label='stretching back' aria-pressed='false'>stretching back</button>
+<button type='button' class='chip' data-id='611' data-label='stretching shoulders' aria-pressed='false'>stretching shoulders</button>
+<button type='button' class='chip' data-id='612' data-label='planning trips' aria-pressed='false'>planning trips</button>
+<button type='button' class='chip' data-id='613' data-label='packing luggage' aria-pressed='false'>packing luggage</button>
+<button type='button' class='chip' data-id='614' data-label='unpacking luggage' aria-pressed='false'>unpacking luggage</button>
+<button type='button' class='chip' data-id='615' data-label='booking flights' aria-pressed='false'>booking flights</button>
+<button type='button' class='chip' data-id='616' data-label='booking hotels' aria-pressed='false'>booking hotels</button>
+<button type='button' class='chip' data-id='617' data-label='riding taxis' aria-pressed='false'>riding taxis</button>
+<button type='button' class='chip' data-id='618' data-label='taking buses' aria-pressed='false'>taking buses</button>
+<button type='button' class='chip' data-id='619' data-label='riding subways' aria-pressed='false'>riding subways</button>
+<button type='button' class='chip' data-id='620' data-label='taking ferries' aria-pressed='false'>taking ferries</button>
+<button type='button' class='chip' data-id='621' data-label='boarding planes' aria-pressed='false'>boarding planes</button>
+<button type='button' class='chip' data-id='622' data-label='going through security' aria-pressed='false'>going through security</button>
+<button type='button' class='chip' data-id='623' data-label='waiting in airports' aria-pressed='false'>waiting in airports</button>
+<button type='button' class='chip' data-id='624' data-label='traveling abroad' aria-pressed='false'>traveling abroad</button>
+<button type='button' class='chip' data-id='625' data-label='learning travel phrases' aria-pressed='false'>learning travel phrases</button>
+<button type='button' class='chip' data-id='626' data-label='sampling foreign foods' aria-pressed='false'>sampling foreign foods</button>
+<button type='button' class='chip' data-id='627' data-label='sightseeing' aria-pressed='false'>sightseeing</button>
+<button type='button' class='chip' data-id='628' data-label='hiking mountains' aria-pressed='false'>hiking mountains</button>
+<button type='button' class='chip' data-id='629' data-label='exploring forests' aria-pressed='false'>exploring forests</button>
+<button type='button' class='chip' data-id='630' data-label='visiting lakes' aria-pressed='false'>visiting lakes</button>
+<button type='button' class='chip' data-id='631' data-label='visiting beaches' aria-pressed='false'>visiting beaches</button>
+<button type='button' class='chip' data-id='632' data-label='walking in cities' aria-pressed='false'>walking in cities</button>
+<button type='button' class='chip' data-id='633' data-label='taking photos' aria-pressed='false'>taking photos</button>
+<button type='button' class='chip' data-id='634' data-label='navigating new places' aria-pressed='false'>navigating new places</button>
+<button type='button' class='chip' data-id='635' data-label='collecting souvenirs' aria-pressed='false'>collecting souvenirs</button>
+<button type='button' class='chip' data-id='636' data-label='meeting locals' aria-pressed='false'>meeting locals</button>
+<button type='button' class='chip' data-id='637' data-label='renting bikes' aria-pressed='false'>renting bikes</button>
+<button type='button' class='chip' data-id='638' data-label='stargazing outdoors' aria-pressed='false'>stargazing outdoors</button>
+<button type='button' class='chip' data-id='639' data-label='camping under stars' aria-pressed='false'>camping under stars</button>
+<button type='button' class='chip' data-id='640' data-label='exploring caves' aria-pressed='false'>exploring caves</button>
+<button type='button' class='chip' data-id='641' data-label='swimming in rivers' aria-pressed='false'>swimming in rivers</button>
+<button type='button' class='chip' data-id='642' data-label='visiting waterfalls' aria-pressed='false'>visiting waterfalls</button>
+<button type='button' class='chip' data-id='643' data-label='taking scenic drives' aria-pressed='false'>taking scenic drives</button>
+<button type='button' class='chip' data-id='644' data-label='road tripping' aria-pressed='false'>road tripping</button>
+<button type='button' class='chip' data-id='645' data-label='using maps' aria-pressed='false'>using maps</button>
+<button type='button' class='chip' data-id='646' data-label='booking tours' aria-pressed='false'>booking tours</button>
+<button type='button' class='chip' data-id='647' data-label='traveling solo' aria-pressed='false'>traveling solo</button>
+<button type='button' class='chip' data-id='648' data-label='traveling with friends' aria-pressed='false'>traveling with friends</button>
+<button type='button' class='chip' data-id='649' data-label='navigating airports' aria-pressed='false'>navigating airports</button>
+<button type='button' class='chip' data-id='650' data-label='trying local cafés' aria-pressed='false'>trying local cafés</button>
+<button type='button' class='chip' data-id='651' data-label='trying new cuisines' aria-pressed='false'>trying new cuisines</button>
+<button type='button' class='chip' data-id='652' data-label='washing clothes' aria-pressed='false'>washing clothes</button>
+<button type='button' class='chip' data-id='653' data-label='drying clothes' aria-pressed='false'>drying clothes</button>
+<button type='button' class='chip' data-id='654' data-label='folding clothes' aria-pressed='false'>folding clothes</button>
+<button type='button' class='chip' data-id='655' data-label='ironing clothes' aria-pressed='false'>ironing clothes</button>
+<button type='button' class='chip' data-id='656' data-label='organizing closets' aria-pressed='false'>organizing closets</button>
+<button type='button' class='chip' data-id='657' data-label='sorting laundry' aria-pressed='false'>sorting laundry</button>
+<button type='button' class='chip' data-id='658' data-label='repairing clothes' aria-pressed='false'>repairing clothes</button>
+<button type='button' class='chip' data-id='659' data-label='sewing buttons' aria-pressed='false'>sewing buttons</button>
+<button type='button' class='chip' data-id='660' data-label='handwashing delicate fabrics' aria-pressed='false'>handwashing delicate fabrics</button>
+<button type='button' class='chip' data-id='661' data-label='cleaning kitchen counters' aria-pressed='false'>cleaning kitchen counters</button>
+<button type='button' class='chip' data-id='662' data-label='scrubbing pans' aria-pressed='false'>scrubbing pans</button>
+<button type='button' class='chip' data-id='663' data-label='disinfecting surfaces' aria-pressed='false'>disinfecting surfaces</button>
+<button type='button' class='chip' data-id='664' data-label='organizing pantries' aria-pressed='false'>organizing pantries</button>
+<button type='button' class='chip' data-id='665' data-label='stocking food' aria-pressed='false'>stocking food</button>
+<button type='button' class='chip' data-id='666' data-label='meal planning' aria-pressed='false'>meal planning</button>
+<button type='button' class='chip' data-id='667' data-label='chopping vegetables' aria-pressed='false'>chopping vegetables</button>
+<button type='button' class='chip' data-id='668' data-label='frying meals' aria-pressed='false'>frying meals</button>
+<button type='button' class='chip' data-id='669' data-label='roasting food' aria-pressed='false'>roasting food</button>
+<button type='button' class='chip' data-id='670' data-label='boiling pasta' aria-pressed='false'>boiling pasta</button>
+<button type='button' class='chip' data-id='671' data-label='making soups' aria-pressed='false'>making soups</button>
+<button type='button' class='chip' data-id='672' data-label='baking cakes' aria-pressed='false'>baking cakes</button>
+<button type='button' class='chip' data-id='673' data-label='making bread' aria-pressed='false'>making bread</button>
+<button type='button' class='chip' data-id='674' data-label='decorating pastries' aria-pressed='false'>decorating pastries</button>
+<button type='button' class='chip' data-id='675' data-label='setting the table' aria-pressed='false'>setting the table</button>
+<button type='button' class='chip' data-id='676' data-label='washing floors' aria-pressed='false'>washing floors</button>
+<button type='button' class='chip' data-id='677' data-label='vacuuming carpets' aria-pressed='false'>vacuuming carpets</button>
+<button type='button' class='chip' data-id='678' data-label='scrubbing bathrooms' aria-pressed='false'>scrubbing bathrooms</button>
+<button type='button' class='chip' data-id='679' data-label='unclogging drains' aria-pressed='false'>unclogging drains</button>
+<button type='button' class='chip' data-id='680' data-label='fixing leaks' aria-pressed='false'>fixing leaks</button>
+<button type='button' class='chip' data-id='681' data-label='organizing cables' aria-pressed='false'>organizing cables</button>
+<button type='button' class='chip' data-id='682' data-label='emptying trash bins' aria-pressed='false'>emptying trash bins</button>
+<button type='button' class='chip' data-id='683' data-label='recycling plastics' aria-pressed='false'>recycling plastics</button>
+<button type='button' class='chip' data-id='684' data-label='composting food scraps' aria-pressed='false'>composting food scraps</button>
+<button type='button' class='chip' data-id='685' data-label='maintaining tools' aria-pressed='false'>maintaining tools</button>
+<button type='button' class='chip' data-id='686' data-label='painting walls' aria-pressed='false'>painting walls</button>
+<button type='button' class='chip' data-id='687' data-label='hanging shelves' aria-pressed='false'>hanging shelves</button>
+<button type='button' class='chip' data-id='688' data-label='assembling furniture' aria-pressed='false'>assembling furniture</button>
+<button type='button' class='chip' data-id='689' data-label='cleaning windows' aria-pressed='false'>cleaning windows</button>
+<button type='button' class='chip' data-id='690' data-label='raising blinds' aria-pressed='false'>raising blinds</button>
+<button type='button' class='chip' data-id='691' data-label='lowering blinds' aria-pressed='false'>lowering blinds</button>
+<button type='button' class='chip' data-id='692' data-label='sweeping patios' aria-pressed='false'>sweeping patios</button>
+<button type='button' class='chip' data-id='693' data-label='watering gardens' aria-pressed='false'>watering gardens</button>
+<button type='button' class='chip' data-id='694' data-label='trimming plants' aria-pressed='false'>trimming plants</button>
+<button type='button' class='chip' data-id='695' data-label='raking leaves' aria-pressed='false'>raking leaves</button>
+<button type='button' class='chip' data-id='696' data-label='shoveling snow' aria-pressed='false'>shoveling snow</button>
+<button type='button' class='chip' data-id='697' data-label='salting sidewalks' aria-pressed='false'>salting sidewalks</button>
+<button type='button' class='chip' data-id='698' data-label='maintaining yard tools' aria-pressed='false'>maintaining yard tools</button>
+<button type='button' class='chip' data-id='699' data-label='maintaining appliances' aria-pressed='false'>maintaining appliances</button>
+<button type='button' class='chip' data-id='700' data-label='changing light bulbs' aria-pressed='false'>changing light bulbs</button>
+</div></details>
+<details open data-sec='sec8'><summary>Section 8 (701–800)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='701' data-label='changing smoke alarm batteries' aria-pressed='false'>changing smoke alarm batteries</button>
+<button type='button' class='chip' data-id='702' data-label='organizing drawers' aria-pressed='false'>organizing drawers</button>
+<button type='button' class='chip' data-id='703' data-label='decluttering rooms' aria-pressed='false'>decluttering rooms</button>
+<button type='button' class='chip' data-id='704' data-label='labeling boxes' aria-pressed='false'>labeling boxes</button>
+<button type='button' class='chip' data-id='705' data-label='storing seasonal items' aria-pressed='false'>storing seasonal items</button>
+<button type='button' class='chip' data-id='706' data-label='watching movies' aria-pressed='false'>watching movies</button>
+<button type='button' class='chip' data-id='707' data-label='binge-watching shows' aria-pressed='false'>binge-watching shows</button>
+<button type='button' class='chip' data-id='708' data-label='rewatching favorites' aria-pressed='false'>rewatching favorites</button>
+<button type='button' class='chip' data-id='709' data-label='listening to music' aria-pressed='false'>listening to music</button>
+<button type='button' class='chip' data-id='710' data-label='discovering new artists' aria-pressed='false'>discovering new artists</button>
+<button type='button' class='chip' data-id='711' data-label='making playlists' aria-pressed='false'>making playlists</button>
+<button type='button' class='chip' data-id='712' data-label='attending concerts' aria-pressed='false'>attending concerts</button>
+<button type='button' class='chip' data-id='713' data-label='going to festivals' aria-pressed='false'>going to festivals</button>
+<button type='button' class='chip' data-id='714' data-label='watching plays' aria-pressed='false'>watching plays</button>
+<button type='button' class='chip' data-id='715' data-label='attending theatre' aria-pressed='false'>attending theatre</button>
+<button type='button' class='chip' data-id='716' data-label='going to museums' aria-pressed='false'>going to museums</button>
+<button type='button' class='chip' data-id='717' data-label='going to art galleries' aria-pressed='false'>going to art galleries</button>
+<button type='button' class='chip' data-id='718' data-label='doing puzzles' aria-pressed='false'>doing puzzles</button>
+<button type='button' class='chip' data-id='719' data-label='solving sudoku' aria-pressed='false'>solving sudoku</button>
+<button type='button' class='chip' data-id='720' data-label='solving crosswords' aria-pressed='false'>solving crosswords</button>
+<button type='button' class='chip' data-id='721' data-label='reading novels' aria-pressed='false'>reading novels</button>
+<button type='button' class='chip' data-id='722' data-label='reading nonfiction' aria-pressed='false'>reading nonfiction</button>
+<button type='button' class='chip' data-id='723' data-label='reading poetry' aria-pressed='false'>reading poetry</button>
+<button type='button' class='chip' data-id='724' data-label='reading comics' aria-pressed='false'>reading comics</button>
+<button type='button' class='chip' data-id='725' data-label='collecting manga' aria-pressed='false'>collecting manga</button>
+<button type='button' class='chip' data-id='726' data-label='visiting bookstores' aria-pressed='false'>visiting bookstores</button>
+<button type='button' class='chip' data-id='727' data-label='joining book clubs' aria-pressed='false'>joining book clubs</button>
+<button type='button' class='chip' data-id='728' data-label='listening to podcasts' aria-pressed='false'>listening to podcasts</button>
+<button type='button' class='chip' data-id='729' data-label='writing reviews' aria-pressed='false'>writing reviews</button>
+<button type='button' class='chip' data-id='730' data-label='watching documentaries' aria-pressed='false'>watching documentaries</button>
+<button type='button' class='chip' data-id='731' data-label='going bowling' aria-pressed='false'>going bowling</button>
+<button type='button' class='chip' data-id='732' data-label='playing mini-golf' aria-pressed='false'>playing mini-golf</button>
+<button type='button' class='chip' data-id='733' data-label='playing darts' aria-pressed='false'>playing darts</button>
+<button type='button' class='chip' data-id='734' data-label='playing billiards' aria-pressed='false'>playing billiards</button>
+<button type='button' class='chip' data-id='735' data-label='board gaming' aria-pressed='false'>board gaming</button>
+<button type='button' class='chip' data-id='736' data-label='card gaming' aria-pressed='false'>card gaming</button>
+<button type='button' class='chip' data-id='737' data-label='tabletop RPGs' aria-pressed='false'>tabletop RPGs</button>
+<button type='button' class='chip' data-id='738' data-label='painting miniatures' aria-pressed='false'>painting miniatures</button>
+<button type='button' class='chip' data-id='739' data-label='cosplaying' aria-pressed='false'>cosplaying</button>
+<button type='button' class='chip' data-id='740' data-label='attending conventions' aria-pressed='false'>attending conventions</button>
+<button type='button' class='chip' data-id='741' data-label='karaoke' aria-pressed='false'>karaoke</button>
+<button type='button' class='chip' data-id='742' data-label='traveling for fun' aria-pressed='false'>traveling for fun</button>
+<button type='button' class='chip' data-id='743' data-label='trying new restaurants' aria-pressed='false'>trying new restaurants</button>
+<button type='button' class='chip' data-id='744' data-label='visiting cafés' aria-pressed='false'>visiting cafés</button>
+<button type='button' class='chip' data-id='745' data-label='watching sports' aria-pressed='false'>watching sports</button>
+<button type='button' class='chip' data-id='746' data-label='participating in sports' aria-pressed='false'>participating in sports</button>
+<button type='button' class='chip' data-id='747' data-label='collecting items' aria-pressed='false'>collecting items</button>
+<button type='button' class='chip' data-id='748' data-label='journaling memories' aria-pressed='false'>journaling memories</button>
+<button type='button' class='chip' data-id='749' data-label='scrapbooking' aria-pressed='false'>scrapbooking</button>
+<button type='button' class='chip' data-id='750' data-label='making photo albums' aria-pressed='false'>making photo albums</button>
+<button type='button' class='chip' data-id='751' data-label='practicing magic tricks' aria-pressed='false'>practicing magic tricks</button>
+<button type='button' class='chip' data-id='752' data-label='attending workshops' aria-pressed='false'>attending workshops</button>
+<button type='button' class='chip' data-id='753' data-label='exploring hobbies' aria-pressed='false'>exploring hobbies</button>
+<button type='button' class='chip' data-id='754' data-label='learning new recipes' aria-pressed='false'>learning new recipes</button>
+<button type='button' class='chip' data-id='755' data-label='doing taste tests' aria-pressed='false'>doing taste tests</button>
+<button type='button' class='chip' data-id='756' data-label='hiking trails' aria-pressed='false'>hiking trails</button>
+<button type='button' class='chip' data-id='757' data-label='taking scenic photos' aria-pressed='false'>taking scenic photos</button>
+<button type='button' class='chip' data-id='758' data-label='budgeting monthly expenses' aria-pressed='false'>budgeting monthly expenses</button>
+<button type='button' class='chip' data-id='759' data-label='tracking spending' aria-pressed='false'>tracking spending</button>
+<button type='button' class='chip' data-id='760' data-label='updating spreadsheets' aria-pressed='false'>updating spreadsheets</button>
+<button type='button' class='chip' data-id='761' data-label='paying rent' aria-pressed='false'>paying rent</button>
+<button type='button' class='chip' data-id='762' data-label='paying utilities' aria-pressed='false'>paying utilities</button>
+<button type='button' class='chip' data-id='763' data-label='reviewing bank statements' aria-pressed='false'>reviewing bank statements</button>
+<button type='button' class='chip' data-id='764' data-label='transferring funds' aria-pressed='false'>transferring funds</button>
+<button type='button' class='chip' data-id='765' data-label='depositing checks' aria-pressed='false'>depositing checks</button>
+<button type='button' class='chip' data-id='766' data-label='grocery shopping' aria-pressed='false'>grocery shopping</button>
+<button type='button' class='chip' data-id='767' data-label='comparing prices' aria-pressed='false'>comparing prices</button>
+<button type='button' class='chip' data-id='768' data-label='coupon clipping' aria-pressed='false'>coupon clipping</button>
+<button type='button' class='chip' data-id='769' data-label='returning items' aria-pressed='false'>returning items</button>
+<button type='button' class='chip' data-id='770' data-label='mailing packages' aria-pressed='false'>mailing packages</button>
+<button type='button' class='chip' data-id='771' data-label='picking up parcels' aria-pressed='false'>picking up parcels</button>
+<button type='button' class='chip' data-id='772' data-label='renewing subscriptions' aria-pressed='false'>renewing subscriptions</button>
+<button type='button' class='chip' data-id='773' data-label='canceling subscriptions' aria-pressed='false'>canceling subscriptions</button>
+<button type='button' class='chip' data-id='774' data-label='repairing electronics' aria-pressed='false'>repairing electronics</button>
+<button type='button' class='chip' data-id='775' data-label='ordering supplies' aria-pressed='false'>ordering supplies</button>
+<button type='button' class='chip' data-id='776' data-label='replacing batteries' aria-pressed='false'>replacing batteries</button>
+<button type='button' class='chip' data-id='777' data-label='washing the car' aria-pressed='false'>washing the car</button>
+<button type='button' class='chip' data-id='778' data-label='refueling the car' aria-pressed='false'>refueling the car</button>
+<button type='button' class='chip' data-id='779' data-label='checking tire pressure' aria-pressed='false'>checking tire pressure</button>
+<button type='button' class='chip' data-id='780' data-label='changing oil' aria-pressed='false'>changing oil</button>
+<button type='button' class='chip' data-id='781' data-label='maintaining bicycles' aria-pressed='false'>maintaining bicycles</button>
+<button type='button' class='chip' data-id='782' data-label='fixing flat tires' aria-pressed='false'>fixing flat tires</button>
+<button type='button' class='chip' data-id='783' data-label='booking maintenance' aria-pressed='false'>booking maintenance</button>
+<button type='button' class='chip' data-id='784' data-label='filling out forms' aria-pressed='false'>filling out forms</button>
+<button type='button' class='chip' data-id='785' data-label='filing taxes' aria-pressed='false'>filing taxes</button>
+<button type='button' class='chip' data-id='786' data-label='organizing receipts' aria-pressed='false'>organizing receipts</button>
+<button type='button' class='chip' data-id='787' data-label='making new friends' aria-pressed='false'>making new friends</button>
+<button type='button' class='chip' data-id='788' data-label='maintaining friendships' aria-pressed='false'>maintaining friendships</button>
+<button type='button' class='chip' data-id='789' data-label='comforting loved ones' aria-pressed='false'>comforting loved ones</button>
+<button type='button' class='chip' data-id='790' data-label='planning hangouts' aria-pressed='false'>planning hangouts</button>
+<button type='button' class='chip' data-id='791' data-label='meeting for coffee' aria-pressed='false'>meeting for coffee</button>
+<button type='button' class='chip' data-id='792' data-label='giving gifts' aria-pressed='false'>giving gifts</button>
+<button type='button' class='chip' data-id='793' data-label='receiving gifts' aria-pressed='false'>receiving gifts</button>
+<button type='button' class='chip' data-id='794' data-label='writing letters' aria-pressed='false'>writing letters</button>
+<button type='button' class='chip' data-id='795' data-label='sending postcards' aria-pressed='false'>sending postcards</button>
+<button type='button' class='chip' data-id='796' data-label='celebrating birthdays' aria-pressed='false'>celebrating birthdays</button>
+<button type='button' class='chip' data-id='797' data-label='celebrating anniversaries' aria-pressed='false'>celebrating anniversaries</button>
+<button type='button' class='chip' data-id='798' data-label='attending weddings' aria-pressed='false'>attending weddings</button>
+<button type='button' class='chip' data-id='799' data-label='attending funerals' aria-pressed='false'>attending funerals</button>
+<button type='button' class='chip' data-id='800' data-label='visiting family' aria-pressed='false'>visiting family</button>
+</div></details>
+<details open data-sec='sec9'><summary>Section 9 (801–900)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='801' data-label='hosting gatherings' aria-pressed='false'>hosting gatherings</button>
+<button type='button' class='chip' data-id='802' data-label='cooking for friends' aria-pressed='false'>cooking for friends</button>
+<button type='button' class='chip' data-id='803' data-label='sharing meals' aria-pressed='false'>sharing meals</button>
+<button type='button' class='chip' data-id='804' data-label='checking in on people' aria-pressed='false'>checking in on people</button>
+<button type='button' class='chip' data-id='805' data-label='mediating conflicts' aria-pressed='false'>mediating conflicts</button>
+<button type='button' class='chip' data-id='806' data-label='resolving misunderstandings' aria-pressed='false'>resolving misunderstandings</button>
+<button type='button' class='chip' data-id='807' data-label='offering support' aria-pressed='false'>offering support</button>
+<button type='button' class='chip' data-id='808' data-label='asking for support' aria-pressed='false'>asking for support</button>
+<button type='button' class='chip' data-id='809' data-label='learning boundaries' aria-pressed='false'>learning boundaries</button>
+<button type='button' class='chip' data-id='810' data-label='practicing assertiveness' aria-pressed='false'>practicing assertiveness</button>
+<button type='button' class='chip' data-id='811' data-label='giving compliments' aria-pressed='false'>giving compliments</button>
+<button type='button' class='chip' data-id='812' data-label='receiving compliments' aria-pressed='false'>receiving compliments</button>
+<button type='button' class='chip' data-id='813' data-label='flirting' aria-pressed='false'>flirting</button>
+<button type='button' class='chip' data-id='814' data-label='dating' aria-pressed='false'>dating</button>
+<button type='button' class='chip' data-id='815' data-label='introspecting about relationships' aria-pressed='false'>introspecting about relationships</button>
+<button type='button' class='chip' data-id='816' data-label='navigating heartbreak' aria-pressed='false'>navigating heartbreak</button>
+<button type='button' class='chip' data-id='817' data-label='rebuilding confidence' aria-pressed='false'>rebuilding confidence</button>
+<button type='button' class='chip' data-id='818' data-label='expressing affection' aria-pressed='false'>expressing affection</button>
+<button type='button' class='chip' data-id='819' data-label='expressing gratitude' aria-pressed='false'>expressing gratitude</button>
+<button type='button' class='chip' data-id='820' data-label='saying goodbye' aria-pressed='false'>saying goodbye</button>
+<button type='button' class='chip' data-id='821' data-label='saying hello' aria-pressed='false'>saying hello</button>
+<button type='button' class='chip' data-id='822' data-label='apologizing sincerely' aria-pressed='false'>apologizing sincerely</button>
+<button type='button' class='chip' data-id='823' data-label='initiating conversations' aria-pressed='false'>initiating conversations</button>
+<button type='button' class='chip' data-id='824' data-label='deep listening' aria-pressed='false'>deep listening</button>
+<button type='button' class='chip' data-id='825' data-label='empathizing deeply' aria-pressed='false'>empathizing deeply</button>
+<button type='button' class='chip' data-id='826' data-label='praying' aria-pressed='false'>praying</button>
+<button type='button' class='chip' data-id='827' data-label='meditating in silence' aria-pressed='false'>meditating in silence</button>
+<button type='button' class='chip' data-id='828' data-label='lighting incense' aria-pressed='false'>lighting incense</button>
+<button type='button' class='chip' data-id='829' data-label='reading sacred texts' aria-pressed='false'>reading sacred texts</button>
+<button type='button' class='chip' data-id='830' data-label='contemplating existence' aria-pressed='false'>contemplating existence</button>
+<button type='button' class='chip' data-id='831' data-label='practicing gratitude' aria-pressed='false'>practicing gratitude</button>
+<button type='button' class='chip' data-id='832' data-label='attending spiritual gatherings' aria-pressed='false'>attending spiritual gatherings</button>
+<button type='button' class='chip' data-id='833' data-label='connecting with nature' aria-pressed='false'>connecting with nature</button>
+<button type='button' class='chip' data-id='834' data-label='walking labyrinths' aria-pressed='false'>walking labyrinths</button>
+<button type='button' class='chip' data-id='835' data-label='chanting' aria-pressed='false'>chanting</button>
+<button type='button' class='chip' data-id='836' data-label='journaling spiritually' aria-pressed='false'>journaling spiritually</button>
+<button type='button' class='chip' data-id='837' data-label='making altars' aria-pressed='false'>making altars</button>
+<button type='button' class='chip' data-id='838' data-label='leaving offerings' aria-pressed='false'>leaving offerings</button>
+<button type='button' class='chip' data-id='839' data-label='mindful breathing' aria-pressed='false'>mindful breathing</button>
+<button type='button' class='chip' data-id='840' data-label='vow setting' aria-pressed='false'>vow setting</button>
+<button type='button' class='chip' data-id='841' data-label='storytelling' aria-pressed='false'>storytelling</button>
+<button type='button' class='chip' data-id='842' data-label='creating characters' aria-pressed='false'>creating characters</button>
+<button type='button' class='chip' data-id='843' data-label='worldbuilding' aria-pressed='false'>worldbuilding</button>
+<button type='button' class='chip' data-id='844' data-label='writing essays' aria-pressed='false'>writing essays</button>
+<button type='button' class='chip' data-id='845' data-label='writing scripts' aria-pressed='false'>writing scripts</button>
+<button type='button' class='chip' data-id='846' data-label='podcast scripting' aria-pressed='false'>podcast scripting</button>
+<button type='button' class='chip' data-id='847' data-label='painting murals' aria-pressed='false'>painting murals</button>
+<button type='button' class='chip' data-id='848' data-label='sculpting clay' aria-pressed='false'>sculpting clay</button>
+<button type='button' class='chip' data-id='849' data-label='composing music' aria-pressed='false'>composing music</button>
+<button type='button' class='chip' data-id='850' data-label='mixing music' aria-pressed='false'>mixing music</button>
+<button type='button' class='chip' data-id='851' data-label='beat making' aria-pressed='false'>beat making</button>
+<button type='button' class='chip' data-id='852' data-label='singing in harmonies' aria-pressed='false'>singing in harmonies</button>
+<button type='button' class='chip' data-id='853' data-label='dancing freestyle' aria-pressed='false'>dancing freestyle</button>
+<button type='button' class='chip' data-id='854' data-label='choreographing dances' aria-pressed='false'>choreographing dances</button>
+<button type='button' class='chip' data-id='855' data-label='writing poetry' aria-pressed='false'>writing poetry</button>
+<button type='button' class='chip' data-id='856' data-label='performing poetry' aria-pressed='false'>performing poetry</button>
+<button type='button' class='chip' data-id='857' data-label='creating zines' aria-pressed='false'>creating zines</button>
+<button type='button' class='chip' data-id='858' data-label='designing posters' aria-pressed='false'>designing posters</button>
+<button type='button' class='chip' data-id='859' data-label='journaling fiction ideas' aria-pressed='false'>journaling fiction ideas</button>
+<button type='button' class='chip' data-id='860' data-label='scrapbooking memories' aria-pressed='false'>scrapbooking memories</button>
+<button type='button' class='chip' data-id='861' data-label='collecting art references' aria-pressed='false'>collecting art references</button>
+<button type='button' class='chip' data-id='862' data-label='photographing nature' aria-pressed='false'>photographing nature</button>
+<button type='button' class='chip' data-id='863' data-label='photographing people' aria-pressed='false'>photographing people</button>
+<button type='button' class='chip' data-id='864' data-label='staging photoshoots' aria-pressed='false'>staging photoshoots</button>
+<button type='button' class='chip' data-id='865' data-label='retouching photos' aria-pressed='false'>retouching photos</button>
+<button type='button' class='chip' data-id='866' data-label='animating 2D art' aria-pressed='false'>animating 2D art</button>
+<button type='button' class='chip' data-id='867' data-label='animating 3D scenes' aria-pressed='false'>animating 3D scenes</button>
+<button type='button' class='chip' data-id='868' data-label='drawing digitally' aria-pressed='false'>drawing digitally</button>
+<button type='button' class='chip' data-id='869' data-label='pixel art design' aria-pressed='false'>pixel art design</button>
+<button type='button' class='chip' data-id='870' data-label='sprite sheet creation' aria-pressed='false'>sprite sheet creation</button>
+<button type='button' class='chip' data-id='871' data-label='VFX design' aria-pressed='false'>VFX design</button>
+<button type='button' class='chip' data-id='872' data-label='storyboard creation' aria-pressed='false'>storyboard creation</button>
+<button type='button' class='chip' data-id='873' data-label='writing comic panels' aria-pressed='false'>writing comic panels</button>
+<button type='button' class='chip' data-id='874' data-label='designing outfits' aria-pressed='false'>designing outfits</button>
+<button type='button' class='chip' data-id='875' data-label='costuming' aria-pressed='false'>costuming</button>
+<button type='button' class='chip' data-id='876' data-label='prop making' aria-pressed='false'>prop making</button>
+<button type='button' class='chip' data-id='877' data-label='observing nature' aria-pressed='false'>observing nature</button>
+<button type='button' class='chip' data-id='878' data-label='collecting samples' aria-pressed='false'>collecting samples</button>
+<button type='button' class='chip' data-id='879' data-label='cataloging findings' aria-pressed='false'>cataloging findings</button>
+<button type='button' class='chip' data-id='880' data-label='doing science experiments' aria-pressed='false'>doing science experiments</button>
+<button type='button' class='chip' data-id='881' data-label='tracking weather' aria-pressed='false'>tracking weather</button>
+<button type='button' class='chip' data-id='882' data-label='building simple machines' aria-pressed='false'>building simple machines</button>
+<button type='button' class='chip' data-id='883' data-label='studying physics' aria-pressed='false'>studying physics</button>
+<button type='button' class='chip' data-id='884' data-label='studying chemistry' aria-pressed='false'>studying chemistry</button>
+<button type='button' class='chip' data-id='885' data-label='studying biology' aria-pressed='false'>studying biology</button>
+<button type='button' class='chip' data-id='886' data-label='studying astronomy' aria-pressed='false'>studying astronomy</button>
+<button type='button' class='chip' data-id='887' data-label='solving math problems' aria-pressed='false'>solving math problems</button>
+<button type='button' class='chip' data-id='888' data-label='writing equations' aria-pressed='false'>writing equations</button>
+<button type='button' class='chip' data-id='889' data-label='modeling data' aria-pressed='false'>modeling data</button>
+<button type='button' class='chip' data-id='890' data-label='observing stars' aria-pressed='false'>observing stars</button>
+<button type='button' class='chip' data-id='891' data-label='using telescopes' aria-pressed='false'>using telescopes</button>
+<button type='button' class='chip' data-id='892' data-label='collecting rocks' aria-pressed='false'>collecting rocks</button>
+<button type='button' class='chip' data-id='893' data-label='identifying minerals' aria-pressed='false'>identifying minerals</button>
+<button type='button' class='chip' data-id='894' data-label='logging field notes' aria-pressed='false'>logging field notes</button>
+<button type='button' class='chip' data-id='895' data-label='reading research articles' aria-pressed='false'>reading research articles</button>
+<button type='button' class='chip' data-id='896' data-label='participating in citizen science' aria-pressed='false'>participating in citizen science</button>
+<button type='button' class='chip' data-id='897' data-label='exploring museums' aria-pressed='false'>exploring museums</button>
+<button type='button' class='chip' data-id='898' data-label='stretching after sleep' aria-pressed='false'>stretching after sleep</button>
+<button type='button' class='chip' data-id='899' data-label='reacting to news' aria-pressed='false'>reacting to news</button>
+<button type='button' class='chip' data-id='900' data-label='forming opinions' aria-pressed='false'>forming opinions</button>
+</div></details>
+<details open data-sec='sec10'><summary>Section 10 (901–944)</summary>
+<div class='chips'>
+<button type='button' class='chip' data-id='901' data-label='changing opinions' aria-pressed='false'>changing opinions</button>
+<button type='button' class='chip' data-id='902' data-label='feeling inspired' aria-pressed='false'>feeling inspired</button>
+<button type='button' class='chip' data-id='903' data-label='feeling discouraged' aria-pressed='false'>feeling discouraged</button>
+<button type='button' class='chip' data-id='904' data-label='overcoming fear' aria-pressed='false'>overcoming fear</button>
+<button type='button' class='chip' data-id='905' data-label='procrastinating' aria-pressed='false'>procrastinating</button>
+<button type='button' class='chip' data-id='906' data-label='planning future goals' aria-pressed='false'>planning future goals</button>
+<button type='button' class='chip' data-id='907' data-label='sharing experiences' aria-pressed='false'>sharing experiences</button>
+<button type='button' class='chip' data-id='908' data-label='rewriting memories' aria-pressed='false'>rewriting memories</button>
+<button type='button' class='chip' data-id='909' data-label='replaying conversations' aria-pressed='false'>replaying conversations</button>
+<button type='button' class='chip' data-id='910' data-label='laughing at memes' aria-pressed='false'>laughing at memes</button>
+<button type='button' class='chip' data-id='911' data-label='sending voice notes' aria-pressed='false'>sending voice notes</button>
+<button type='button' class='chip' data-id='912' data-label='reacting with emojis' aria-pressed='false'>reacting with emojis</button>
+<button type='button' class='chip' data-id='913' data-label='analyzing dreams' aria-pressed='false'>analyzing dreams</button>
+<button type='button' class='chip' data-id='914' data-label='making wishes' aria-pressed='false'>making wishes</button>
+<button type='button' class='chip' data-id='915' data-label='evaluating risks' aria-pressed='false'>evaluating risks</button>
+<button type='button' class='chip' data-id='916' data-label='managing impulses' aria-pressed='false'>managing impulses</button>
+<button type='button' class='chip' data-id='917' data-label='resisting temptations' aria-pressed='false'>resisting temptations</button>
+<button type='button' class='chip' data-id='918' data-label='indulging desires' aria-pressed='false'>indulging desires</button>
+<button type='button' class='chip' data-id='919' data-label='oversharing' aria-pressed='false'>oversharing</button>
+<button type='button' class='chip' data-id='920' data-label='holding back' aria-pressed='false'>holding back</button>
+<button type='button' class='chip' data-id='921' data-label='expressing vulnerability' aria-pressed='false'>expressing vulnerability</button>
+<button type='button' class='chip' data-id='922' data-label='rehearsing conversations' aria-pressed='false'>rehearsing conversations</button>
+<button type='button' class='chip' data-id='923' data-label='feeling déjà vu' aria-pressed='false'>feeling déjà vu</button>
+<button type='button' class='chip' data-id='924' data-label='sensing danger' aria-pressed='false'>sensing danger</button>
+<button type='button' class='chip' data-id='925' data-label='adapting to change' aria-pressed='false'>adapting to change</button>
+<button type='button' class='chip' data-id='926' data-label='seeking closure' aria-pressed='false'>seeking closure</button>
+<button type='button' class='chip' data-id='927' data-label='embracing new routines' aria-pressed='false'>embracing new routines</button>
+<button type='button' class='chip' data-id='928' data-label='reshaping identity' aria-pressed='false'>reshaping identity</button>
+<button type='button' class='chip' data-id='929' data-label='grieving past versions of yourself' aria-pressed='false'>grieving past versions of yourself</button>
+<button type='button' class='chip' data-id='930' data-label='romanticizing life' aria-pressed='false'>romanticizing life</button>
+<button type='button' class='chip' data-id='931' data-label='savoring moments' aria-pressed='false'>savoring moments</button>
+<button type='button' class='chip' data-id='932' data-label='cherishing memories' aria-pressed='false'>cherishing memories</button>
+<button type='button' class='chip' data-id='933' data-label='striving for purpose' aria-pressed='false'>striving for purpose</button>
+<button type='button' class='chip' data-id='934' data-label='nurturing curiosity' aria-pressed='false'>nurturing curiosity</button>
+<button type='button' class='chip' data-id='935' data-label='exploring possibilities' aria-pressed='false'>exploring possibilities</button>
+<button type='button' class='chip' data-id='936' data-label='wandering aimlessly' aria-pressed='false'>wandering aimlessly</button>
+<button type='button' class='chip' data-id='937' data-label='cultivating patience' aria-pressed='false'>cultivating patience</button>
+<button type='button' class='chip' data-id='938' data-label='navigating uncertainty' aria-pressed='false'>navigating uncertainty</button>
+<button type='button' class='chip' data-id='939' data-label='repairing mistakes' aria-pressed='false'>repairing mistakes</button>
+<button type='button' class='chip' data-id='940' data-label='creating new habits' aria-pressed='false'>creating new habits</button>
+<button type='button' class='chip' data-id='941' data-label='breaking old habits' aria-pressed='false'>breaking old habits</button>
+<button type='button' class='chip' data-id='942' data-label='evolving' aria-pressed='false'>evolving</button>
+<button type='button' class='chip' data-id='943' data-label='learning continuously' aria-pressed='false'>learning continuously</button>
+<button type='button' class='chip' data-id='944' data-label='being human' aria-pressed='false'>being human</button>
+</div></details>
+</div>
+<div class='footer meta'>Tip: selections auto-save in your browser on this device.</div>
+<script>
+(function(){
+  const STORAGE_KEY = "activities_selected_v1";
+  const OPEN_KEY = "activities_open_sections_v1";
+  const search = document.getElementById("search");
+  const copyBtn = document.getElementById("copyBtn");
+  const clearBtn = document.getElementById("clearBtn");
+  const countEl = document.getElementById("count");
+  const statusEl = document.getElementById("status");
+  const chips = Array.from(document.querySelectorAll(".chip"));
+  const sections = Array.from(document.querySelectorAll("details[data-sec]"));
+
+  function setStatus(msg){
+    statusEl.textContent = msg ? " • " + msg : "";
+  }
+
+  function getSelectedIds(){
+    return chips.filter(b => b.getAttribute("aria-pressed")==="true").map(b => b.dataset.id);
+  }
+
+  function updateCount(){
+    const n = getSelectedIds().length;
+    countEl.textContent = n + (n===1 ? " selected" : " selected");
+  }
+
+  function saveSelected(){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(getSelectedIds())); }catch(e){}
+  }
+
+  function loadSelected(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return;
+      const ids = new Set(JSON.parse(raw));
+      chips.forEach(b => {
+        if(ids.has(b.dataset.id)) b.setAttribute("aria-pressed","true");
+      });
+    }catch(e){}
+  }
+
+  function saveOpen(){
+    try{
+      const open = {};
+      sections.forEach(d => open[d.dataset.sec] = !!d.open);
+      localStorage.setItem(OPEN_KEY, JSON.stringify(open));
+    }catch(e){}
+  }
+
+  function loadOpen(){
+    try{
+      const raw = localStorage.getItem(OPEN_KEY);
+      if(!raw) return;
+      const open = JSON.parse(raw);
+      sections.forEach(d => {
+        if(open.hasOwnProperty(d.dataset.sec)) d.open = !!open[d.dataset.sec];
+      });
+    }catch(e){}
+  }
+
+  function toggleChip(btn){
+    const now = btn.getAttribute("aria-pressed") === "true" ? "false" : "true";
+    btn.setAttribute("aria-pressed", now);
+    saveSelected();
+    updateCount();
+    setStatus("");
+  }
+
+  // Click + keyboard toggle
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chip");
+    if(!btn) return;
+    e.preventDefault(); // prevent any weird focus/scroll behavior
+    toggleChip(btn);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const btn = e.target.closest && e.target.closest(".chip");
+    if(!btn) return;
+    if(e.key === " " || e.key === "Enter"){
+      e.preventDefault();
+      toggleChip(btn);
+    }
+  });
+
+  // Section open/close persistence
+  sections.forEach(d => d.addEventListener("toggle", saveOpen));
+
+  // Search filter
+  function applyFilter(){
+    const q = (search.value || "").trim().toLowerCase();
+    let visibleSelected = 0;
+    chips.forEach(btn => {
+      const match = !q || btn.textContent.toLowerCase().includes(q);
+      btn.classList.toggle("hidden", !match);
+      if(match && btn.getAttribute("aria-pressed")==="true") visibleSelected++;
+    });
+    // hide empty sections
+    sections.forEach(d => {
+      const anyVisible = !!d.querySelector(".chip:not(.hidden)");
+      d.classList.toggle("hidden", !anyVisible);
+      if(q && anyVisible) d.open = true; // open matching sections during search
+    });
+    setStatus(q ? ("filter: " + q + " (" + visibleSelected + " selected shown)") : "");
+  }
+  search.addEventListener("input", applyFilter);
+
+  // Copy selected (comma-separated)
+  copyBtn.addEventListener("click", async () => {
+    const selected = chips.filter(b => b.getAttribute("aria-pressed")==="true").map(b => b.textContent.trim());
+    if(selected.length === 0){
+      alert("No items selected.");
+      return;
+    }
+    const text = selected.join(", ");
+    try{
+      await navigator.clipboard.writeText(text);
+      alert("Copied " + selected.length + " selected item(s).");
+    }catch(e){
+      // fallback
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      ta.remove();
+      alert("Copied " + selected.length + " selected item(s).");
+    }
+  });
+
+  clearBtn.addEventListener("click", () => {
+    chips.forEach(b => b.setAttribute("aria-pressed","false"));
+    try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+    updateCount();
+    applyFilter();
+  });
+
+  // init
+  loadSelected();
+  loadOpen();
+  updateCount();
+  applyFilter();
+})();
+</script>
+</body></html>
