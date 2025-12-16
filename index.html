@@ -14,7 +14,12 @@ body {
   align-items:flex-start;
 }
 .cb{
-  position:absolute;
+  /* keep inputs in-flow so focusing them never scrolls the page */
+  position:relative;
+  width:1px;
+  height:1px;
+  margin:0;
+  padding:0;
   opacity:0;
   pointer-events:none;
 }
