@@ -876,7 +876,7 @@ function setSegIdx(nextIdx) {
 function syncStepper() {
   document.body.dataset.guided = guidedMode ? "true" : "false";
   const topic = (SEGMENTS[segIdx] && SEGMENTS[segIdx].title) || `Segment ${segIdx+1}`;
-  if (segLabel) segLabel.textContent = `Section ${segIdx+1}/${TOTAL_SEGS} • ${topic}`;
+  if (segLabel) segLabel.textContent = `Section ${segIdx+1}/${TOTAL_SEGS}`;
   if (prevSegBtn) prevSegBtn.disabled = !guidedMode || segIdx <= 0;
   if (nextSegBtn) nextSegBtn.disabled = !guidedMode || segIdx >= TOTAL_SEGS - 1;
   if (modeToggleBtn) {
